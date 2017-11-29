@@ -2,3 +2,5 @@ Link for tutorial: https://github.com/tfors/rpi-tf/blob/master/doc/install_tenso
 
 In section 3 before building tensorflow run:
 sed -i '\@https://github.com/google/protobuf/archive/0b059a3d8a8f8aa40dde7bea55edca4ec5dfea66.tar.gz@d' tensorflow/workspace.bzl
+
+May have to use pip instead of pip3 for last install
