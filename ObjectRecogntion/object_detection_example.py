@@ -1,14 +1,3 @@
-
-# coding: utf-8
-
-# # Object Detection Demo
-# Welcome to the object detection inference walkthrough!  This notebook will walk you step by step through the process of using a pre-trained model to detect objects in an image. Make sure to follow the [installation instructions](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md) before you start.
-
-# # Imports
-
-# In[1]:
-
-
 import numpy as np
 import os
 import six.moves.urllib as urllib
@@ -25,24 +14,11 @@ from PIL import Image
 import cv2
 
 cap = cv2.VideoCapture(0)
+#cap = cv2.VideoCapture('Demo5.mp4')
 
 
-# ## Env setup
-
-# In[2]:
-
-
-# This is needed to display the images.
-#get_ipython().magic(u'matplotlib inline')
-
-# This is needed since the notebook is stored in the object_detection folder.
 sys.path.append("..")
 
-
-# ## Object detection imports
-# Here are the imports from the object detection module.
-
-# In[3]:
 
 
 from utils import label_map_util
@@ -50,15 +26,6 @@ from utils import label_map_util
 from utils import visualization_utils as vis_util
 
 
-# # Model preparation 
-
-# ## Variables
-# 
-# Any model exported using the `export_inference_graph.py` tool can be loaded here simply by changing `PATH_TO_CKPT` to point to a new .pb file.  
-# 
-# By default we use an "SSD with Mobilenet" model here. See the [detection model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md) for a list of other models that can be run out-of-the-box with varying speeds and accuracies.
-
-# In[4]:
 
 
 # What model to download.
@@ -173,8 +140,22 @@ with detection_graph.as_default():
           use_normalized_coordinates=True,
           line_thickness=8)
 
-      cv2.imshow('object detection', cv2.resize(image_np, (800,600)))
-      if cv2.waitKey(25) & 0xFF == ord('q'):
+      cv2.imshow('object detection', cv2.resize(image_np, (1200,700)))
+      objects = []
+      threshold = 0.5
+#      objects = [category_index.get(value) for index,value in enumerate(classes[0]) if scores[0,index] > 0.5]
+#      print(objects['name'])
+      for index, value in enumerate(classes[0]):
+        object_dict = {}
+        if scores[0, index] > threshold:
+          object_dict[(category_index.get(value)).get('name').encode('utf8')] = \
+                              scores[0, index]
+          objects.append(object_dict.copy())
+      print(objects)
+
+      
+      
+      if cv2.waitKey(5) & 0xFF == ord('q'):
         cv2.destroyAllWindows()
         break
 
