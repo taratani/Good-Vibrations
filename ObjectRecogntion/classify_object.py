@@ -39,6 +39,7 @@ import tarfile
 import numpy as np
 from six.moves import urllib
 import tensorflow as tf
+import time
 
 FLAGS = None
 
@@ -181,7 +182,10 @@ def main(_):
   maybe_download_and_extract()
   image = (FLAGS.image_file if FLAGS.image_file else
            os.path.join(FLAGS.model_dir, 'cropped_panda.jpg'))
+  t0 = time.time()
   run_inference_on_image(image)
+  t1 = time.time()
+  print('Total time to process image: ', t1-t0)
 
 
 if __name__ == '__main__':
