@@ -66,11 +66,15 @@ with detection_graph.as_default():
 	    print('OK!')
 
 	    while True:
-	    	# capture image
-	    	camera.start_preview()
-	    	sleep(2)
-	    	camera.capture('image.jpg')
-	    	camera.stop_preview()
-	    	image_np = cv2.imread('image.jpg')
+	    	option = raw_input()
+	    	if(option=='')
+		    	# capture image
+		    	camera.start_preview()
+		    	sleep(2)
+		    	camera.capture('image.jpg')
+		    	camera.stop_preview()
+		    	image_np = cv2.imread('image.jpg')
 
-	    	detectObstacle(image_np)
+		    	detectObstacle(image_np)
+		    if(option=='q'):
+		    	break
