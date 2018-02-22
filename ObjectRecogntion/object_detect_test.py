@@ -30,6 +30,24 @@ with detection_graph.as_default():
     od_graph_def.ParseFromString(serialized_graph)
     tf.import_graph_def(od_graph_def, name='')
 
+def detectObstacle(image_np):
+	# actual detection
+	(boxes, scores, classes, num) = sess.run(
+		[detection_boxes, detection_scores, detection_classes, num_detections],
+		feed_dict={image_tensor: image_np_expanded})
+	objects = []
+    threshold = 0.5
+    #objects = [category_index.get(value) for index,value in enumerate(classes[0]) if scores[0,index] > 0.5]
+    #print(objects['name'])
+    for index, value in enumerate(classes[0]):
+        object_dict = {}
+        if scores[0, index] > threshold:
+          	object_dict[(category_index.get(value)).get('name').encode('utf8')] = \
+                scores[0, index]
+          	objects.append(object_dict.copy())
+     print(objects)
+
+
 # loading label maps
 label_map = label_map_util.load_labelmap(PATH_TO_LABELS)
 categories = label_map_util.convert_label_map_to_categories(label_map, max_num_classes=NUM_CLASSES, use_display_name=True)
@@ -43,6 +61,9 @@ with detection_graph.as_default():
 		detection_scores = detection_graph.get_tensor_by_name('detection_scores:0')
 	    detection_classes = detection_graph.get_tensor_by_name('detection_classes:0')
 	    num_detections = detection_graph.get_tensor_by_name('num_detections:0')
+	    image_np = cv2.imread('image.jpg')
+	    detectObstacle(image_np)
+	    print('OK!')
 
 	    while True:
 	    	# capture image
@@ -52,19 +73,4 @@ with detection_graph.as_default():
 	    	camera.stop_preview()
 	    	image_np = cv2.imread('image.jpg')
 
-	    	# actual detection
-	    	(boxes, scores, classes, num) = sess.run(
-		        [detection_boxes, detection_scores, detection_classes, num_detections],
-		        feed_dict={image_tensor: image_np_expanded})
-	    	objects = []
-      		threshold = 0.5
-      		#objects = [category_index.get(value) for index,value in enumerate(classes[0]) if scores[0,index] > 0.5]
-      		#print(objects['name'])
-      		for index, value in enumerate(classes[0]):
-        		object_dict = {}
-        		if scores[0, index] > threshold:
-          			object_dict[(category_index.get(value)).get('name').encode('utf8')] = \
-                        scores[0, index]
-          			objects.append(object_dict.copy())
-      		print(objects)
-
+	    	detectObstacle(image_np)
