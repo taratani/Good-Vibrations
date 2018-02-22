@@ -183,7 +183,7 @@ def maybe_download_and_extract():
 
 def main(_):
   maybe_download_and_extract()
-  camera = picamera()
+  camera = PiCamera()
   camera.start_preview()
   sleep(2)
   camera.capture('image.jpg')
