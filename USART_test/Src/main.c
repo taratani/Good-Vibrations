@@ -39,7 +39,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f4xx_hal.h"
-#include "i2c.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -51,6 +50,12 @@
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
+uint8_t buffrec[40];
+char* bufftr = "hello";
+uint8_t but_stat;
+uint8_t count = 0;
+uint8_t message;
+
 
 /* USER CODE END PV */
 
@@ -91,22 +96,31 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_I2C1_Init();
   MX_USART1_UART_Init();
-  MX_USART3_UART_Init();
 
+  //__HAL_UART_ENABLE_IT(&huart1, UART_IT_TXE);
   /* USER CODE BEGIN 2 */
-
-  USART_puts(USART1, "Init complete! Hello World!\r\n");
-
+  HAL_UART_Transmit_IT(&huart1, (uint8_t *)bufftr, 5);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-  /* USER CODE END WHILE */
 
+  /* USER CODE END WHILE */
+	  if(message == 2)
+	  {
+		  bufftr = "data";
+		  HAL_UART_Transmit_IT(&huart1, (uint8_t *)bufftr, 4);
+		  message = 0;
+	  }
+	  else if(message == 1)
+	  {
+		  bufftr = "quit";
+		  HAL_UART_Transmit_IT(&huart1, (uint8_t *)bufftr, 4);
+		  message = 0;
+	  }
   /* USER CODE BEGIN 3 */
 
   }
