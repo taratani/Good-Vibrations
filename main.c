@@ -8,7 +8,9 @@
 #define MAX_STRLEN 20 // this is the maximum string length of our string in characters
 #define BUTTON_LIMIT 2500000
 volatile char received_string[MAX_STRLEN+1]; // this will hold the recieved string
+#define SLAVE_ADDRESS 0x29 // the slave address (example)
 uint8_t state = 1;
+uint8_t received_data[2];
 
 void Delay(__IO uint32_t nCount) {
   while(nCount--) {
@@ -160,8 +162,6 @@ void USART_puts(USART_TypeDef* USARTx, volatile char *s){
 	}
 }
 
-#define SLAVE_ADDRESS 0x3D // the slave address (example)
-
 void init_I2C1(void){
 
 	GPIO_InitTypeDef GPIO_InitStruct;
@@ -287,25 +287,40 @@ void I2C_stop(I2C_TypeDef* I2Cx){
 	I2C_GenerateSTOP(I2Cx, ENABLE);
 }
 
-void InitializeTimer()
+void TIM_INT_Init()
 {
+    // Enable clock for TIM2
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
 
-    TIM_TimeBaseInitTypeDef timerInitStructure;
-    timerInitStructure.TIM_Prescaler = 40000;
-    timerInitStructure.TIM_CounterMode = TIM_CounterMode_Up;
-    timerInitStructure.TIM_Period = 500;
-    timerInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;
-    timerInitStructure.TIM_RepetitionCounter = 0;
-    TIM_TimeBaseInit(TIM2, &timerInitStructure);
+    // TIM2 initialization overflow every 500ms
+    // TIM2 by default has clock of 84MHz
+    // Here, we must set value of prescaler and period,
+    // so update event is 0.5Hz or 500ms
+    // Update Event (Hz) = timer_clock / ((TIM_Prescaler + 1) *
+    // (TIM_Period + 1))
+    // Update Event (Hz) = 84MHz / ((4199 + 1) * (9999 + 1)) = 0.5 Hz
+    TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStruct;
+    TIM_TimeBaseInitStruct.TIM_Prescaler = 4199;
+    TIM_TimeBaseInitStruct.TIM_Period = 9999;
+    TIM_TimeBaseInitStruct.TIM_ClockDivision = TIM_CKD_DIV1;
+    TIM_TimeBaseInitStruct.TIM_CounterMode = TIM_CounterMode_Up;
+
+    // TIM2 initialize
+    TIM_TimeBaseInit(TIM2, &TIM_TimeBaseInitStruct);
+    // Enable TIM2 interrupt
+    TIM_ITConfig(TIM2, TIM_IT_Update, ENABLE);
+    // Start TIM2
     TIM_Cmd(TIM2, ENABLE);
 
-    NVIC_InitTypeDef nvicStructure;
-    nvicStructure.NVIC_IRQChannel = TIM2_IRQn;
-    nvicStructure.NVIC_IRQChannelPreemptionPriority = 0;
-    nvicStructure.NVIC_IRQChannelSubPriority = 1;
-    nvicStructure.NVIC_IRQChannelCmd = ENABLE;
-    NVIC_Init(&nvicStructure);
+    // Nested vectored interrupt settings
+    // TIM2 interrupt is most important (PreemptionPriority and
+    // SubPriority = 0)
+    NVIC_InitTypeDef NVIC_InitStruct;
+    NVIC_InitStruct.NVIC_IRQChannel = TIM2_IRQn;
+    NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority = 0;
+    NVIC_InitStruct.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStruct);
 }
 
 int main(void) {
@@ -316,7 +331,7 @@ int main(void) {
 
   init_I2C1(); //
 
-  InitializeTimer();
+  TIM_INT_Init();
 
   while (1){
     /*
@@ -389,8 +404,14 @@ void EXTI4_IRQHandler(void) {
 
 void TIM2_IRQHandler()
 {
-    if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET)
+    // Checks whether the TIM2 interrupt has occurred or not
+    if (TIM_GetITStatus(TIM2, TIM_IT_Update))
     {
+        // Clears the TIM2 interrupt pending bit
         TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
+
+        I2C_start(I2C1, SLAVE_ADDRESS<<1, I2C_Direction_Receiver); // start a transmission in Master receiver mode
+        received_data[0] = I2C_read_ack(I2C1); // read one byte and request another byte
+        received_data[1] = I2C_read_nack(I2C1); // read one byte and don't request another byte, stop transmission
     }
 }
