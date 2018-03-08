@@ -39,6 +39,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f4xx_hal.h"
+#include "tof_hw.h"
 
 /* USER CODE BEGIN Includes */
 
@@ -63,6 +64,8 @@ static void MX_I2C1_Init(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
+
+
 
 /* USER CODE END 0 */
 
@@ -93,15 +96,78 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C1_Init();
 
+
+   // wait until serial port opens for native USB devices
+
   /* USER CODE BEGIN 2 */
 
+  sfr sbit TOF_ENABLE at GPIOC_ODR.B2;
+  sfr sbit TOF_DRDY at GPIOD_IDR.B10;
+
+  uint64_t milliseconds_counter = 0;
+
+  void timer_setup()
+  {
+    RCC_APB1ENR.TIM2EN = 1;
+    TIM2_CR1.CEN = 0;
+    TIM2_PSC = 1;
+    TIM2_ARR = 35999;
+    NVIC_IntEnable(IVT_INT_TIM2);
+    TIM2_DIER.UIE = 1;
+    TIM2_CR1.CEN = 1;
+    EnableInterrupts();
+  }
+
+
+  void setup()
+  {
+    GPIO_Digital_Output(&GPIOC_BASE, _GPIO_PINMASK_2);
+    GPIO_Digital_Input(&GPIOD_BASE, _GPIO_PINMASK_10);
+    TOF_ENABLE = 0;
+    delay_ms(100);
+    I2C1_Init_Advanced(400000, &_GPIO_MODULE_I2C1_PB67);
+    delay_ms(200);
+    tof_hal_init();
+    TOF_ENABLE = 1;
+    delay_ms(100);
+    Uart1_Init(57600);
+    delay_ms(200);
+    Uart_Write_Text("Uart init\r\n");
+  }
+
+  uint8_t testread[3];
+  uint16_t model_id;
+  uint16_t range;
+
   /* USER CODE END 2 */
+  char txt[10];
+
+
+  setup();
+  timer_setup();
+
+  tof_init(true);
+  tof_set_timeout(500);
+  tof_start_continuous(0);
+  Uart_Write_Text("TOF ready\r\n");
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
   /* USER CODE END WHILE */
+
+
+		  range = tof_read_range_continuous_millimeters();
+	      WordToStr(range, txt);
+	      Uart_Write_Text("Range: ");
+	      Uart_Write_Text(txt);
+	      Uart_Write_Text("\r\n");
+
+	      if (tof_timeout_occurred())
+	    	  Uart_Write_Text("TIMEOUT\r\n");
+
+
 
   /* USER CODE BEGIN 3 */
 
@@ -228,6 +294,13 @@ void _Error_Handler(char * file, int line)
   /* USER CODE END Error_Handler_Debug */ 
 }
 
+void Timer2_interrupt() iv IVT_INT_TIM2
+{
+  TIM2_SR.UIF = 0;
+  milliseconds_counter++;
+}
+
+
 #ifdef USE_FULL_ASSERT
 
 /**
@@ -245,6 +318,8 @@ void assert_failed(uint8_t* file, uint32_t line)
   /* USER CODE END 6 */
 
 }
+
+
 
 #endif
 
