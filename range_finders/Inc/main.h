@@ -43,12 +43,24 @@
 /* Includes ------------------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+
+
 /* USER CODE END Includes */
 
 /* Private define ------------------------------------------------------------*/
 
 #define Control_Pin_Pin GPIO_PIN_12
 #define Control_Pin_GPIO_Port GPIOA
+#define BOOT0_Pin GPIO_PIN_8
+#define BOOT0_GPIO_Port GPIOB
+#define LED_USB_Pin GPIO_PIN_4
+#define LED_USB_GPIO_Port GPIOA
+#define LED_USR_Pin GPIO_PIN_5
+#define LED_USR_GPIO_Port GPIOA
+#define I2C1_RST_Pin GPIO_PIN_6
+#define I2C1_RST_GPIO_Port GPIOA
+#define I2C1_INT_Pin GPIO_PIN_7
+#define I2C1_INT_GPIO_Port GPIOA
 
 /* ########################## Assert Selection ############################## */
 /**

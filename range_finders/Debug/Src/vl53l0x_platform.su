@@ -1,0 +1,16 @@
+vl53l0x_platform.c:18:12:i2c_write	24	static
+vl53l0x_platform.c:26:12:i2c_read	24	static
+vl53l0x_platform.c:8:5:VL53L0X_i2c_init	0	static
+vl53l0x_platform.c:13:9:VL53L0X_i2c_close	0	static
+vl53l0x_platform.c:34:15:VL53L0X_LockSequenceAccess	0	static
+vl53l0x_platform.c:39:15:VL53L0X_UnlockSequenceAccess	0	static
+vl53l0x_platform.c:44:15:VL53L0X_WriteMulti	8	static
+vl53l0x_platform.c:48:15:VL53L0X_ReadMulti	8	static
+vl53l0x_platform.c:52:15:VL53L0X_WrByte	16	static
+vl53l0x_platform.c:56:15:VL53L0X_WrWord	16	static
+vl53l0x_platform.c:63:15:VL53L0X_WrDWord	16	static
+vl53l0x_platform.c:72:15:VL53L0X_UpdateByte	32	static
+vl53l0x_platform.c:87:15:VL53L0X_RdByte	16	static
+vl53l0x_platform.c:95:15:VL53L0X_RdWord	16	static
+vl53l0x_platform.c:106:16:VL53L0X_RdDWord	16	static
+vl53l0x_platform.c:119:15:VL53L0X_PollingDelay	0	static
