@@ -1,0 +1,2750 @@
+[1.839] reset_hw_wtchpt_module():  Hardware watchpoint supported by the target 
+[1.845] createFlashParams():  STM32 device: Flash size =1024
+[1.948] STM32_AppReset():  Enter STM32_AppReset() function 
+[2.061] STM32_AppReset():  NVIC_DFSR_REG = 0x00000009
+[2.063] STM32_AppReset():  NVIC_CFGFSR_REG = 0x00000000
+[2.064] STM32_AppReset():  XPSR = 0x01000000
+[2.065] Device_Initialise():  ST_LINK Major version =2 Jtag version =28
+[2.065] Device_Initialise():  ST_LINK VID=1155 PID=14152
+[2.065] Device_Initialise():  ST_LINK device status: HALT_MODE
+[2.066] Device_Initialise():  ST_LINK detects target voltage =3.22 Volt
+[2.066] initServerContext():  ST-Link device initialization OK
+[2.071] WaitConnection():  Waiting for connection on port 61234...
+[2.073] WaitConnection():  Accepted connection on port 61234...
+[2.073] Device_GetStatus():  ST_LINK device status: HALT_MODE
+[2.106] handlePacket():  Reading 0x4 bytes of memory from addr 0x80015b8 
+[2.108] handlePacket():  Reading 0x2 bytes of memory from addr 0x80015b4 
+[2.109] handlePacket():  Reading 0x2 bytes of memory from addr 0x80015b6 
+[2.110] handlePacket():  Reading 0x4 bytes of memory from addr 0x80015ec 
+[2.187] handlePacket():  Reading 0x2 bytes of memory from addr 0x80014aa 
+[2.189] handlePacket():  Reading 0x4 bytes of memory from addr 0x80014c0 
+[2.194] handlePacket():  Reading 0x2 bytes of memory from addr 0x80014aa 
+[2.204] handlePacket():  Reading 0x2 bytes of memory from addr 0x80014a0 
+[2.209] handlePacket():  Reading 0x2 bytes of memory from addr 0x80014a0 
+[2.229] handlePacket():  Reading 0x2 bytes of memory from addr 0x8000f70 
+[2.231] handlePacket():  Reading 0x2 bytes of memory from addr 0x8000f72 
+[2.247] handlePacket():  Reading 0x2 bytes of memory from addr 0x8001370 
+[2.248] handlePacket():  Reading 0x4 bytes of memory from addr 0x80013c4 
+[2.249] handlePacket():  Reading 0x2 bytes of memory from addr 0x8001378 
+[2.254] handlePacket():  Reading 0x2 bytes of memory from addr 0x800145a 
+[2.257] handlePacket():  Reading 0x2 bytes of memory from addr 0x800146a 
+[2.273] STM32_AppReset():  Enter STM32_AppReset() function 
+[2.379] STM32_AppReset():  NVIC_DFSR_REG = 0x00000009
+[2.380] STM32_AppReset():  NVIC_CFGFSR_REG = 0x00000000
+[2.380] STM32_AppReset():  XPSR = 0x01000000
+[2.381] handleFlashPacket():  Flash erase: Address= 0x8000000, Length=16384 
+[2.381] flash_page_erase():  FuncEntry
+[2.381] unlock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[2.381] flash_f2_wait_for_last_operation():  FuncEntry
+[2.381] flash_f2_get_busy_status():  FuncEntry
+[2.381] flash_f2_get_busy_status():  FuncExit
+[2.381] flash_f2_wait_for_last_operation():  FuncExit
+[2.383] flash_f2_wait_for_last_operation():  FuncEntry
+[2.383] flash_f2_get_busy_status():  FuncEntry
+[2.383] flash_f2_get_busy_status():  FuncExit
+[2.383] flash_f2_wait_for_last_operation():  FuncExit
+[2.384] get_f2_flash_error_status():  FuncEntry
+[2.384] flash_f2_wait_for_last_operation():  FuncEntry
+[2.384] flash_f2_get_busy_status():  FuncEntry
+[2.384] flash_f2_get_busy_status():  FuncExit
+[2.384] flash_f2_wait_for_last_operation():  FuncExit
+[2.385] get_f2_flash_error_status():  FuncExit
+[2.385] flash_f2_wait_for_last_operation():  FuncEntry
+[2.385] flash_f2_get_busy_status():  FuncEntry
+[2.385] flash_f2_get_busy_status():  FuncExit
+[2.385] flash_f2_wait_for_last_operation():  FuncExit
+[2.387] flash_f2_wait_for_last_operation():  FuncEntry
+[2.387] flash_f2_get_busy_status():  FuncEntry
+[2.387] flash_f2_get_busy_status():  FuncExit
+[2.387] flash_f2_get_busy_status():  FuncEntry
+[2.387] flash_f2_get_busy_status():  FuncExit
+[2.387] flash_f2_get_busy_status():  FuncEntry
+[2.388] flash_f2_get_busy_status():  FuncExit
+[2.388] flash_f2_get_busy_status():  FuncEntry
+[2.388] flash_f2_get_busy_status():  FuncExit
+[2.388] flash_f2_get_busy_status():  FuncEntry
+[2.389] flash_f2_get_busy_status():  FuncExit
+[2.389] flash_f2_get_busy_status():  FuncEntry
+[2.389] flash_f2_get_busy_status():  FuncExit
+[2.389] flash_f2_get_busy_status():  FuncEntry
+[2.389] flash_f2_get_busy_status():  FuncExit
+[2.389] flash_f2_get_busy_status():  FuncEntry
+[2.390] flash_f2_get_busy_status():  FuncExit
+[2.390] flash_f2_get_busy_status():  FuncEntry
+[2.390] flash_f2_get_busy_status():  FuncExit
+[2.390] flash_f2_get_busy_status():  FuncEntry
+[2.390] flash_f2_get_busy_status():  FuncExit
+[2.391] flash_f2_get_busy_status():  FuncEntry
+[2.391] flash_f2_get_busy_status():  FuncExit
+[2.391] flash_f2_get_busy_status():  FuncEntry
+[2.391] flash_f2_get_busy_status():  FuncExit
+[2.391] flash_f2_get_busy_status():  FuncEntry
+[2.392] flash_f2_get_busy_status():  FuncExit
+[2.392] flash_f2_get_busy_status():  FuncEntry
+[2.392] flash_f2_get_busy_status():  FuncExit
+[2.392] flash_f2_get_busy_status():  FuncEntry
+[2.392] flash_f2_get_busy_status():  FuncExit
+[2.392] flash_f2_get_busy_status():  FuncEntry
+[2.393] flash_f2_get_busy_status():  FuncExit
+[2.393] flash_f2_get_busy_status():  FuncEntry
+[2.393] flash_f2_get_busy_status():  FuncExit
+[2.393] flash_f2_get_busy_status():  FuncEntry
+[2.394] flash_f2_get_busy_status():  FuncExit
+[2.394] flash_f2_get_busy_status():  FuncEntry
+[2.394] flash_f2_get_busy_status():  FuncExit
+[2.394] flash_f2_get_busy_status():  FuncEntry
+[2.394] flash_f2_get_busy_status():  FuncExit
+[2.394] flash_f2_get_busy_status():  FuncEntry
+[2.395] flash_f2_get_busy_status():  FuncExit
+[2.395] flash_f2_get_busy_status():  FuncEntry
+[2.395] flash_f2_get_busy_status():  FuncExit
+[2.395] flash_f2_get_busy_status():  FuncEntry
+[2.395] flash_f2_get_busy_status():  FuncExit
+[2.395] flash_f2_get_busy_status():  FuncEntry
+[2.396] flash_f2_get_busy_status():  FuncExit
+[2.396] flash_f2_get_busy_status():  FuncEntry
+[2.396] flash_f2_get_busy_status():  FuncExit
+[2.396] flash_f2_get_busy_status():  FuncEntry
+[2.396] flash_f2_get_busy_status():  FuncExit
+[2.396] flash_f2_get_busy_status():  FuncEntry
+[2.397] flash_f2_get_busy_status():  FuncExit
+[2.397] flash_f2_get_busy_status():  FuncEntry
+[2.397] flash_f2_get_busy_status():  FuncExit
+[2.397] flash_f2_get_busy_status():  FuncEntry
+[2.398] flash_f2_get_busy_status():  FuncExit
+[2.398] flash_f2_get_busy_status():  FuncEntry
+[2.398] flash_f2_get_busy_status():  FuncExit
+[2.398] flash_f2_get_busy_status():  FuncEntry
+[2.399] flash_f2_get_busy_status():  FuncExit
+[2.399] flash_f2_get_busy_status():  FuncEntry
+[2.399] flash_f2_get_busy_status():  FuncExit
+[2.399] flash_f2_get_busy_status():  FuncEntry
+[2.400] flash_f2_get_busy_status():  FuncExit
+[2.400] flash_f2_get_busy_status():  FuncEntry
+[2.400] flash_f2_get_busy_status():  FuncExit
+[2.400] flash_f2_get_busy_status():  FuncEntry
+[2.400] flash_f2_get_busy_status():  FuncExit
+[2.400] flash_f2_get_busy_status():  FuncEntry
+[2.401] flash_f2_get_busy_status():  FuncExit
+[2.401] flash_f2_get_busy_status():  FuncEntry
+[2.401] flash_f2_get_busy_status():  FuncExit
+[2.401] flash_f2_get_busy_status():  FuncEntry
+[2.401] flash_f2_get_busy_status():  FuncExit
+[2.401] flash_f2_get_busy_status():  FuncEntry
+[2.402] flash_f2_get_busy_status():  FuncExit
+[2.402] flash_f2_get_busy_status():  FuncEntry
+[2.402] flash_f2_get_busy_status():  FuncExit
+[2.402] flash_f2_get_busy_status():  FuncEntry
+[2.403] flash_f2_get_busy_status():  FuncExit
+[2.403] flash_f2_get_busy_status():  FuncEntry
+[2.403] flash_f2_get_busy_status():  FuncExit
+[2.403] flash_f2_get_busy_status():  FuncEntry
+[2.403] flash_f2_get_busy_status():  FuncExit
+[2.403] flash_f2_get_busy_status():  FuncEntry
+[2.404] flash_f2_get_busy_status():  FuncExit
+[2.404] flash_f2_get_busy_status():  FuncEntry
+[2.404] flash_f2_get_busy_status():  FuncExit
+[2.404] flash_f2_get_busy_status():  FuncEntry
+[2.404] flash_f2_get_busy_status():  FuncExit
+[2.404] flash_f2_get_busy_status():  FuncEntry
+[2.405] flash_f2_get_busy_status():  FuncExit
+[2.405] flash_f2_get_busy_status():  FuncEntry
+[2.405] flash_f2_get_busy_status():  FuncExit
+[2.405] flash_f2_get_busy_status():  FuncEntry
+[2.406] flash_f2_get_busy_status():  FuncExit
+[2.406] flash_f2_get_busy_status():  FuncEntry
+[2.406] flash_f2_get_busy_status():  FuncExit
+[2.406] flash_f2_get_busy_status():  FuncEntry
+[2.406] flash_f2_get_busy_status():  FuncExit
+[2.406] flash_f2_get_busy_status():  FuncEntry
+[2.407] flash_f2_get_busy_status():  FuncExit
+[2.407] flash_f2_get_busy_status():  FuncEntry
+[2.407] flash_f2_get_busy_status():  FuncExit
+[2.407] flash_f2_get_busy_status():  FuncEntry
+[2.407] flash_f2_get_busy_status():  FuncExit
+[2.407] flash_f2_get_busy_status():  FuncEntry
+[2.408] flash_f2_get_busy_status():  FuncExit
+[2.408] flash_f2_get_busy_status():  FuncEntry
+[2.408] flash_f2_get_busy_status():  FuncExit
+[2.408] flash_f2_get_busy_status():  FuncEntry
+[2.409] flash_f2_get_busy_status():  FuncExit
+[2.409] flash_f2_get_busy_status():  FuncEntry
+[2.409] flash_f2_get_busy_status():  FuncExit
+[2.409] flash_f2_get_busy_status():  FuncEntry
+[2.409] flash_f2_get_busy_status():  FuncExit
+[2.409] flash_f2_get_busy_status():  FuncEntry
+[2.410] flash_f2_get_busy_status():  FuncExit
+[2.410] flash_f2_get_busy_status():  FuncEntry
+[2.410] flash_f2_get_busy_status():  FuncExit
+[2.410] flash_f2_get_busy_status():  FuncEntry
+[2.411] flash_f2_get_busy_status():  FuncExit
+[2.411] flash_f2_get_busy_status():  FuncEntry
+[2.411] flash_f2_get_busy_status():  FuncExit
+[2.411] flash_f2_get_busy_status():  FuncEntry
+[2.411] flash_f2_get_busy_status():  FuncExit
+[2.411] flash_f2_get_busy_status():  FuncEntry
+[2.412] flash_f2_get_busy_status():  FuncExit
+[2.412] flash_f2_get_busy_status():  FuncEntry
+[2.412] flash_f2_get_busy_status():  FuncExit
+[2.412] flash_f2_get_busy_status():  FuncEntry
+[2.412] flash_f2_get_busy_status():  FuncExit
+[2.412] flash_f2_get_busy_status():  FuncEntry
+[2.413] flash_f2_get_busy_status():  FuncExit
+[2.413] flash_f2_get_busy_status():  FuncEntry
+[2.413] flash_f2_get_busy_status():  FuncExit
+[2.413] flash_f2_get_busy_status():  FuncEntry
+[2.414] flash_f2_get_busy_status():  FuncExit
+[2.414] flash_f2_get_busy_status():  FuncEntry
+[2.414] flash_f2_get_busy_status():  FuncExit
+[2.414] flash_f2_get_busy_status():  FuncEntry
+[2.414] flash_f2_get_busy_status():  FuncExit
+[2.414] flash_f2_get_busy_status():  FuncEntry
+[2.415] flash_f2_get_busy_status():  FuncExit
+[2.415] flash_f2_get_busy_status():  FuncEntry
+[2.415] flash_f2_get_busy_status():  FuncExit
+[2.415] flash_f2_get_busy_status():  FuncEntry
+[2.415] flash_f2_get_busy_status():  FuncExit
+[2.415] flash_f2_get_busy_status():  FuncEntry
+[2.416] flash_f2_get_busy_status():  FuncExit
+[2.416] flash_f2_get_busy_status():  FuncEntry
+[2.416] flash_f2_get_busy_status():  FuncExit
+[2.416] flash_f2_get_busy_status():  FuncEntry
+[2.416] flash_f2_get_busy_status():  FuncExit
+[2.416] flash_f2_get_busy_status():  FuncEntry
+[2.417] flash_f2_get_busy_status():  FuncExit
+[2.417] flash_f2_get_busy_status():  FuncEntry
+[2.417] flash_f2_get_busy_status():  FuncExit
+[2.417] flash_f2_get_busy_status():  FuncEntry
+[2.418] flash_f2_get_busy_status():  FuncExit
+[2.418] flash_f2_get_busy_status():  FuncEntry
+[2.418] flash_f2_get_busy_status():  FuncExit
+[2.418] flash_f2_get_busy_status():  FuncEntry
+[2.418] flash_f2_get_busy_status():  FuncExit
+[2.418] flash_f2_get_busy_status():  FuncEntry
+[2.419] flash_f2_get_busy_status():  FuncExit
+[2.419] flash_f2_get_busy_status():  FuncEntry
+[2.419] flash_f2_get_busy_status():  FuncExit
+[2.419] flash_f2_get_busy_status():  FuncEntry
+[2.420] flash_f2_get_busy_status():  FuncExit
+[2.420] flash_f2_get_busy_status():  FuncEntry
+[2.420] flash_f2_get_busy_status():  FuncExit
+[2.420] flash_f2_get_busy_status():  FuncEntry
+[2.420] flash_f2_get_busy_status():  FuncExit
+[2.420] flash_f2_get_busy_status():  FuncEntry
+[2.421] flash_f2_get_busy_status():  FuncExit
+[2.421] flash_f2_get_busy_status():  FuncEntry
+[2.421] flash_f2_get_busy_status():  FuncExit
+[2.421] flash_f2_get_busy_status():  FuncEntry
+[2.422] flash_f2_get_busy_status():  FuncExit
+[2.422] flash_f2_get_busy_status():  FuncEntry
+[2.422] flash_f2_get_busy_status():  FuncExit
+[2.422] flash_f2_get_busy_status():  FuncEntry
+[2.423] flash_f2_get_busy_status():  FuncExit
+[2.423] flash_f2_get_busy_status():  FuncEntry
+[2.423] flash_f2_get_busy_status():  FuncExit
+[2.423] flash_f2_get_busy_status():  FuncEntry
+[2.424] flash_f2_get_busy_status():  FuncExit
+[2.424] flash_f2_get_busy_status():  FuncEntry
+[2.424] flash_f2_get_busy_status():  FuncExit
+[2.425] flash_f2_get_busy_status():  FuncEntry
+[2.425] flash_f2_get_busy_status():  FuncExit
+[2.425] flash_f2_get_busy_status():  FuncEntry
+[2.426] flash_f2_get_busy_status():  FuncExit
+[2.426] flash_f2_get_busy_status():  FuncEntry
+[2.426] flash_f2_get_busy_status():  FuncExit
+[2.426] flash_f2_get_busy_status():  FuncEntry
+[2.427] flash_f2_get_busy_status():  FuncExit
+[2.427] flash_f2_get_busy_status():  FuncEntry
+[2.427] flash_f2_get_busy_status():  FuncExit
+[2.427] flash_f2_get_busy_status():  FuncEntry
+[2.428] flash_f2_get_busy_status():  FuncExit
+[2.428] flash_f2_get_busy_status():  FuncEntry
+[2.428] flash_f2_get_busy_status():  FuncExit
+[2.428] flash_f2_get_busy_status():  FuncEntry
+[2.429] flash_f2_get_busy_status():  FuncExit
+[2.429] flash_f2_get_busy_status():  FuncEntry
+[2.429] flash_f2_get_busy_status():  FuncExit
+[2.429] flash_f2_get_busy_status():  FuncEntry
+[2.429] flash_f2_get_busy_status():  FuncExit
+[2.429] flash_f2_get_busy_status():  FuncEntry
+[2.430] flash_f2_get_busy_status():  FuncExit
+[2.430] flash_f2_get_busy_status():  FuncEntry
+[2.430] flash_f2_get_busy_status():  FuncExit
+[2.430] flash_f2_get_busy_status():  FuncEntry
+[2.431] flash_f2_get_busy_status():  FuncExit
+[2.439] flash_f2_get_busy_status():  FuncEntry
+[2.439] flash_f2_get_busy_status():  FuncExit
+[2.439] flash_f2_get_busy_status():  FuncEntry
+[2.440] flash_f2_get_busy_status():  FuncExit
+[2.440] flash_f2_get_busy_status():  FuncEntry
+[2.440] flash_f2_get_busy_status():  FuncExit
+[2.440] flash_f2_get_busy_status():  FuncEntry
+[2.441] flash_f2_get_busy_status():  FuncExit
+[2.441] flash_f2_get_busy_status():  FuncEntry
+[2.441] flash_f2_get_busy_status():  FuncExit
+[2.441] flash_f2_get_busy_status():  FuncEntry
+[2.441] flash_f2_get_busy_status():  FuncExit
+[2.441] flash_f2_get_busy_status():  FuncEntry
+[2.442] flash_f2_get_busy_status():  FuncExit
+[2.442] flash_f2_get_busy_status():  FuncEntry
+[2.442] flash_f2_get_busy_status():  FuncExit
+[2.442] flash_f2_get_busy_status():  FuncEntry
+[2.443] flash_f2_get_busy_status():  FuncExit
+[2.443] flash_f2_get_busy_status():  FuncEntry
+[2.443] flash_f2_get_busy_status():  FuncExit
+[2.443] flash_f2_get_busy_status():  FuncEntry
+[2.444] flash_f2_get_busy_status():  FuncExit
+[2.444] flash_f2_get_busy_status():  FuncEntry
+[2.444] flash_f2_get_busy_status():  FuncExit
+[2.444] flash_f2_get_busy_status():  FuncEntry
+[2.445] flash_f2_get_busy_status():  FuncExit
+[2.445] flash_f2_get_busy_status():  FuncEntry
+[2.445] flash_f2_get_busy_status():  FuncExit
+[2.445] flash_f2_get_busy_status():  FuncEntry
+[2.445] flash_f2_get_busy_status():  FuncExit
+[2.445] flash_f2_get_busy_status():  FuncEntry
+[2.446] flash_f2_get_busy_status():  FuncExit
+[2.446] flash_f2_get_busy_status():  FuncEntry
+[2.446] flash_f2_get_busy_status():  FuncExit
+[2.446] flash_f2_get_busy_status():  FuncEntry
+[2.446] flash_f2_get_busy_status():  FuncExit
+[2.446] flash_f2_get_busy_status():  FuncEntry
+[2.447] flash_f2_get_busy_status():  FuncExit
+[2.447] flash_f2_get_busy_status():  FuncEntry
+[2.447] flash_f2_get_busy_status():  FuncExit
+[2.447] flash_f2_get_busy_status():  FuncEntry
+[2.447] flash_f2_get_busy_status():  FuncExit
+[2.447] flash_f2_get_busy_status():  FuncEntry
+[2.448] flash_f2_get_busy_status():  FuncExit
+[2.448] flash_f2_get_busy_status():  FuncEntry
+[2.448] flash_f2_get_busy_status():  FuncExit
+[2.448] flash_f2_get_busy_status():  FuncEntry
+[2.448] flash_f2_get_busy_status():  FuncExit
+[2.449] flash_f2_get_busy_status():  FuncEntry
+[2.449] flash_f2_get_busy_status():  FuncExit
+[2.449] flash_f2_get_busy_status():  FuncEntry
+[2.449] flash_f2_get_busy_status():  FuncExit
+[2.449] flash_f2_get_busy_status():  FuncEntry
+[2.449] flash_f2_get_busy_status():  FuncExit
+[2.450] flash_f2_get_busy_status():  FuncEntry
+[2.450] flash_f2_get_busy_status():  FuncExit
+[2.450] flash_f2_get_busy_status():  FuncEntry
+[2.450] flash_f2_get_busy_status():  FuncExit
+[2.450] flash_f2_get_busy_status():  FuncEntry
+[2.451] flash_f2_get_busy_status():  FuncExit
+[2.451] flash_f2_get_busy_status():  FuncEntry
+[2.451] flash_f2_get_busy_status():  FuncExit
+[2.451] flash_f2_get_busy_status():  FuncEntry
+[2.452] flash_f2_get_busy_status():  FuncExit
+[2.452] flash_f2_get_busy_status():  FuncEntry
+[2.452] flash_f2_get_busy_status():  FuncExit
+[2.452] flash_f2_get_busy_status():  FuncEntry
+[2.453] flash_f2_get_busy_status():  FuncExit
+[2.453] flash_f2_get_busy_status():  FuncEntry
+[2.453] flash_f2_get_busy_status():  FuncExit
+[2.453] flash_f2_get_busy_status():  FuncEntry
+[2.454] flash_f2_get_busy_status():  FuncExit
+[2.454] flash_f2_get_busy_status():  FuncEntry
+[2.454] flash_f2_get_busy_status():  FuncExit
+[2.454] flash_f2_get_busy_status():  FuncEntry
+[2.454] flash_f2_get_busy_status():  FuncExit
+[2.454] flash_f2_get_busy_status():  FuncEntry
+[2.455] flash_f2_get_busy_status():  FuncExit
+[2.455] flash_f2_get_busy_status():  FuncEntry
+[2.455] flash_f2_get_busy_status():  FuncExit
+[2.455] flash_f2_get_busy_status():  FuncEntry
+[2.456] flash_f2_get_busy_status():  FuncExit
+[2.456] flash_f2_get_busy_status():  FuncEntry
+[2.456] flash_f2_get_busy_status():  FuncExit
+[2.456] flash_f2_get_busy_status():  FuncEntry
+[2.456] flash_f2_get_busy_status():  FuncExit
+[2.456] flash_f2_get_busy_status():  FuncEntry
+[2.457] flash_f2_get_busy_status():  FuncExit
+[2.457] flash_f2_get_busy_status():  FuncEntry
+[2.457] flash_f2_get_busy_status():  FuncExit
+[2.457] flash_f2_get_busy_status():  FuncEntry
+[2.458] flash_f2_get_busy_status():  FuncExit
+[2.458] flash_f2_get_busy_status():  FuncEntry
+[2.458] flash_f2_get_busy_status():  FuncExit
+[2.458] flash_f2_get_busy_status():  FuncEntry
+[2.458] flash_f2_get_busy_status():  FuncExit
+[2.458] flash_f2_get_busy_status():  FuncEntry
+[2.459] flash_f2_get_busy_status():  FuncExit
+[2.459] flash_f2_get_busy_status():  FuncEntry
+[2.459] flash_f2_get_busy_status():  FuncExit
+[2.459] flash_f2_get_busy_status():  FuncEntry
+[2.459] flash_f2_get_busy_status():  FuncExit
+[2.459] flash_f2_get_busy_status():  FuncEntry
+[2.460] flash_f2_get_busy_status():  FuncExit
+[2.460] flash_f2_get_busy_status():  FuncEntry
+[2.460] flash_f2_get_busy_status():  FuncExit
+[2.460] flash_f2_get_busy_status():  FuncEntry
+[2.460] flash_f2_get_busy_status():  FuncExit
+[2.460] flash_f2_get_busy_status():  FuncEntry
+[2.461] flash_f2_get_busy_status():  FuncExit
+[2.461] flash_f2_get_busy_status():  FuncEntry
+[2.461] flash_f2_get_busy_status():  FuncExit
+[2.461] flash_f2_get_busy_status():  FuncEntry
+[2.461] flash_f2_get_busy_status():  FuncExit
+[2.461] flash_f2_get_busy_status():  FuncEntry
+[2.462] flash_f2_get_busy_status():  FuncExit
+[2.462] flash_f2_get_busy_status():  FuncEntry
+[2.462] flash_f2_get_busy_status():  FuncExit
+[2.462] flash_f2_get_busy_status():  FuncEntry
+[2.463] flash_f2_get_busy_status():  FuncExit
+[2.463] flash_f2_get_busy_status():  FuncEntry
+[2.463] flash_f2_get_busy_status():  FuncExit
+[2.463] flash_f2_get_busy_status():  FuncEntry
+[2.463] flash_f2_get_busy_status():  FuncExit
+[2.463] flash_f2_get_busy_status():  FuncEntry
+[2.464] flash_f2_get_busy_status():  FuncExit
+[2.464] flash_f2_get_busy_status():  FuncEntry
+[2.464] flash_f2_get_busy_status():  FuncExit
+[2.464] flash_f2_get_busy_status():  FuncEntry
+[2.464] flash_f2_get_busy_status():  FuncExit
+[2.464] flash_f2_get_busy_status():  FuncEntry
+[2.465] flash_f2_get_busy_status():  FuncExit
+[2.465] flash_f2_get_busy_status():  FuncEntry
+[2.465] flash_f2_get_busy_status():  FuncExit
+[2.465] flash_f2_get_busy_status():  FuncEntry
+[2.465] flash_f2_get_busy_status():  FuncExit
+[2.465] flash_f2_get_busy_status():  FuncEntry
+[2.466] flash_f2_get_busy_status():  FuncExit
+[2.466] flash_f2_get_busy_status():  FuncEntry
+[2.466] flash_f2_get_busy_status():  FuncExit
+[2.466] flash_f2_get_busy_status():  FuncEntry
+[2.467] flash_f2_get_busy_status():  FuncExit
+[2.467] flash_f2_get_busy_status():  FuncEntry
+[2.467] flash_f2_get_busy_status():  FuncExit
+[2.467] flash_f2_get_busy_status():  FuncEntry
+[2.467] flash_f2_get_busy_status():  FuncExit
+[2.467] flash_f2_get_busy_status():  FuncEntry
+[2.468] flash_f2_get_busy_status():  FuncExit
+[2.468] flash_f2_get_busy_status():  FuncEntry
+[2.468] flash_f2_get_busy_status():  FuncExit
+[2.468] flash_f2_get_busy_status():  FuncEntry
+[2.469] flash_f2_get_busy_status():  FuncExit
+[2.469] flash_f2_get_busy_status():  FuncEntry
+[2.469] flash_f2_get_busy_status():  FuncExit
+[2.469] flash_f2_get_busy_status():  FuncEntry
+[2.469] flash_f2_get_busy_status():  FuncExit
+[2.470] flash_f2_get_busy_status():  FuncEntry
+[2.470] flash_f2_get_busy_status():  FuncExit
+[2.470] flash_f2_get_busy_status():  FuncEntry
+[2.470] flash_f2_get_busy_status():  FuncExit
+[2.470] flash_f2_get_busy_status():  FuncEntry
+[2.471] flash_f2_get_busy_status():  FuncExit
+[2.471] flash_f2_get_busy_status():  FuncEntry
+[2.471] flash_f2_get_busy_status():  FuncExit
+[2.471] flash_f2_get_busy_status():  FuncEntry
+[2.472] flash_f2_get_busy_status():  FuncExit
+[2.472] flash_f2_get_busy_status():  FuncEntry
+[2.472] flash_f2_get_busy_status():  FuncExit
+[2.472] flash_f2_get_busy_status():  FuncEntry
+[2.473] flash_f2_get_busy_status():  FuncExit
+[2.473] flash_f2_get_busy_status():  FuncEntry
+[2.473] flash_f2_get_busy_status():  FuncExit
+[2.473] flash_f2_get_busy_status():  FuncEntry
+[2.473] flash_f2_get_busy_status():  FuncExit
+[2.473] flash_f2_get_busy_status():  FuncEntry
+[2.474] flash_f2_get_busy_status():  FuncExit
+[2.474] flash_f2_get_busy_status():  FuncEntry
+[2.474] flash_f2_get_busy_status():  FuncExit
+[2.474] flash_f2_get_busy_status():  FuncEntry
+[2.474] flash_f2_get_busy_status():  FuncExit
+[2.474] flash_f2_get_busy_status():  FuncEntry
+[2.475] flash_f2_get_busy_status():  FuncExit
+[2.475] flash_f2_get_busy_status():  FuncEntry
+[2.475] flash_f2_get_busy_status():  FuncExit
+[2.475] flash_f2_get_busy_status():  FuncEntry
+[2.476] flash_f2_get_busy_status():  FuncExit
+[2.476] flash_f2_get_busy_status():  FuncEntry
+[2.476] flash_f2_get_busy_status():  FuncExit
+[2.476] flash_f2_get_busy_status():  FuncEntry
+[2.476] flash_f2_get_busy_status():  FuncExit
+[2.476] flash_f2_get_busy_status():  FuncEntry
+[2.477] flash_f2_get_busy_status():  FuncExit
+[2.477] flash_f2_get_busy_status():  FuncEntry
+[2.477] flash_f2_get_busy_status():  FuncExit
+[2.477] flash_f2_get_busy_status():  FuncEntry
+[2.477] flash_f2_get_busy_status():  FuncExit
+[2.477] flash_f2_get_busy_status():  FuncEntry
+[2.478] flash_f2_get_busy_status():  FuncExit
+[2.478] flash_f2_get_busy_status():  FuncEntry
+[2.478] flash_f2_get_busy_status():  FuncExit
+[2.478] flash_f2_get_busy_status():  FuncEntry
+[2.478] flash_f2_get_busy_status():  FuncExit
+[2.478] flash_f2_get_busy_status():  FuncEntry
+[2.479] flash_f2_get_busy_status():  FuncExit
+[2.479] flash_f2_get_busy_status():  FuncEntry
+[2.479] flash_f2_get_busy_status():  FuncExit
+[2.479] flash_f2_get_busy_status():  FuncEntry
+[2.479] flash_f2_get_busy_status():  FuncExit
+[2.479] flash_f2_get_busy_status():  FuncEntry
+[2.480] flash_f2_get_busy_status():  FuncExit
+[2.480] flash_f2_get_busy_status():  FuncEntry
+[2.480] flash_f2_get_busy_status():  FuncExit
+[2.480] flash_f2_get_busy_status():  FuncEntry
+[2.480] flash_f2_get_busy_status():  FuncExit
+[2.480] flash_f2_get_busy_status():  FuncEntry
+[2.481] flash_f2_get_busy_status():  FuncExit
+[2.481] flash_f2_get_busy_status():  FuncEntry
+[2.481] flash_f2_get_busy_status():  FuncExit
+[2.481] flash_f2_get_busy_status():  FuncEntry
+[2.481] flash_f2_get_busy_status():  FuncExit
+[2.481] flash_f2_get_busy_status():  FuncEntry
+[2.482] flash_f2_get_busy_status():  FuncExit
+[2.482] flash_f2_get_busy_status():  FuncEntry
+[2.482] flash_f2_get_busy_status():  FuncExit
+[2.482] flash_f2_get_busy_status():  FuncEntry
+[2.482] flash_f2_get_busy_status():  FuncExit
+[2.482] flash_f2_get_busy_status():  FuncEntry
+[2.483] flash_f2_get_busy_status():  FuncExit
+[2.483] flash_f2_get_busy_status():  FuncEntry
+[2.483] flash_f2_get_busy_status():  FuncExit
+[2.483] flash_f2_get_busy_status():  FuncEntry
+[2.483] flash_f2_get_busy_status():  FuncExit
+[2.483] flash_f2_get_busy_status():  FuncEntry
+[2.484] flash_f2_get_busy_status():  FuncExit
+[2.484] flash_f2_get_busy_status():  FuncEntry
+[2.484] flash_f2_get_busy_status():  FuncExit
+[2.484] flash_f2_get_busy_status():  FuncEntry
+[2.485] flash_f2_get_busy_status():  FuncExit
+[2.485] flash_f2_get_busy_status():  FuncEntry
+[2.485] flash_f2_get_busy_status():  FuncExit
+[2.485] flash_f2_get_busy_status():  FuncEntry
+[2.485] flash_f2_get_busy_status():  FuncExit
+[2.485] flash_f2_get_busy_status():  FuncEntry
+[2.486] flash_f2_get_busy_status():  FuncExit
+[2.486] flash_f2_get_busy_status():  FuncEntry
+[2.486] flash_f2_get_busy_status():  FuncExit
+[2.486] flash_f2_get_busy_status():  FuncEntry
+[2.486] flash_f2_get_busy_status():  FuncExit
+[2.486] flash_f2_get_busy_status():  FuncEntry
+[2.487] flash_f2_get_busy_status():  FuncExit
+[2.487] flash_f2_get_busy_status():  FuncEntry
+[2.487] flash_f2_get_busy_status():  FuncExit
+[2.487] flash_f2_get_busy_status():  FuncEntry
+[2.487] flash_f2_get_busy_status():  FuncExit
+[2.487] flash_f2_get_busy_status():  FuncEntry
+[2.488] flash_f2_get_busy_status():  FuncExit
+[2.488] flash_f2_get_busy_status():  FuncEntry
+[2.488] flash_f2_get_busy_status():  FuncExit
+[2.488] flash_f2_get_busy_status():  FuncEntry
+[2.488] flash_f2_get_busy_status():  FuncExit
+[2.488] flash_f2_get_busy_status():  FuncEntry
+[2.489] flash_f2_get_busy_status():  FuncExit
+[2.489] flash_f2_get_busy_status():  FuncEntry
+[2.489] flash_f2_get_busy_status():  FuncExit
+[2.489] flash_f2_get_busy_status():  FuncEntry
+[2.490] flash_f2_get_busy_status():  FuncExit
+[2.490] flash_f2_get_busy_status():  FuncEntry
+[2.490] flash_f2_get_busy_status():  FuncExit
+[2.490] flash_f2_get_busy_status():  FuncEntry
+[2.491] flash_f2_get_busy_status():  FuncExit
+[2.491] flash_f2_get_busy_status():  FuncEntry
+[2.491] flash_f2_get_busy_status():  FuncExit
+[2.491] flash_f2_get_busy_status():  FuncEntry
+[2.491] flash_f2_get_busy_status():  FuncExit
+[2.491] flash_f2_get_busy_status():  FuncEntry
+[2.492] flash_f2_get_busy_status():  FuncExit
+[2.492] flash_f2_get_busy_status():  FuncEntry
+[2.492] flash_f2_get_busy_status():  FuncExit
+[2.492] flash_f2_get_busy_status():  FuncEntry
+[2.493] flash_f2_get_busy_status():  FuncExit
+[2.493] flash_f2_get_busy_status():  FuncEntry
+[2.493] flash_f2_get_busy_status():  FuncExit
+[2.493] flash_f2_get_busy_status():  FuncEntry
+[2.493] flash_f2_get_busy_status():  FuncExit
+[2.493] flash_f2_get_busy_status():  FuncEntry
+[2.494] flash_f2_get_busy_status():  FuncExit
+[2.494] flash_f2_get_busy_status():  FuncEntry
+[2.494] flash_f2_get_busy_status():  FuncExit
+[2.494] flash_f2_get_busy_status():  FuncEntry
+[2.494] flash_f2_get_busy_status():  FuncExit
+[2.494] flash_f2_get_busy_status():  FuncEntry
+[2.495] flash_f2_get_busy_status():  FuncExit
+[2.495] flash_f2_get_busy_status():  FuncEntry
+[2.495] flash_f2_get_busy_status():  FuncExit
+[2.495] flash_f2_get_busy_status():  FuncEntry
+[2.495] flash_f2_get_busy_status():  FuncExit
+[2.495] flash_f2_get_busy_status():  FuncEntry
+[2.496] flash_f2_get_busy_status():  FuncExit
+[2.496] flash_f2_get_busy_status():  FuncEntry
+[2.496] flash_f2_get_busy_status():  FuncExit
+[2.496] flash_f2_get_busy_status():  FuncEntry
+[2.496] flash_f2_get_busy_status():  FuncExit
+[2.496] flash_f2_get_busy_status():  FuncEntry
+[2.497] flash_f2_get_busy_status():  FuncExit
+[2.497] flash_f2_get_busy_status():  FuncEntry
+[2.497] flash_f2_get_busy_status():  FuncExit
+[2.497] flash_f2_get_busy_status():  FuncEntry
+[2.497] flash_f2_get_busy_status():  FuncExit
+[2.497] flash_f2_get_busy_status():  FuncEntry
+[2.498] flash_f2_get_busy_status():  FuncExit
+[2.498] flash_f2_get_busy_status():  FuncEntry
+[2.498] flash_f2_get_busy_status():  FuncExit
+[2.498] flash_f2_get_busy_status():  FuncEntry
+[2.498] flash_f2_get_busy_status():  FuncExit
+[2.498] flash_f2_get_busy_status():  FuncEntry
+[2.499] flash_f2_get_busy_status():  FuncExit
+[2.499] flash_f2_get_busy_status():  FuncEntry
+[2.499] flash_f2_get_busy_status():  FuncExit
+[2.499] flash_f2_get_busy_status():  FuncEntry
+[2.499] flash_f2_get_busy_status():  FuncExit
+[2.499] flash_f2_get_busy_status():  FuncEntry
+[2.500] flash_f2_get_busy_status():  FuncExit
+[2.500] flash_f2_get_busy_status():  FuncEntry
+[2.500] flash_f2_get_busy_status():  FuncExit
+[2.500] flash_f2_get_busy_status():  FuncEntry
+[2.500] flash_f2_get_busy_status():  FuncExit
+[2.500] flash_f2_get_busy_status():  FuncEntry
+[2.501] flash_f2_get_busy_status():  FuncExit
+[2.501] flash_f2_get_busy_status():  FuncEntry
+[2.501] flash_f2_get_busy_status():  FuncExit
+[2.501] flash_f2_get_busy_status():  FuncEntry
+[2.501] flash_f2_get_busy_status():  FuncExit
+[2.501] flash_f2_get_busy_status():  FuncEntry
+[2.502] flash_f2_get_busy_status():  FuncExit
+[2.502] flash_f2_get_busy_status():  FuncEntry
+[2.502] flash_f2_get_busy_status():  FuncExit
+[2.502] flash_f2_get_busy_status():  FuncEntry
+[2.502] flash_f2_get_busy_status():  FuncExit
+[2.502] flash_f2_get_busy_status():  FuncEntry
+[2.503] flash_f2_get_busy_status():  FuncExit
+[2.503] flash_f2_get_busy_status():  FuncEntry
+[2.503] flash_f2_get_busy_status():  FuncExit
+[2.503] flash_f2_get_busy_status():  FuncEntry
+[2.503] flash_f2_get_busy_status():  FuncExit
+[2.503] flash_f2_get_busy_status():  FuncEntry
+[2.504] flash_f2_get_busy_status():  FuncExit
+[2.504] flash_f2_get_busy_status():  FuncEntry
+[2.504] flash_f2_get_busy_status():  FuncExit
+[2.504] flash_f2_get_busy_status():  FuncEntry
+[2.504] flash_f2_get_busy_status():  FuncExit
+[2.505] flash_f2_get_busy_status():  FuncEntry
+[2.505] flash_f2_get_busy_status():  FuncExit
+[2.505] flash_f2_get_busy_status():  FuncEntry
+[2.505] flash_f2_get_busy_status():  FuncExit
+[2.505] flash_f2_get_busy_status():  FuncEntry
+[2.506] flash_f2_get_busy_status():  FuncExit
+[2.506] flash_f2_get_busy_status():  FuncEntry
+[2.506] flash_f2_get_busy_status():  FuncExit
+[2.506] flash_f2_get_busy_status():  FuncEntry
+[2.506] flash_f2_get_busy_status():  FuncExit
+[2.506] flash_f2_get_busy_status():  FuncEntry
+[2.507] flash_f2_get_busy_status():  FuncExit
+[2.507] flash_f2_get_busy_status():  FuncEntry
+[2.507] flash_f2_get_busy_status():  FuncExit
+[2.507] flash_f2_get_busy_status():  FuncEntry
+[2.507] flash_f2_get_busy_status():  FuncExit
+[2.507] flash_f2_get_busy_status():  FuncEntry
+[2.508] flash_f2_get_busy_status():  FuncExit
+[2.508] flash_f2_get_busy_status():  FuncEntry
+[2.508] flash_f2_get_busy_status():  FuncExit
+[2.508] flash_f2_get_busy_status():  FuncEntry
+[2.508] flash_f2_get_busy_status():  FuncExit
+[2.508] flash_f2_get_busy_status():  FuncEntry
+[2.509] flash_f2_get_busy_status():  FuncExit
+[2.509] flash_f2_get_busy_status():  FuncEntry
+[2.509] flash_f2_get_busy_status():  FuncExit
+[2.509] flash_f2_get_busy_status():  FuncEntry
+[2.510] flash_f2_get_busy_status():  FuncExit
+[2.510] flash_f2_get_busy_status():  FuncEntry
+[2.510] flash_f2_get_busy_status():  FuncExit
+[2.510] flash_f2_get_busy_status():  FuncEntry
+[2.511] flash_f2_get_busy_status():  FuncExit
+[2.511] flash_f2_get_busy_status():  FuncEntry
+[2.511] flash_f2_get_busy_status():  FuncExit
+[2.511] flash_f2_get_busy_status():  FuncEntry
+[2.511] flash_f2_get_busy_status():  FuncExit
+[2.511] flash_f2_get_busy_status():  FuncEntry
+[2.512] flash_f2_get_busy_status():  FuncExit
+[2.512] flash_f2_get_busy_status():  FuncEntry
+[2.512] flash_f2_get_busy_status():  FuncExit
+[2.512] flash_f2_get_busy_status():  FuncEntry
+[2.512] flash_f2_get_busy_status():  FuncExit
+[2.512] flash_f2_get_busy_status():  FuncEntry
+[2.513] flash_f2_get_busy_status():  FuncExit
+[2.513] flash_f2_get_busy_status():  FuncEntry
+[2.513] flash_f2_get_busy_status():  FuncExit
+[2.513] flash_f2_get_busy_status():  FuncEntry
+[2.513] flash_f2_get_busy_status():  FuncExit
+[2.513] flash_f2_get_busy_status():  FuncEntry
+[2.514] flash_f2_get_busy_status():  FuncExit
+[2.514] flash_f2_get_busy_status():  FuncEntry
+[2.514] flash_f2_get_busy_status():  FuncExit
+[2.514] flash_f2_get_busy_status():  FuncEntry
+[2.514] flash_f2_get_busy_status():  FuncExit
+[2.514] flash_f2_get_busy_status():  FuncEntry
+[2.515] flash_f2_get_busy_status():  FuncExit
+[2.515] flash_f2_get_busy_status():  FuncEntry
+[2.515] flash_f2_get_busy_status():  FuncExit
+[2.515] flash_f2_get_busy_status():  FuncEntry
+[2.515] flash_f2_get_busy_status():  FuncExit
+[2.515] flash_f2_get_busy_status():  FuncEntry
+[2.516] flash_f2_get_busy_status():  FuncExit
+[2.516] flash_f2_get_busy_status():  FuncEntry
+[2.516] flash_f2_get_busy_status():  FuncExit
+[2.516] flash_f2_get_busy_status():  FuncEntry
+[2.517] flash_f2_get_busy_status():  FuncExit
+[2.517] flash_f2_get_busy_status():  FuncEntry
+[2.517] flash_f2_get_busy_status():  FuncExit
+[2.517] flash_f2_get_busy_status():  FuncEntry
+[2.517] flash_f2_get_busy_status():  FuncExit
+[2.517] flash_f2_get_busy_status():  FuncEntry
+[2.518] flash_f2_get_busy_status():  FuncExit
+[2.518] flash_f2_get_busy_status():  FuncEntry
+[2.518] flash_f2_get_busy_status():  FuncExit
+[2.518] flash_f2_get_busy_status():  FuncEntry
+[2.518] flash_f2_get_busy_status():  FuncExit
+[2.518] flash_f2_get_busy_status():  FuncEntry
+[2.519] flash_f2_get_busy_status():  FuncExit
+[2.519] flash_f2_get_busy_status():  FuncEntry
+[2.519] flash_f2_get_busy_status():  FuncExit
+[2.519] flash_f2_get_busy_status():  FuncEntry
+[2.519] flash_f2_get_busy_status():  FuncExit
+[2.519] flash_f2_get_busy_status():  FuncEntry
+[2.520] flash_f2_get_busy_status():  FuncExit
+[2.520] flash_f2_get_busy_status():  FuncEntry
+[2.520] flash_f2_get_busy_status():  FuncExit
+[2.520] flash_f2_get_busy_status():  FuncEntry
+[2.520] flash_f2_get_busy_status():  FuncExit
+[2.520] flash_f2_get_busy_status():  FuncEntry
+[2.521] flash_f2_get_busy_status():  FuncExit
+[2.521] flash_f2_get_busy_status():  FuncEntry
+[2.521] flash_f2_get_busy_status():  FuncExit
+[2.521] flash_f2_get_busy_status():  FuncEntry
+[2.522] flash_f2_get_busy_status():  FuncExit
+[2.522] flash_f2_get_busy_status():  FuncEntry
+[2.522] flash_f2_get_busy_status():  FuncExit
+[2.522] flash_f2_get_busy_status():  FuncEntry
+[2.523] flash_f2_get_busy_status():  FuncExit
+[2.523] flash_f2_get_busy_status():  FuncEntry
+[2.523] flash_f2_get_busy_status():  FuncExit
+[2.523] flash_f2_get_busy_status():  FuncEntry
+[2.523] flash_f2_get_busy_status():  FuncExit
+[2.523] flash_f2_get_busy_status():  FuncEntry
+[2.524] flash_f2_get_busy_status():  FuncExit
+[2.524] flash_f2_get_busy_status():  FuncEntry
+[2.524] flash_f2_get_busy_status():  FuncExit
+[2.524] flash_f2_get_busy_status():  FuncEntry
+[2.525] flash_f2_get_busy_status():  FuncExit
+[2.525] flash_f2_get_busy_status():  FuncEntry
+[2.525] flash_f2_get_busy_status():  FuncExit
+[2.525] flash_f2_get_busy_status():  FuncEntry
+[2.525] flash_f2_get_busy_status():  FuncExit
+[2.526] flash_f2_get_busy_status():  FuncEntry
+[2.526] flash_f2_get_busy_status():  FuncExit
+[2.526] flash_f2_get_busy_status():  FuncEntry
+[2.526] flash_f2_get_busy_status():  FuncExit
+[2.526] flash_f2_get_busy_status():  FuncEntry
+[2.527] flash_f2_get_busy_status():  FuncExit
+[2.527] flash_f2_get_busy_status():  FuncEntry
+[2.527] flash_f2_get_busy_status():  FuncExit
+[2.527] flash_f2_get_busy_status():  FuncEntry
+[2.528] flash_f2_get_busy_status():  FuncExit
+[2.528] flash_f2_get_busy_status():  FuncEntry
+[2.528] flash_f2_get_busy_status():  FuncExit
+[2.528] flash_f2_get_busy_status():  FuncEntry
+[2.528] flash_f2_get_busy_status():  FuncExit
+[2.528] flash_f2_get_busy_status():  FuncEntry
+[2.529] flash_f2_get_busy_status():  FuncExit
+[2.529] flash_f2_get_busy_status():  FuncEntry
+[2.529] flash_f2_get_busy_status():  FuncExit
+[2.529] flash_f2_get_busy_status():  FuncEntry
+[2.529] flash_f2_get_busy_status():  FuncExit
+[2.529] flash_f2_get_busy_status():  FuncEntry
+[2.530] flash_f2_get_busy_status():  FuncExit
+[2.530] flash_f2_get_busy_status():  FuncEntry
+[2.530] flash_f2_get_busy_status():  FuncExit
+[2.530] flash_f2_get_busy_status():  FuncEntry
+[2.530] flash_f2_get_busy_status():  FuncExit
+[2.530] flash_f2_get_busy_status():  FuncEntry
+[2.531] flash_f2_get_busy_status():  FuncExit
+[2.531] flash_f2_get_busy_status():  FuncEntry
+[2.531] flash_f2_get_busy_status():  FuncExit
+[2.531] flash_f2_get_busy_status():  FuncEntry
+[2.531] flash_f2_get_busy_status():  FuncExit
+[2.531] flash_f2_get_busy_status():  FuncEntry
+[2.532] flash_f2_get_busy_status():  FuncExit
+[2.532] flash_f2_get_busy_status():  FuncEntry
+[2.532] flash_f2_get_busy_status():  FuncExit
+[2.532] flash_f2_get_busy_status():  FuncEntry
+[2.532] flash_f2_get_busy_status():  FuncExit
+[2.532] flash_f2_get_busy_status():  FuncEntry
+[2.533] flash_f2_get_busy_status():  FuncExit
+[2.533] flash_f2_get_busy_status():  FuncEntry
+[2.533] flash_f2_get_busy_status():  FuncExit
+[2.533] flash_f2_get_busy_status():  FuncEntry
+[2.533] flash_f2_get_busy_status():  FuncExit
+[2.533] flash_f2_get_busy_status():  FuncEntry
+[2.534] flash_f2_get_busy_status():  FuncExit
+[2.534] flash_f2_get_busy_status():  FuncEntry
+[2.534] flash_f2_get_busy_status():  FuncExit
+[2.534] flash_f2_get_busy_status():  FuncEntry
+[2.534] flash_f2_get_busy_status():  FuncExit
+[2.534] flash_f2_get_busy_status():  FuncEntry
+[2.535] flash_f2_get_busy_status():  FuncExit
+[2.535] flash_f2_get_busy_status():  FuncEntry
+[2.535] flash_f2_get_busy_status():  FuncExit
+[2.535] flash_f2_get_busy_status():  FuncEntry
+[2.535] flash_f2_get_busy_status():  FuncExit
+[2.535] flash_f2_get_busy_status():  FuncEntry
+[2.536] flash_f2_get_busy_status():  FuncExit
+[2.536] flash_f2_get_busy_status():  FuncEntry
+[2.536] flash_f2_get_busy_status():  FuncExit
+[2.536] flash_f2_get_busy_status():  FuncEntry
+[2.536] flash_f2_get_busy_status():  FuncExit
+[2.536] flash_f2_get_busy_status():  FuncEntry
+[2.537] flash_f2_get_busy_status():  FuncExit
+[2.537] flash_f2_get_busy_status():  FuncEntry
+[2.537] flash_f2_get_busy_status():  FuncExit
+[2.537] flash_f2_get_busy_status():  FuncEntry
+[2.537] flash_f2_get_busy_status():  FuncExit
+[2.537] flash_f2_get_busy_status():  FuncEntry
+[2.538] flash_f2_get_busy_status():  FuncExit
+[2.538] flash_f2_get_busy_status():  FuncEntry
+[2.538] flash_f2_get_busy_status():  FuncExit
+[2.538] flash_f2_get_busy_status():  FuncEntry
+[2.538] flash_f2_get_busy_status():  FuncExit
+[2.538] flash_f2_get_busy_status():  FuncEntry
+[2.539] flash_f2_get_busy_status():  FuncExit
+[2.539] flash_f2_get_busy_status():  FuncEntry
+[2.539] flash_f2_get_busy_status():  FuncExit
+[2.539] flash_f2_get_busy_status():  FuncEntry
+[2.539] flash_f2_get_busy_status():  FuncExit
+[2.539] flash_f2_get_busy_status():  FuncEntry
+[2.540] flash_f2_get_busy_status():  FuncExit
+[2.540] flash_f2_get_busy_status():  FuncEntry
+[2.540] flash_f2_get_busy_status():  FuncExit
+[2.540] flash_f2_get_busy_status():  FuncEntry
+[2.541] flash_f2_get_busy_status():  FuncExit
+[2.541] flash_f2_get_busy_status():  FuncEntry
+[2.541] flash_f2_get_busy_status():  FuncExit
+[2.541] flash_f2_get_busy_status():  FuncEntry
+[2.541] flash_f2_get_busy_status():  FuncExit
+[2.541] flash_f2_get_busy_status():  FuncEntry
+[2.542] flash_f2_get_busy_status():  FuncExit
+[2.542] flash_f2_get_busy_status():  FuncEntry
+[2.542] flash_f2_get_busy_status():  FuncExit
+[2.542] flash_f2_get_busy_status():  FuncEntry
+[2.543] flash_f2_get_busy_status():  FuncExit
+[2.543] flash_f2_get_busy_status():  FuncEntry
+[2.543] flash_f2_get_busy_status():  FuncExit
+[2.543] flash_f2_get_busy_status():  FuncEntry
+[2.543] flash_f2_get_busy_status():  FuncExit
+[2.543] flash_f2_get_busy_status():  FuncEntry
+[2.544] flash_f2_get_busy_status():  FuncExit
+[2.544] flash_f2_get_busy_status():  FuncEntry
+[2.544] flash_f2_get_busy_status():  FuncExit
+[2.544] flash_f2_get_busy_status():  FuncEntry
+[2.544] flash_f2_get_busy_status():  FuncExit
+[2.544] flash_f2_get_busy_status():  FuncEntry
+[2.545] flash_f2_get_busy_status():  FuncExit
+[2.545] flash_f2_get_busy_status():  FuncEntry
+[2.545] flash_f2_get_busy_status():  FuncExit
+[2.545] flash_f2_get_busy_status():  FuncEntry
+[2.546] flash_f2_get_busy_status():  FuncExit
+[2.546] flash_f2_get_busy_status():  FuncEntry
+[2.546] flash_f2_get_busy_status():  FuncExit
+[2.546] flash_f2_get_busy_status():  FuncEntry
+[2.546] flash_f2_get_busy_status():  FuncExit
+[2.546] flash_f2_get_busy_status():  FuncEntry
+[2.547] flash_f2_get_busy_status():  FuncExit
+[2.547] flash_f2_get_busy_status():  FuncEntry
+[2.547] flash_f2_get_busy_status():  FuncExit
+[2.547] flash_f2_get_busy_status():  FuncEntry
+[2.547] flash_f2_get_busy_status():  FuncExit
+[2.547] flash_f2_get_busy_status():  FuncEntry
+[2.548] flash_f2_get_busy_status():  FuncExit
+[2.548] flash_f2_get_busy_status():  FuncEntry
+[2.548] flash_f2_get_busy_status():  FuncExit
+[2.548] flash_f2_get_busy_status():  FuncEntry
+[2.548] flash_f2_get_busy_status():  FuncExit
+[2.548] flash_f2_get_busy_status():  FuncEntry
+[2.549] flash_f2_get_busy_status():  FuncExit
+[2.549] flash_f2_get_busy_status():  FuncEntry
+[2.549] flash_f2_get_busy_status():  FuncExit
+[2.549] flash_f2_get_busy_status():  FuncEntry
+[2.549] flash_f2_get_busy_status():  FuncExit
+[2.549] flash_f2_get_busy_status():  FuncEntry
+[2.550] flash_f2_get_busy_status():  FuncExit
+[2.550] flash_f2_get_busy_status():  FuncEntry
+[2.550] flash_f2_get_busy_status():  FuncExit
+[2.550] flash_f2_get_busy_status():  FuncEntry
+[2.550] flash_f2_get_busy_status():  FuncExit
+[2.550] flash_f2_get_busy_status():  FuncEntry
+[2.551] flash_f2_get_busy_status():  FuncExit
+[2.551] flash_f2_get_busy_status():  FuncEntry
+[2.551] flash_f2_get_busy_status():  FuncExit
+[2.551] flash_f2_get_busy_status():  FuncEntry
+[2.551] flash_f2_get_busy_status():  FuncExit
+[2.551] flash_f2_get_busy_status():  FuncEntry
+[2.552] flash_f2_get_busy_status():  FuncExit
+[2.552] flash_f2_get_busy_status():  FuncEntry
+[2.552] flash_f2_get_busy_status():  FuncExit
+[2.552] flash_f2_get_busy_status():  FuncEntry
+[2.553] flash_f2_get_busy_status():  FuncExit
+[2.553] flash_f2_get_busy_status():  FuncEntry
+[2.553] flash_f2_get_busy_status():  FuncExit
+[2.553] flash_f2_get_busy_status():  FuncEntry
+[2.553] flash_f2_get_busy_status():  FuncExit
+[2.553] flash_f2_get_busy_status():  FuncEntry
+[2.554] flash_f2_get_busy_status():  FuncExit
+[2.554] flash_f2_get_busy_status():  FuncEntry
+[2.554] flash_f2_get_busy_status():  FuncExit
+[2.554] flash_f2_get_busy_status():  FuncEntry
+[2.555] flash_f2_get_busy_status():  FuncExit
+[2.555] flash_f2_get_busy_status():  FuncEntry
+[2.555] flash_f2_get_busy_status():  FuncExit
+[2.555] flash_f2_get_busy_status():  FuncEntry
+[2.556] flash_f2_get_busy_status():  FuncExit
+[2.556] flash_f2_get_busy_status():  FuncEntry
+[2.556] flash_f2_get_busy_status():  FuncExit
+[2.556] flash_f2_get_busy_status():  FuncEntry
+[2.557] flash_f2_get_busy_status():  FuncExit
+[2.557] flash_f2_get_busy_status():  FuncEntry
+[2.557] flash_f2_get_busy_status():  FuncExit
+[2.557] flash_f2_get_busy_status():  FuncEntry
+[2.558] flash_f2_get_busy_status():  FuncExit
+[2.558] flash_f2_get_busy_status():  FuncEntry
+[2.558] flash_f2_get_busy_status():  FuncExit
+[2.558] flash_f2_get_busy_status():  FuncEntry
+[2.558] flash_f2_get_busy_status():  FuncExit
+[2.558] flash_f2_get_busy_status():  FuncEntry
+[2.559] flash_f2_get_busy_status():  FuncExit
+[2.559] flash_f2_get_busy_status():  FuncEntry
+[2.559] flash_f2_get_busy_status():  FuncExit
+[2.559] flash_f2_get_busy_status():  FuncEntry
+[2.560] flash_f2_get_busy_status():  FuncExit
+[2.560] flash_f2_get_busy_status():  FuncEntry
+[2.560] flash_f2_get_busy_status():  FuncExit
+[2.560] flash_f2_get_busy_status():  FuncEntry
+[2.561] flash_f2_get_busy_status():  FuncExit
+[2.561] flash_f2_get_busy_status():  FuncEntry
+[2.561] flash_f2_get_busy_status():  FuncExit
+[2.561] flash_f2_get_busy_status():  FuncEntry
+[2.561] flash_f2_get_busy_status():  FuncExit
+[2.561] flash_f2_get_busy_status():  FuncEntry
+[2.562] flash_f2_get_busy_status():  FuncExit
+[2.562] flash_f2_get_busy_status():  FuncEntry
+[2.562] flash_f2_get_busy_status():  FuncExit
+[2.562] flash_f2_get_busy_status():  FuncEntry
+[2.563] flash_f2_get_busy_status():  FuncExit
+[2.563] flash_f2_get_busy_status():  FuncEntry
+[2.563] flash_f2_get_busy_status():  FuncExit
+[2.563] flash_f2_get_busy_status():  FuncEntry
+[2.563] flash_f2_get_busy_status():  FuncExit
+[2.563] flash_f2_get_busy_status():  FuncEntry
+[2.564] flash_f2_get_busy_status():  FuncExit
+[2.564] flash_f2_get_busy_status():  FuncEntry
+[2.564] flash_f2_get_busy_status():  FuncExit
+[2.564] flash_f2_get_busy_status():  FuncEntry
+[2.564] flash_f2_get_busy_status():  FuncExit
+[2.564] flash_f2_get_busy_status():  FuncEntry
+[2.565] flash_f2_get_busy_status():  FuncExit
+[2.565] flash_f2_get_busy_status():  FuncEntry
+[2.565] flash_f2_get_busy_status():  FuncExit
+[2.565] flash_f2_get_busy_status():  FuncEntry
+[2.565] flash_f2_get_busy_status():  FuncExit
+[2.565] flash_f2_get_busy_status():  FuncEntry
+[2.566] flash_f2_get_busy_status():  FuncExit
+[2.566] flash_f2_get_busy_status():  FuncEntry
+[2.566] flash_f2_get_busy_status():  FuncExit
+[2.566] flash_f2_get_busy_status():  FuncEntry
+[2.566] flash_f2_get_busy_status():  FuncExit
+[2.566] flash_f2_get_busy_status():  FuncEntry
+[2.567] flash_f2_get_busy_status():  FuncExit
+[2.567] flash_f2_get_busy_status():  FuncEntry
+[2.567] flash_f2_get_busy_status():  FuncExit
+[2.567] flash_f2_get_busy_status():  FuncEntry
+[2.568] flash_f2_get_busy_status():  FuncExit
+[2.568] flash_f2_get_busy_status():  FuncEntry
+[2.568] flash_f2_get_busy_status():  FuncExit
+[2.568] flash_f2_get_busy_status():  FuncEntry
+[2.569] flash_f2_get_busy_status():  FuncExit
+[2.569] flash_f2_get_busy_status():  FuncEntry
+[2.569] flash_f2_get_busy_status():  FuncExit
+[2.569] flash_f2_get_busy_status():  FuncEntry
+[2.569] flash_f2_get_busy_status():  FuncExit
+[2.569] flash_f2_get_busy_status():  FuncEntry
+[2.570] flash_f2_get_busy_status():  FuncExit
+[2.570] flash_f2_get_busy_status():  FuncEntry
+[2.570] flash_f2_get_busy_status():  FuncExit
+[2.570] flash_f2_get_busy_status():  FuncEntry
+[2.570] flash_f2_get_busy_status():  FuncExit
+[2.570] flash_f2_get_busy_status():  FuncEntry
+[2.571] flash_f2_get_busy_status():  FuncExit
+[2.571] flash_f2_get_busy_status():  FuncEntry
+[2.571] flash_f2_get_busy_status():  FuncExit
+[2.571] flash_f2_get_busy_status():  FuncEntry
+[2.571] flash_f2_get_busy_status():  FuncExit
+[2.571] flash_f2_get_busy_status():  FuncEntry
+[2.572] flash_f2_get_busy_status():  FuncExit
+[2.572] flash_f2_get_busy_status():  FuncEntry
+[2.572] flash_f2_get_busy_status():  FuncExit
+[2.572] flash_f2_get_busy_status():  FuncEntry
+[2.573] flash_f2_get_busy_status():  FuncExit
+[2.573] flash_f2_get_busy_status():  FuncEntry
+[2.573] flash_f2_get_busy_status():  FuncExit
+[2.573] flash_f2_get_busy_status():  FuncEntry
+[2.573] flash_f2_get_busy_status():  FuncExit
+[2.573] flash_f2_get_busy_status():  FuncEntry
+[2.574] flash_f2_get_busy_status():  FuncExit
+[2.574] flash_f2_get_busy_status():  FuncEntry
+[2.574] flash_f2_get_busy_status():  FuncExit
+[2.574] flash_f2_get_busy_status():  FuncEntry
+[2.575] flash_f2_get_busy_status():  FuncExit
+[2.575] flash_f2_get_busy_status():  FuncEntry
+[2.575] flash_f2_get_busy_status():  FuncExit
+[2.575] flash_f2_get_busy_status():  FuncEntry
+[2.576] flash_f2_get_busy_status():  FuncExit
+[2.576] flash_f2_get_busy_status():  FuncEntry
+[2.576] flash_f2_get_busy_status():  FuncExit
+[2.576] flash_f2_get_busy_status():  FuncEntry
+[2.577] flash_f2_get_busy_status():  FuncExit
+[2.577] flash_f2_get_busy_status():  FuncEntry
+[2.577] flash_f2_get_busy_status():  FuncExit
+[2.577] flash_f2_get_busy_status():  FuncEntry
+[2.578] flash_f2_get_busy_status():  FuncExit
+[2.578] flash_f2_get_busy_status():  FuncEntry
+[2.578] flash_f2_get_busy_status():  FuncExit
+[2.578] flash_f2_get_busy_status():  FuncEntry
+[2.579] flash_f2_get_busy_status():  FuncExit
+[2.579] flash_f2_get_busy_status():  FuncEntry
+[2.579] flash_f2_get_busy_status():  FuncExit
+[2.579] flash_f2_get_busy_status():  FuncEntry
+[2.579] flash_f2_get_busy_status():  FuncExit
+[2.579] flash_f2_get_busy_status():  FuncEntry
+[2.580] flash_f2_get_busy_status():  FuncExit
+[2.580] flash_f2_get_busy_status():  FuncEntry
+[2.580] flash_f2_get_busy_status():  FuncExit
+[2.580] flash_f2_get_busy_status():  FuncEntry
+[2.581] flash_f2_get_busy_status():  FuncExit
+[2.581] flash_f2_get_busy_status():  FuncEntry
+[2.581] flash_f2_get_busy_status():  FuncExit
+[2.581] flash_f2_get_busy_status():  FuncEntry
+[2.582] flash_f2_get_busy_status():  FuncExit
+[2.582] flash_f2_get_busy_status():  FuncEntry
+[2.582] flash_f2_get_busy_status():  FuncExit
+[2.582] flash_f2_get_busy_status():  FuncEntry
+[2.583] flash_f2_get_busy_status():  FuncExit
+[2.583] flash_f2_get_busy_status():  FuncEntry
+[2.583] flash_f2_get_busy_status():  FuncExit
+[2.583] flash_f2_get_busy_status():  FuncEntry
+[2.584] flash_f2_get_busy_status():  FuncExit
+[2.584] flash_f2_get_busy_status():  FuncEntry
+[2.584] flash_f2_get_busy_status():  FuncExit
+[2.584] flash_f2_get_busy_status():  FuncEntry
+[2.585] flash_f2_get_busy_status():  FuncExit
+[2.585] flash_f2_get_busy_status():  FuncEntry
+[2.585] flash_f2_get_busy_status():  FuncExit
+[2.585] flash_f2_get_busy_status():  FuncEntry
+[2.586] flash_f2_get_busy_status():  FuncExit
+[2.586] flash_f2_get_busy_status():  FuncEntry
+[2.586] flash_f2_get_busy_status():  FuncExit
+[2.586] flash_f2_get_busy_status():  FuncEntry
+[2.586] flash_f2_get_busy_status():  FuncExit
+[2.586] flash_f2_get_busy_status():  FuncEntry
+[2.587] flash_f2_get_busy_status():  FuncExit
+[2.587] flash_f2_get_busy_status():  FuncEntry
+[2.587] flash_f2_get_busy_status():  FuncExit
+[2.587] flash_f2_get_busy_status():  FuncEntry
+[2.587] flash_f2_get_busy_status():  FuncExit
+[2.587] flash_f2_get_busy_status():  FuncEntry
+[2.588] flash_f2_get_busy_status():  FuncExit
+[2.588] flash_f2_get_busy_status():  FuncEntry
+[2.588] flash_f2_get_busy_status():  FuncExit
+[2.588] flash_f2_get_busy_status():  FuncEntry
+[2.588] flash_f2_get_busy_status():  FuncExit
+[2.588] flash_f2_get_busy_status():  FuncEntry
+[2.589] flash_f2_get_busy_status():  FuncExit
+[2.589] flash_f2_get_busy_status():  FuncEntry
+[2.589] flash_f2_get_busy_status():  FuncExit
+[2.589] flash_f2_get_busy_status():  FuncEntry
+[2.590] flash_f2_get_busy_status():  FuncExit
+[2.590] flash_f2_get_busy_status():  FuncEntry
+[2.590] flash_f2_get_busy_status():  FuncExit
+[2.590] flash_f2_get_busy_status():  FuncEntry
+[2.590] flash_f2_get_busy_status():  FuncExit
+[2.590] flash_f2_get_busy_status():  FuncEntry
+[2.591] flash_f2_get_busy_status():  FuncExit
+[2.591] flash_f2_get_busy_status():  FuncEntry
+[2.591] flash_f2_get_busy_status():  FuncExit
+[2.591] flash_f2_get_busy_status():  FuncEntry
+[2.592] flash_f2_get_busy_status():  FuncExit
+[2.592] flash_f2_get_busy_status():  FuncEntry
+[2.592] flash_f2_get_busy_status():  FuncExit
+[2.592] flash_f2_get_busy_status():  FuncEntry
+[2.593] flash_f2_get_busy_status():  FuncExit
+[2.593] flash_f2_get_busy_status():  FuncEntry
+[2.593] flash_f2_get_busy_status():  FuncExit
+[2.593] flash_f2_get_busy_status():  FuncEntry
+[2.593] flash_f2_get_busy_status():  FuncExit
+[2.593] flash_f2_get_busy_status():  FuncEntry
+[2.594] flash_f2_get_busy_status():  FuncExit
+[2.594] flash_f2_get_busy_status():  FuncEntry
+[2.594] flash_f2_get_busy_status():  FuncExit
+[2.594] flash_f2_get_busy_status():  FuncEntry
+[2.595] flash_f2_get_busy_status():  FuncExit
+[2.595] flash_f2_get_busy_status():  FuncEntry
+[2.595] flash_f2_get_busy_status():  FuncExit
+[2.595] flash_f2_get_busy_status():  FuncEntry
+[2.595] flash_f2_get_busy_status():  FuncExit
+[2.595] flash_f2_get_busy_status():  FuncEntry
+[2.596] flash_f2_get_busy_status():  FuncExit
+[2.596] flash_f2_get_busy_status():  FuncEntry
+[2.596] flash_f2_get_busy_status():  FuncExit
+[2.596] flash_f2_get_busy_status():  FuncEntry
+[2.596] flash_f2_get_busy_status():  FuncExit
+[2.596] flash_f2_get_busy_status():  FuncEntry
+[2.597] flash_f2_get_busy_status():  FuncExit
+[2.597] flash_f2_get_busy_status():  FuncEntry
+[2.597] flash_f2_get_busy_status():  FuncExit
+[2.597] flash_f2_get_busy_status():  FuncEntry
+[2.598] flash_f2_get_busy_status():  FuncExit
+[2.598] flash_f2_get_busy_status():  FuncEntry
+[2.598] flash_f2_get_busy_status():  FuncExit
+[2.598] flash_f2_get_busy_status():  FuncEntry
+[2.598] flash_f2_get_busy_status():  FuncExit
+[2.598] flash_f2_get_busy_status():  FuncEntry
+[2.599] flash_f2_get_busy_status():  FuncExit
+[2.599] flash_f2_get_busy_status():  FuncEntry
+[2.599] flash_f2_get_busy_status():  FuncExit
+[2.599] flash_f2_get_busy_status():  FuncEntry
+[2.600] flash_f2_get_busy_status():  FuncExit
+[2.600] flash_f2_get_busy_status():  FuncEntry
+[2.600] flash_f2_get_busy_status():  FuncExit
+[2.600] flash_f2_get_busy_status():  FuncEntry
+[2.601] flash_f2_get_busy_status():  FuncExit
+[2.601] flash_f2_get_busy_status():  FuncEntry
+[2.601] flash_f2_get_busy_status():  FuncExit
+[2.601] flash_f2_get_busy_status():  FuncEntry
+[2.602] flash_f2_get_busy_status():  FuncExit
+[2.602] flash_f2_get_busy_status():  FuncEntry
+[2.602] flash_f2_get_busy_status():  FuncExit
+[2.602] flash_f2_get_busy_status():  FuncEntry
+[2.603] flash_f2_get_busy_status():  FuncExit
+[2.603] flash_f2_get_busy_status():  FuncEntry
+[2.603] flash_f2_get_busy_status():  FuncExit
+[2.603] flash_f2_get_busy_status():  FuncEntry
+[2.604] flash_f2_get_busy_status():  FuncExit
+[2.604] flash_f2_get_busy_status():  FuncEntry
+[2.604] flash_f2_get_busy_status():  FuncExit
+[2.604] flash_f2_get_busy_status():  FuncEntry
+[2.605] flash_f2_get_busy_status():  FuncExit
+[2.605] flash_f2_get_busy_status():  FuncEntry
+[2.605] flash_f2_get_busy_status():  FuncExit
+[2.605] flash_f2_get_busy_status():  FuncEntry
+[2.605] flash_f2_get_busy_status():  FuncExit
+[2.605] flash_f2_get_busy_status():  FuncEntry
+[2.606] flash_f2_get_busy_status():  FuncExit
+[2.606] flash_f2_get_busy_status():  FuncEntry
+[2.606] flash_f2_get_busy_status():  FuncExit
+[2.606] flash_f2_get_busy_status():  FuncEntry
+[2.606] flash_f2_get_busy_status():  FuncExit
+[2.606] flash_f2_get_busy_status():  FuncEntry
+[2.607] flash_f2_get_busy_status():  FuncExit
+[2.607] flash_f2_get_busy_status():  FuncEntry
+[2.608] flash_f2_get_busy_status():  FuncExit
+[2.608] flash_f2_get_busy_status():  FuncEntry
+[2.608] flash_f2_get_busy_status():  FuncExit
+[2.608] flash_f2_get_busy_status():  FuncEntry
+[2.609] flash_f2_get_busy_status():  FuncExit
+[2.609] flash_f2_get_busy_status():  FuncEntry
+[2.609] flash_f2_get_busy_status():  FuncExit
+[2.609] flash_f2_get_busy_status():  FuncEntry
+[2.609] flash_f2_get_busy_status():  FuncExit
+[2.609] flash_f2_get_busy_status():  FuncEntry
+[2.610] flash_f2_get_busy_status():  FuncExit
+[2.610] flash_f2_get_busy_status():  FuncEntry
+[2.611] flash_f2_get_busy_status():  FuncExit
+[2.611] flash_f2_get_busy_status():  FuncEntry
+[2.611] flash_f2_get_busy_status():  FuncExit
+[2.611] flash_f2_get_busy_status():  FuncEntry
+[2.612] flash_f2_get_busy_status():  FuncExit
+[2.612] flash_f2_get_busy_status():  FuncEntry
+[2.612] flash_f2_get_busy_status():  FuncExit
+[2.612] flash_f2_get_busy_status():  FuncEntry
+[2.612] flash_f2_get_busy_status():  FuncExit
+[2.612] flash_f2_get_busy_status():  FuncEntry
+[2.613] flash_f2_get_busy_status():  FuncExit
+[2.613] flash_f2_get_busy_status():  FuncEntry
+[2.613] flash_f2_get_busy_status():  FuncExit
+[2.613] flash_f2_get_busy_status():  FuncEntry
+[2.614] flash_f2_get_busy_status():  FuncExit
+[2.614] flash_f2_get_busy_status():  FuncEntry
+[2.614] flash_f2_get_busy_status():  FuncExit
+[2.614] flash_f2_get_busy_status():  FuncEntry
+[2.614] flash_f2_get_busy_status():  FuncExit
+[2.614] flash_f2_get_busy_status():  FuncEntry
+[2.615] flash_f2_get_busy_status():  FuncExit
+[2.615] flash_f2_get_busy_status():  FuncEntry
+[2.615] flash_f2_get_busy_status():  FuncExit
+[2.615] flash_f2_get_busy_status():  FuncEntry
+[2.615] flash_f2_get_busy_status():  FuncExit
+[2.615] flash_f2_get_busy_status():  FuncEntry
+[2.616] flash_f2_get_busy_status():  FuncExit
+[2.616] flash_f2_get_busy_status():  FuncEntry
+[2.616] flash_f2_get_busy_status():  FuncExit
+[2.616] flash_f2_get_busy_status():  FuncEntry
+[2.617] flash_f2_get_busy_status():  FuncExit
+[2.617] flash_f2_get_busy_status():  FuncEntry
+[2.617] flash_f2_get_busy_status():  FuncExit
+[2.617] flash_f2_get_busy_status():  FuncEntry
+[2.617] flash_f2_get_busy_status():  FuncExit
+[2.617] flash_f2_get_busy_status():  FuncEntry
+[2.618] flash_f2_get_busy_status():  FuncExit
+[2.618] flash_f2_get_busy_status():  FuncEntry
+[2.618] flash_f2_get_busy_status():  FuncExit
+[2.618] flash_f2_get_busy_status():  FuncEntry
+[2.619] flash_f2_get_busy_status():  FuncExit
+[2.619] flash_f2_get_busy_status():  FuncEntry
+[2.619] flash_f2_get_busy_status():  FuncExit
+[2.619] flash_f2_get_busy_status():  FuncEntry
+[2.619] flash_f2_get_busy_status():  FuncExit
+[2.619] flash_f2_get_busy_status():  FuncEntry
+[2.621] flash_f2_get_busy_status():  FuncExit
+[2.621] flash_f2_get_busy_status():  FuncEntry
+[2.621] flash_f2_get_busy_status():  FuncExit
+[2.621] flash_f2_get_busy_status():  FuncEntry
+[2.621] flash_f2_get_busy_status():  FuncExit
+[2.621] flash_f2_get_busy_status():  FuncEntry
+[2.621] flash_f2_get_busy_status():  FuncExit
+[2.621] flash_f2_get_busy_status():  FuncEntry
+[2.621] flash_f2_get_busy_status():  FuncExit
+[2.621] flash_f2_get_busy_status():  FuncEntry
+[2.622] flash_f2_get_busy_status():  FuncExit
+[2.622] flash_f2_get_busy_status():  FuncEntry
+[2.622] flash_f2_get_busy_status():  FuncExit
+[2.622] flash_f2_get_busy_status():  FuncEntry
+[2.623] flash_f2_get_busy_status():  FuncExit
+[2.623] flash_f2_get_busy_status():  FuncEntry
+[2.623] flash_f2_get_busy_status():  FuncExit
+[2.623] flash_f2_get_busy_status():  FuncEntry
+[2.624] flash_f2_get_busy_status():  FuncExit
+[2.624] flash_f2_get_busy_status():  FuncEntry
+[2.624] flash_f2_get_busy_status():  FuncExit
+[2.624] flash_f2_get_busy_status():  FuncEntry
+[2.625] flash_f2_get_busy_status():  FuncExit
+[2.625] flash_f2_get_busy_status():  FuncEntry
+[2.625] flash_f2_get_busy_status():  FuncExit
+[2.625] flash_f2_get_busy_status():  FuncEntry
+[2.626] flash_f2_get_busy_status():  FuncExit
+[2.626] flash_f2_get_busy_status():  FuncEntry
+[2.626] flash_f2_get_busy_status():  FuncExit
+[2.626] flash_f2_get_busy_status():  FuncEntry
+[2.627] flash_f2_get_busy_status():  FuncExit
+[2.627] flash_f2_get_busy_status():  FuncEntry
+[2.627] flash_f2_get_busy_status():  FuncExit
+[2.627] flash_f2_get_busy_status():  FuncEntry
+[2.627] flash_f2_get_busy_status():  FuncExit
+[2.627] flash_f2_get_busy_status():  FuncEntry
+[2.628] flash_f2_get_busy_status():  FuncExit
+[2.628] flash_f2_get_busy_status():  FuncEntry
+[2.628] flash_f2_get_busy_status():  FuncExit
+[2.628] flash_f2_get_busy_status():  FuncEntry
+[2.629] flash_f2_get_busy_status():  FuncExit
+[2.629] flash_f2_get_busy_status():  FuncEntry
+[2.629] flash_f2_get_busy_status():  FuncExit
+[2.629] flash_f2_get_busy_status():  FuncEntry
+[2.629] flash_f2_get_busy_status():  FuncExit
+[2.629] flash_f2_get_busy_status():  FuncEntry
+[2.630] flash_f2_get_busy_status():  FuncExit
+[2.630] flash_f2_get_busy_status():  FuncEntry
+[2.630] flash_f2_get_busy_status():  FuncExit
+[2.630] flash_f2_get_busy_status():  FuncEntry
+[2.631] flash_f2_get_busy_status():  FuncExit
+[2.631] flash_f2_get_busy_status():  FuncEntry
+[2.631] flash_f2_get_busy_status():  FuncExit
+[2.631] flash_f2_get_busy_status():  FuncEntry
+[2.631] flash_f2_get_busy_status():  FuncExit
+[2.631] flash_f2_get_busy_status():  FuncEntry
+[2.632] flash_f2_get_busy_status():  FuncExit
+[2.632] flash_f2_get_busy_status():  FuncEntry
+[2.632] flash_f2_get_busy_status():  FuncExit
+[2.632] flash_f2_get_busy_status():  FuncEntry
+[2.633] flash_f2_get_busy_status():  FuncExit
+[2.633] flash_f2_get_busy_status():  FuncEntry
+[2.633] flash_f2_get_busy_status():  FuncExit
+[2.633] flash_f2_get_busy_status():  FuncEntry
+[2.634] flash_f2_get_busy_status():  FuncExit
+[2.634] flash_f2_get_busy_status():  FuncEntry
+[2.634] flash_f2_get_busy_status():  FuncExit
+[2.634] flash_f2_get_busy_status():  FuncEntry
+[2.635] flash_f2_get_busy_status():  FuncExit
+[2.635] flash_f2_get_busy_status():  FuncEntry
+[2.635] flash_f2_get_busy_status():  FuncExit
+[2.635] flash_f2_get_busy_status():  FuncEntry
+[2.636] flash_f2_get_busy_status():  FuncExit
+[2.636] flash_f2_get_busy_status():  FuncEntry
+[2.636] flash_f2_get_busy_status():  FuncExit
+[2.636] flash_f2_get_busy_status():  FuncEntry
+[2.637] flash_f2_get_busy_status():  FuncExit
+[2.637] flash_f2_get_busy_status():  FuncEntry
+[2.637] flash_f2_get_busy_status():  FuncExit
+[2.637] flash_f2_get_busy_status():  FuncEntry
+[2.638] flash_f2_get_busy_status():  FuncExit
+[2.638] flash_f2_get_busy_status():  FuncEntry
+[2.638] flash_f2_get_busy_status():  FuncExit
+[2.638] flash_f2_get_busy_status():  FuncEntry
+[2.638] flash_f2_get_busy_status():  FuncExit
+[2.638] flash_f2_get_busy_status():  FuncEntry
+[2.639] flash_f2_get_busy_status():  FuncExit
+[2.639] flash_f2_get_busy_status():  FuncEntry
+[2.639] flash_f2_get_busy_status():  FuncExit
+[2.639] flash_f2_get_busy_status():  FuncEntry
+[2.639] flash_f2_get_busy_status():  FuncExit
+[2.639] flash_f2_get_busy_status():  FuncEntry
+[2.640] flash_f2_get_busy_status():  FuncExit
+[2.640] flash_f2_get_busy_status():  FuncEntry
+[2.640] flash_f2_get_busy_status():  FuncExit
+[2.640] flash_f2_get_busy_status():  FuncEntry
+[2.641] flash_f2_get_busy_status():  FuncExit
+[2.641] flash_f2_get_busy_status():  FuncEntry
+[2.641] flash_f2_get_busy_status():  FuncExit
+[2.641] flash_f2_get_busy_status():  FuncEntry
+[2.642] flash_f2_get_busy_status():  FuncExit
+[2.642] flash_f2_get_busy_status():  FuncEntry
+[2.642] flash_f2_get_busy_status():  FuncExit
+[2.643] flash_f2_get_busy_status():  FuncEntry
+[2.643] flash_f2_get_busy_status():  FuncExit
+[2.643] flash_f2_get_busy_status():  FuncEntry
+[2.644] flash_f2_get_busy_status():  FuncExit
+[2.644] flash_f2_get_busy_status():  FuncEntry
+[2.644] flash_f2_get_busy_status():  FuncExit
+[2.644] flash_f2_get_busy_status():  FuncEntry
+[2.645] flash_f2_get_busy_status():  FuncExit
+[2.645] flash_f2_get_busy_status():  FuncEntry
+[2.645] flash_f2_get_busy_status():  FuncExit
+[2.645] flash_f2_get_busy_status():  FuncEntry
+[2.646] flash_f2_get_busy_status():  FuncExit
+[2.646] flash_f2_get_busy_status():  FuncEntry
+[2.646] flash_f2_get_busy_status():  FuncExit
+[2.646] flash_f2_get_busy_status():  FuncEntry
+[2.647] flash_f2_get_busy_status():  FuncExit
+[2.647] flash_f2_get_busy_status():  FuncEntry
+[2.647] flash_f2_get_busy_status():  FuncExit
+[2.647] flash_f2_get_busy_status():  FuncEntry
+[2.648] flash_f2_get_busy_status():  FuncExit
+[2.648] flash_f2_get_busy_status():  FuncEntry
+[2.648] flash_f2_get_busy_status():  FuncExit
+[2.648] flash_f2_get_busy_status():  FuncEntry
+[2.649] flash_f2_get_busy_status():  FuncExit
+[2.649] flash_f2_get_busy_status():  FuncEntry
+[2.649] flash_f2_get_busy_status():  FuncExit
+[2.649] flash_f2_get_busy_status():  FuncEntry
+[2.650] flash_f2_get_busy_status():  FuncExit
+[2.650] flash_f2_get_busy_status():  FuncEntry
+[2.650] flash_f2_get_busy_status():  FuncExit
+[2.650] flash_f2_get_busy_status():  FuncEntry
+[2.651] flash_f2_get_busy_status():  FuncExit
+[2.651] flash_f2_get_busy_status():  FuncEntry
+[2.651] flash_f2_get_busy_status():  FuncExit
+[2.651] flash_f2_get_busy_status():  FuncEntry
+[2.651] flash_f2_get_busy_status():  FuncExit
+[2.651] flash_f2_get_busy_status():  FuncEntry
+[2.652] flash_f2_get_busy_status():  FuncExit
+[2.652] flash_f2_get_busy_status():  FuncEntry
+[2.652] flash_f2_get_busy_status():  FuncExit
+[2.652] flash_f2_get_busy_status():  FuncEntry
+[2.653] flash_f2_get_busy_status():  FuncExit
+[2.653] flash_f2_get_busy_status():  FuncEntry
+[2.653] flash_f2_get_busy_status():  FuncExit
+[2.653] flash_f2_get_busy_status():  FuncEntry
+[2.654] flash_f2_get_busy_status():  FuncExit
+[2.654] flash_f2_get_busy_status():  FuncEntry
+[2.654] flash_f2_get_busy_status():  FuncExit
+[2.654] flash_f2_get_busy_status():  FuncEntry
+[2.654] flash_f2_get_busy_status():  FuncExit
+[2.654] flash_f2_get_busy_status():  FuncEntry
+[2.655] flash_f2_get_busy_status():  FuncExit
+[2.655] flash_f2_get_busy_status():  FuncEntry
+[2.655] flash_f2_get_busy_status():  FuncExit
+[2.655] flash_f2_get_busy_status():  FuncEntry
+[2.656] flash_f2_get_busy_status():  FuncExit
+[2.656] flash_f2_get_busy_status():  FuncEntry
+[2.656] flash_f2_get_busy_status():  FuncExit
+[2.656] flash_f2_get_busy_status():  FuncEntry
+[2.656] flash_f2_get_busy_status():  FuncExit
+[2.656] flash_f2_get_busy_status():  FuncEntry
+[2.657] flash_f2_get_busy_status():  FuncExit
+[2.657] flash_f2_get_busy_status():  FuncEntry
+[2.657] flash_f2_get_busy_status():  FuncExit
+[2.657] flash_f2_get_busy_status():  FuncEntry
+[2.659] flash_f2_get_busy_status():  FuncExit
+[2.659] flash_f2_get_busy_status():  FuncEntry
+[2.659] flash_f2_get_busy_status():  FuncExit
+[2.659] flash_f2_get_busy_status():  FuncEntry
+[2.659] flash_f2_get_busy_status():  FuncExit
+[2.659] flash_f2_get_busy_status():  FuncEntry
+[2.660] flash_f2_get_busy_status():  FuncExit
+[2.660] flash_f2_get_busy_status():  FuncEntry
+[2.660] flash_f2_get_busy_status():  FuncExit
+[2.660] flash_f2_get_busy_status():  FuncEntry
+[2.661] flash_f2_get_busy_status():  FuncExit
+[2.661] flash_f2_get_busy_status():  FuncEntry
+[2.661] flash_f2_get_busy_status():  FuncExit
+[2.661] flash_f2_get_busy_status():  FuncEntry
+[2.661] flash_f2_get_busy_status():  FuncExit
+[2.661] flash_f2_get_busy_status():  FuncEntry
+[2.662] flash_f2_get_busy_status():  FuncExit
+[2.662] flash_f2_get_busy_status():  FuncEntry
+[2.662] flash_f2_get_busy_status():  FuncExit
+[2.662] flash_f2_get_busy_status():  FuncEntry
+[2.663] flash_f2_get_busy_status():  FuncExit
+[2.663] flash_f2_get_busy_status():  FuncEntry
+[2.663] flash_f2_get_busy_status():  FuncExit
+[2.663] flash_f2_get_busy_status():  FuncEntry
+[2.663] flash_f2_get_busy_status():  FuncExit
+[2.663] flash_f2_get_busy_status():  FuncEntry
+[2.665] flash_f2_get_busy_status():  FuncExit
+[2.665] flash_f2_get_busy_status():  FuncEntry
+[2.665] flash_f2_get_busy_status():  FuncExit
+[2.665] flash_f2_get_busy_status():  FuncEntry
+[2.666] flash_f2_get_busy_status():  FuncExit
+[2.666] flash_f2_get_busy_status():  FuncEntry
+[2.666] flash_f2_get_busy_status():  FuncExit
+[2.666] flash_f2_get_busy_status():  FuncEntry
+[2.666] flash_f2_get_busy_status():  FuncExit
+[2.666] flash_f2_get_busy_status():  FuncEntry
+[2.667] flash_f2_get_busy_status():  FuncExit
+[2.667] flash_f2_get_busy_status():  FuncEntry
+[2.667] flash_f2_get_busy_status():  FuncExit
+[2.667] flash_f2_get_busy_status():  FuncEntry
+[2.667] flash_f2_get_busy_status():  FuncExit
+[2.667] flash_f2_get_busy_status():  FuncEntry
+[2.668] flash_f2_get_busy_status():  FuncExit
+[2.668] flash_f2_get_busy_status():  FuncEntry
+[2.668] flash_f2_get_busy_status():  FuncExit
+[2.668] flash_f2_get_busy_status():  FuncEntry
+[2.669] flash_f2_get_busy_status():  FuncExit
+[2.669] flash_f2_get_busy_status():  FuncEntry
+[2.669] flash_f2_get_busy_status():  FuncExit
+[2.669] flash_f2_get_busy_status():  FuncEntry
+[2.669] flash_f2_get_busy_status():  FuncExit
+[2.669] flash_f2_get_busy_status():  FuncEntry
+[2.670] flash_f2_get_busy_status():  FuncExit
+[2.670] flash_f2_get_busy_status():  FuncEntry
+[2.670] flash_f2_get_busy_status():  FuncExit
+[2.670] flash_f2_get_busy_status():  FuncEntry
+[2.671] flash_f2_get_busy_status():  FuncExit
+[2.671] flash_f2_get_busy_status():  FuncEntry
+[2.671] flash_f2_get_busy_status():  FuncExit
+[2.671] flash_f2_get_busy_status():  FuncEntry
+[2.671] flash_f2_get_busy_status():  FuncExit
+[2.671] flash_f2_get_busy_status():  FuncEntry
+[2.672] flash_f2_get_busy_status():  FuncExit
+[2.672] flash_f2_get_busy_status():  FuncEntry
+[2.672] flash_f2_get_busy_status():  FuncExit
+[2.672] flash_f2_get_busy_status():  FuncEntry
+[2.672] flash_f2_get_busy_status():  FuncExit
+[2.672] flash_f2_get_busy_status():  FuncEntry
+[2.673] flash_f2_get_busy_status():  FuncExit
+[2.673] flash_f2_get_busy_status():  FuncEntry
+[2.673] flash_f2_get_busy_status():  FuncExit
+[2.673] flash_f2_get_busy_status():  FuncEntry
+[2.673] flash_f2_get_busy_status():  FuncExit
+[2.673] flash_f2_get_busy_status():  FuncEntry
+[2.674] flash_f2_get_busy_status():  FuncExit
+[2.674] flash_f2_get_busy_status():  FuncEntry
+[2.674] flash_f2_get_busy_status():  FuncExit
+[2.674] flash_f2_get_busy_status():  FuncEntry
+[2.675] flash_f2_get_busy_status():  FuncExit
+[2.675] flash_f2_get_busy_status():  FuncEntry
+[2.675] flash_f2_get_busy_status():  FuncExit
+[2.675] flash_f2_get_busy_status():  FuncEntry
+[2.676] flash_f2_get_busy_status():  FuncExit
+[2.676] flash_f2_get_busy_status():  FuncEntry
+[2.676] flash_f2_get_busy_status():  FuncExit
+[2.676] flash_f2_get_busy_status():  FuncEntry
+[2.677] flash_f2_get_busy_status():  FuncExit
+[2.677] flash_f2_get_busy_status():  FuncEntry
+[2.678] flash_f2_get_busy_status():  FuncExit
+[2.678] flash_f2_get_busy_status():  FuncEntry
+[2.678] flash_f2_get_busy_status():  FuncExit
+[2.678] flash_f2_get_busy_status():  FuncEntry
+[2.679] flash_f2_get_busy_status():  FuncExit
+[2.679] flash_f2_get_busy_status():  FuncEntry
+[2.679] flash_f2_get_busy_status():  FuncExit
+[2.679] flash_f2_get_busy_status():  FuncEntry
+[2.680] flash_f2_get_busy_status():  FuncExit
+[2.680] flash_f2_get_busy_status():  FuncEntry
+[2.680] flash_f2_get_busy_status():  FuncExit
+[2.680] flash_f2_get_busy_status():  FuncEntry
+[2.681] flash_f2_get_busy_status():  FuncExit
+[2.681] flash_f2_get_busy_status():  FuncEntry
+[2.681] flash_f2_get_busy_status():  FuncExit
+[2.681] flash_f2_get_busy_status():  FuncEntry
+[2.682] flash_f2_get_busy_status():  FuncExit
+[2.682] flash_f2_get_busy_status():  FuncEntry
+[2.682] flash_f2_get_busy_status():  FuncExit
+[2.682] flash_f2_get_busy_status():  FuncEntry
+[2.682] flash_f2_get_busy_status():  FuncExit
+[2.682] flash_f2_get_busy_status():  FuncEntry
+[2.683] flash_f2_get_busy_status():  FuncExit
+[2.683] flash_f2_get_busy_status():  FuncEntry
+[2.684] flash_f2_get_busy_status():  FuncExit
+[2.684] flash_f2_get_busy_status():  FuncEntry
+[2.684] flash_f2_get_busy_status():  FuncExit
+[2.684] flash_f2_get_busy_status():  FuncEntry
+[2.685] flash_f2_get_busy_status():  FuncExit
+[2.685] flash_f2_get_busy_status():  FuncEntry
+[2.685] flash_f2_get_busy_status():  FuncExit
+[2.685] flash_f2_get_busy_status():  FuncEntry
+[2.685] flash_f2_get_busy_status():  FuncExit
+[2.685] flash_f2_get_busy_status():  FuncEntry
+[2.686] flash_f2_get_busy_status():  FuncExit
+[2.686] flash_f2_get_busy_status():  FuncEntry
+[2.686] flash_f2_get_busy_status():  FuncExit
+[2.686] flash_f2_get_busy_status():  FuncEntry
+[2.687] flash_f2_get_busy_status():  FuncExit
+[2.687] flash_f2_get_busy_status():  FuncEntry
+[2.687] flash_f2_get_busy_status():  FuncExit
+[2.687] flash_f2_get_busy_status():  FuncEntry
+[2.687] flash_f2_get_busy_status():  FuncExit
+[2.687] flash_f2_get_busy_status():  FuncEntry
+[2.688] flash_f2_get_busy_status():  FuncExit
+[2.688] flash_f2_get_busy_status():  FuncEntry
+[2.688] flash_f2_get_busy_status():  FuncExit
+[2.688] flash_f2_get_busy_status():  FuncEntry
+[2.688] flash_f2_get_busy_status():  FuncExit
+[2.688] flash_f2_get_busy_status():  FuncEntry
+[2.689] flash_f2_get_busy_status():  FuncExit
+[2.689] flash_f2_get_busy_status():  FuncEntry
+[2.689] flash_f2_get_busy_status():  FuncExit
+[2.689] flash_f2_get_busy_status():  FuncEntry
+[2.690] flash_f2_get_busy_status():  FuncExit
+[2.690] flash_f2_get_busy_status():  FuncEntry
+[2.690] flash_f2_get_busy_status():  FuncExit
+[2.690] flash_f2_get_busy_status():  FuncEntry
+[2.690] flash_f2_get_busy_status():  FuncExit
+[2.690] flash_f2_get_busy_status():  FuncEntry
+[2.691] flash_f2_get_busy_status():  FuncExit
+[2.691] flash_f2_get_busy_status():  FuncEntry
+[2.691] flash_f2_get_busy_status():  FuncExit
+[2.691] flash_f2_get_busy_status():  FuncEntry
+[2.691] flash_f2_get_busy_status():  FuncExit
+[2.691] flash_f2_get_busy_status():  FuncEntry
+[2.692] flash_f2_get_busy_status():  FuncExit
+[2.692] flash_f2_get_busy_status():  FuncEntry
+[2.692] flash_f2_get_busy_status():  FuncExit
+[2.692] flash_f2_get_busy_status():  FuncEntry
+[2.693] flash_f2_get_busy_status():  FuncExit
+[2.693] flash_f2_get_busy_status():  FuncEntry
+[2.693] flash_f2_get_busy_status():  FuncExit
+[2.693] flash_f2_get_busy_status():  FuncEntry
+[2.694] flash_f2_get_busy_status():  FuncExit
+[2.694] flash_f2_get_busy_status():  FuncEntry
+[2.694] flash_f2_get_busy_status():  FuncExit
+[2.694] flash_f2_get_busy_status():  FuncEntry
+[2.695] flash_f2_get_busy_status():  FuncExit
+[2.695] flash_f2_get_busy_status():  FuncEntry
+[2.695] flash_f2_get_busy_status():  FuncExit
+[2.695] flash_f2_get_busy_status():  FuncEntry
+[2.696] flash_f2_get_busy_status():  FuncExit
+[2.696] flash_f2_get_busy_status():  FuncEntry
+[2.696] flash_f2_get_busy_status():  FuncExit
+[2.696] flash_f2_get_busy_status():  FuncEntry
+[2.696] flash_f2_get_busy_status():  FuncExit
+[2.696] flash_f2_get_busy_status():  FuncEntry
+[2.697] flash_f2_get_busy_status():  FuncExit
+[2.697] flash_f2_get_busy_status():  FuncEntry
+[2.697] flash_f2_get_busy_status():  FuncExit
+[2.697] flash_f2_get_busy_status():  FuncEntry
+[2.697] flash_f2_get_busy_status():  FuncExit
+[2.697] flash_f2_get_busy_status():  FuncEntry
+[2.698] flash_f2_get_busy_status():  FuncExit
+[2.698] flash_f2_get_busy_status():  FuncEntry
+[2.698] flash_f2_get_busy_status():  FuncExit
+[2.698] flash_f2_get_busy_status():  FuncEntry
+[2.698] flash_f2_get_busy_status():  FuncExit
+[2.698] flash_f2_get_busy_status():  FuncEntry
+[2.699] flash_f2_get_busy_status():  FuncExit
+[2.699] flash_f2_get_busy_status():  FuncEntry
+[2.699] flash_f2_get_busy_status():  FuncExit
+[2.699] flash_f2_get_busy_status():  FuncEntry
+[2.700] flash_f2_get_busy_status():  FuncExit
+[2.700] flash_f2_get_busy_status():  FuncEntry
+[2.700] flash_f2_get_busy_status():  FuncExit
+[2.700] flash_f2_get_busy_status():  FuncEntry
+[2.700] flash_f2_get_busy_status():  FuncExit
+[2.700] flash_f2_get_busy_status():  FuncEntry
+[2.701] flash_f2_get_busy_status():  FuncExit
+[2.701] flash_f2_get_busy_status():  FuncEntry
+[2.701] flash_f2_get_busy_status():  FuncExit
+[2.701] flash_f2_get_busy_status():  FuncEntry
+[2.701] flash_f2_get_busy_status():  FuncExit
+[2.701] flash_f2_get_busy_status():  FuncEntry
+[2.702] flash_f2_get_busy_status():  FuncExit
+[2.702] flash_f2_get_busy_status():  FuncEntry
+[2.702] flash_f2_get_busy_status():  FuncExit
+[2.702] flash_f2_get_busy_status():  FuncEntry
+[2.703] flash_f2_get_busy_status():  FuncExit
+[2.703] flash_f2_get_busy_status():  FuncEntry
+[2.703] flash_f2_get_busy_status():  FuncExit
+[2.703] flash_f2_get_busy_status():  FuncEntry
+[2.703] flash_f2_get_busy_status():  FuncExit
+[2.703] flash_f2_get_busy_status():  FuncEntry
+[2.704] flash_f2_get_busy_status():  FuncExit
+[2.704] flash_f2_get_busy_status():  FuncEntry
+[2.704] flash_f2_get_busy_status():  FuncExit
+[2.704] flash_f2_get_busy_status():  FuncEntry
+[2.704] flash_f2_get_busy_status():  FuncExit
+[2.705] flash_f2_get_busy_status():  FuncEntry
+[2.705] flash_f2_get_busy_status():  FuncExit
+[2.705] flash_f2_get_busy_status():  FuncEntry
+[2.705] flash_f2_get_busy_status():  FuncExit
+[2.705] flash_f2_get_busy_status():  FuncEntry
+[2.706] flash_f2_get_busy_status():  FuncExit
+[2.706] flash_f2_get_busy_status():  FuncEntry
+[2.706] flash_f2_get_busy_status():  FuncExit
+[2.706] flash_f2_get_busy_status():  FuncEntry
+[2.706] flash_f2_get_busy_status():  FuncExit
+[2.706] flash_f2_get_busy_status():  FuncEntry
+[2.707] flash_f2_get_busy_status():  FuncExit
+[2.707] flash_f2_get_busy_status():  FuncEntry
+[2.707] flash_f2_get_busy_status():  FuncExit
+[2.707] flash_f2_get_busy_status():  FuncEntry
+[2.707] flash_f2_get_busy_status():  FuncExit
+[2.707] flash_f2_get_busy_status():  FuncEntry
+[2.708] flash_f2_get_busy_status():  FuncExit
+[2.708] flash_f2_get_busy_status():  FuncEntry
+[2.708] flash_f2_get_busy_status():  FuncExit
+[2.708] flash_f2_get_busy_status():  FuncEntry
+[2.709] flash_f2_get_busy_status():  FuncExit
+[2.709] flash_f2_get_busy_status():  FuncEntry
+[2.709] flash_f2_get_busy_status():  FuncExit
+[2.709] flash_f2_get_busy_status():  FuncEntry
+[2.710] flash_f2_get_busy_status():  FuncExit
+[2.710] flash_f2_get_busy_status():  FuncEntry
+[2.710] flash_f2_get_busy_status():  FuncExit
+[2.710] flash_f2_get_busy_status():  FuncEntry
+[2.711] flash_f2_get_busy_status():  FuncExit
+[2.711] flash_f2_get_busy_status():  FuncEntry
+[2.711] flash_f2_get_busy_status():  FuncExit
+[2.711] flash_f2_get_busy_status():  FuncEntry
+[2.711] flash_f2_get_busy_status():  FuncExit
+[2.711] flash_f2_get_busy_status():  FuncEntry
+[2.712] flash_f2_get_busy_status():  FuncExit
+[2.712] flash_f2_get_busy_status():  FuncEntry
+[2.712] flash_f2_get_busy_status():  FuncExit
+[2.712] flash_f2_get_busy_status():  FuncEntry
+[2.713] flash_f2_get_busy_status():  FuncExit
+[2.713] flash_f2_get_busy_status():  FuncEntry
+[2.713] flash_f2_get_busy_status():  FuncExit
+[2.713] flash_f2_get_busy_status():  FuncEntry
+[2.713] flash_f2_get_busy_status():  FuncExit
+[2.713] flash_f2_get_busy_status():  FuncEntry
+[2.714] flash_f2_get_busy_status():  FuncExit
+[2.714] flash_f2_get_busy_status():  FuncEntry
+[2.714] flash_f2_get_busy_status():  FuncExit
+[2.714] flash_f2_get_busy_status():  FuncEntry
+[2.714] flash_f2_get_busy_status():  FuncExit
+[2.714] flash_f2_get_busy_status():  FuncEntry
+[2.715] flash_f2_get_busy_status():  FuncExit
+[2.715] flash_f2_get_busy_status():  FuncEntry
+[2.715] flash_f2_get_busy_status():  FuncExit
+[2.715] flash_f2_get_busy_status():  FuncEntry
+[2.716] flash_f2_get_busy_status():  FuncExit
+[2.716] flash_f2_get_busy_status():  FuncEntry
+[2.716] flash_f2_get_busy_status():  FuncExit
+[2.716] flash_f2_get_busy_status():  FuncEntry
+[2.716] flash_f2_get_busy_status():  FuncExit
+[2.716] flash_f2_get_busy_status():  FuncEntry
+[2.717] flash_f2_get_busy_status():  FuncExit
+[2.717] flash_f2_get_busy_status():  FuncEntry
+[2.717] flash_f2_get_busy_status():  FuncExit
+[2.717] flash_f2_get_busy_status():  FuncEntry
+[2.717] flash_f2_get_busy_status():  FuncExit
+[2.717] flash_f2_get_busy_status():  FuncEntry
+[2.718] flash_f2_get_busy_status():  FuncExit
+[2.718] flash_f2_get_busy_status():  FuncEntry
+[2.718] flash_f2_get_busy_status():  FuncExit
+[2.718] flash_f2_get_busy_status():  FuncEntry
+[2.719] flash_f2_get_busy_status():  FuncExit
+[2.719] flash_f2_get_busy_status():  FuncEntry
+[2.719] flash_f2_get_busy_status():  FuncExit
+[2.719] flash_f2_get_busy_status():  FuncEntry
+[2.719] flash_f2_get_busy_status():  FuncExit
+[2.719] flash_f2_get_busy_status():  FuncEntry
+[2.720] flash_f2_get_busy_status():  FuncExit
+[2.720] flash_f2_get_busy_status():  FuncEntry
+[2.720] flash_f2_get_busy_status():  FuncExit
+[2.720] flash_f2_get_busy_status():  FuncEntry
+[2.721] flash_f2_get_busy_status():  FuncExit
+[2.721] flash_f2_get_busy_status():  FuncEntry
+[2.721] flash_f2_get_busy_status():  FuncExit
+[2.721] flash_f2_get_busy_status():  FuncEntry
+[2.721] flash_f2_get_busy_status():  FuncExit
+[2.721] flash_f2_get_busy_status():  FuncEntry
+[2.722] flash_f2_get_busy_status():  FuncExit
+[2.722] flash_f2_get_busy_status():  FuncEntry
+[2.722] flash_f2_get_busy_status():  FuncExit
+[2.722] flash_f2_get_busy_status():  FuncEntry
+[2.722] flash_f2_get_busy_status():  FuncExit
+[2.722] flash_f2_get_busy_status():  FuncEntry
+[2.723] flash_f2_get_busy_status():  FuncExit
+[2.723] flash_f2_get_busy_status():  FuncEntry
+[2.723] flash_f2_get_busy_status():  FuncExit
+[2.723] flash_f2_get_busy_status():  FuncEntry
+[2.723] flash_f2_get_busy_status():  FuncExit
+[2.724] flash_f2_get_busy_status():  FuncEntry
+[2.724] flash_f2_get_busy_status():  FuncExit
+[2.724] flash_f2_get_busy_status():  FuncEntry
+[2.724] flash_f2_get_busy_status():  FuncExit
+[2.724] flash_f2_get_busy_status():  FuncEntry
+[2.725] flash_f2_get_busy_status():  FuncExit
+[2.725] flash_f2_get_busy_status():  FuncEntry
+[2.725] flash_f2_get_busy_status():  FuncExit
+[2.725] flash_f2_get_busy_status():  FuncEntry
+[2.725] flash_f2_get_busy_status():  FuncExit
+[2.725] flash_f2_get_busy_status():  FuncEntry
+[2.726] flash_f2_get_busy_status():  FuncExit
+[2.726] flash_f2_get_busy_status():  FuncEntry
+[2.726] flash_f2_get_busy_status():  FuncExit
+[2.726] flash_f2_get_busy_status():  FuncEntry
+[2.726] flash_f2_get_busy_status():  FuncExit
+[2.727] flash_f2_get_busy_status():  FuncEntry
+[2.727] flash_f2_get_busy_status():  FuncExit
+[2.727] flash_f2_get_busy_status():  FuncEntry
+[2.727] flash_f2_get_busy_status():  FuncExit
+[2.727] flash_f2_get_busy_status():  FuncEntry
+[2.728] flash_f2_get_busy_status():  FuncExit
+[2.728] flash_f2_get_busy_status():  FuncEntry
+[2.728] flash_f2_get_busy_status():  FuncExit
+[2.728] flash_f2_get_busy_status():  FuncEntry
+[2.728] flash_f2_get_busy_status():  FuncExit
+[2.728] flash_f2_get_busy_status():  FuncEntry
+[2.729] flash_f2_get_busy_status():  FuncExit
+[2.729] flash_f2_get_busy_status():  FuncEntry
+[2.729] flash_f2_get_busy_status():  FuncExit
+[2.729] flash_f2_get_busy_status():  FuncEntry
+[2.729] flash_f2_get_busy_status():  FuncExit
+[2.729] flash_f2_get_busy_status():  FuncEntry
+[2.730] flash_f2_get_busy_status():  FuncExit
+[2.730] flash_f2_get_busy_status():  FuncEntry
+[2.730] flash_f2_get_busy_status():  FuncExit
+[2.730] flash_f2_get_busy_status():  FuncEntry
+[2.731] flash_f2_get_busy_status():  FuncExit
+[2.731] flash_f2_get_busy_status():  FuncEntry
+[2.731] flash_f2_get_busy_status():  FuncExit
+[2.731] flash_f2_get_busy_status():  FuncEntry
+[2.731] flash_f2_get_busy_status():  FuncExit
+[2.731] flash_f2_get_busy_status():  FuncEntry
+[2.732] flash_f2_get_busy_status():  FuncExit
+[2.732] flash_f2_get_busy_status():  FuncEntry
+[2.732] flash_f2_get_busy_status():  FuncExit
+[2.732] flash_f2_get_busy_status():  FuncEntry
+[2.733] flash_f2_get_busy_status():  FuncExit
+[2.733] flash_f2_get_busy_status():  FuncEntry
+[2.733] flash_f2_get_busy_status():  FuncExit
+[2.733] flash_f2_get_busy_status():  FuncEntry
+[2.733] flash_f2_get_busy_status():  FuncExit
+[2.733] flash_f2_get_busy_status():  FuncEntry
+[2.734] flash_f2_get_busy_status():  FuncExit
+[2.734] flash_f2_get_busy_status():  FuncEntry
+[2.734] flash_f2_get_busy_status():  FuncExit
+[2.734] flash_f2_get_busy_status():  FuncEntry
+[2.734] flash_f2_get_busy_status():  FuncExit
+[2.734] flash_f2_get_busy_status():  FuncEntry
+[2.735] flash_f2_get_busy_status():  FuncExit
+[2.735] flash_f2_get_busy_status():  FuncEntry
+[2.735] flash_f2_get_busy_status():  FuncExit
+[2.735] flash_f2_get_busy_status():  FuncEntry
+[2.735] flash_f2_get_busy_status():  FuncExit
+[2.736] flash_f2_get_busy_status():  FuncEntry
+[2.736] flash_f2_get_busy_status():  FuncExit
+[2.736] flash_f2_get_busy_status():  FuncEntry
+[2.736] flash_f2_get_busy_status():  FuncExit
+[2.736] flash_f2_get_busy_status():  FuncEntry
+[2.737] flash_f2_get_busy_status():  FuncExit
+[2.737] flash_f2_get_busy_status():  FuncEntry
+[2.737] flash_f2_get_busy_status():  FuncExit
+[2.737] flash_f2_get_busy_status():  FuncEntry
+[2.737] flash_f2_get_busy_status():  FuncExit
+[2.737] flash_f2_get_busy_status():  FuncEntry
+[2.738] flash_f2_get_busy_status():  FuncExit
+[2.738] flash_f2_get_busy_status():  FuncEntry
+[2.738] flash_f2_get_busy_status():  FuncExit
+[2.738] flash_f2_get_busy_status():  FuncEntry
+[2.738] flash_f2_get_busy_status():  FuncExit
+[2.738] flash_f2_get_busy_status():  FuncEntry
+[2.739] flash_f2_get_busy_status():  FuncExit
+[2.739] flash_f2_get_busy_status():  FuncEntry
+[2.739] flash_f2_get_busy_status():  FuncExit
+[2.739] flash_f2_get_busy_status():  FuncEntry
+[2.740] flash_f2_get_busy_status():  FuncExit
+[2.740] flash_f2_get_busy_status():  FuncEntry
+[2.740] flash_f2_get_busy_status():  FuncExit
+[2.740] flash_f2_get_busy_status():  FuncEntry
+[2.740] flash_f2_get_busy_status():  FuncExit
+[2.740] flash_f2_get_busy_status():  FuncEntry
+[2.741] flash_f2_get_busy_status():  FuncExit
+[2.741] flash_f2_get_busy_status():  FuncEntry
+[2.741] flash_f2_get_busy_status():  FuncExit
+[2.741] flash_f2_get_busy_status():  FuncEntry
+[2.742] flash_f2_get_busy_status():  FuncExit
+[2.742] flash_f2_get_busy_status():  FuncEntry
+[2.742] flash_f2_get_busy_status():  FuncExit
+[2.742] flash_f2_get_busy_status():  FuncEntry
+[2.742] flash_f2_get_busy_status():  FuncExit
+[2.742] flash_f2_get_busy_status():  FuncEntry
+[2.743] flash_f2_get_busy_status():  FuncExit
+[2.743] flash_f2_get_busy_status():  FuncEntry
+[2.743] flash_f2_get_busy_status():  FuncExit
+[2.743] flash_f2_get_busy_status():  FuncEntry
+[2.743] flash_f2_get_busy_status():  FuncExit
+[2.743] flash_f2_get_busy_status():  FuncEntry
+[2.744] flash_f2_get_busy_status():  FuncExit
+[2.744] flash_f2_get_busy_status():  FuncEntry
+[2.744] flash_f2_get_busy_status():  FuncExit
+[2.744] flash_f2_get_busy_status():  FuncEntry
+[2.745] flash_f2_get_busy_status():  FuncExit
+[2.745] flash_f2_get_busy_status():  FuncEntry
+[2.745] flash_f2_get_busy_status():  FuncExit
+[2.745] flash_f2_get_busy_status():  FuncEntry
+[2.745] flash_f2_get_busy_status():  FuncExit
+[2.745] flash_f2_get_busy_status():  FuncEntry
+[2.746] flash_f2_get_busy_status():  FuncExit
+[2.746] flash_f2_get_busy_status():  FuncEntry
+[2.746] flash_f2_get_busy_status():  FuncExit
+[2.746] flash_f2_get_busy_status():  FuncEntry
+[2.746] flash_f2_get_busy_status():  FuncExit
+[2.746] flash_f2_get_busy_status():  FuncEntry
+[2.747] flash_f2_get_busy_status():  FuncExit
+[2.747] flash_f2_get_busy_status():  FuncEntry
+[2.747] flash_f2_get_busy_status():  FuncExit
+[2.747] flash_f2_get_busy_status():  FuncEntry
+[2.747] flash_f2_get_busy_status():  FuncExit
+[2.747] flash_f2_get_busy_status():  FuncEntry
+[2.748] flash_f2_get_busy_status():  FuncExit
+[2.748] flash_f2_get_busy_status():  FuncEntry
+[2.748] flash_f2_get_busy_status():  FuncExit
+[2.748] flash_f2_get_busy_status():  FuncEntry
+[2.749] flash_f2_get_busy_status():  FuncExit
+[2.749] flash_f2_get_busy_status():  FuncEntry
+[2.749] flash_f2_get_busy_status():  FuncExit
+[2.749] flash_f2_get_busy_status():  FuncEntry
+[2.749] flash_f2_get_busy_status():  FuncExit
+[2.749] flash_f2_get_busy_status():  FuncEntry
+[2.750] flash_f2_get_busy_status():  FuncExit
+[2.750] flash_f2_get_busy_status():  FuncEntry
+[2.750] flash_f2_get_busy_status():  FuncExit
+[2.750] flash_f2_get_busy_status():  FuncEntry
+[2.750] flash_f2_get_busy_status():  FuncExit
+[2.750] flash_f2_get_busy_status():  FuncEntry
+[2.751] flash_f2_get_busy_status():  FuncExit
+[2.751] flash_f2_get_busy_status():  FuncEntry
+[2.751] flash_f2_get_busy_status():  FuncExit
+[2.751] flash_f2_get_busy_status():  FuncEntry
+[2.752] flash_f2_get_busy_status():  FuncExit
+[2.752] flash_f2_get_busy_status():  FuncEntry
+[2.752] flash_f2_get_busy_status():  FuncExit
+[2.752] flash_f2_get_busy_status():  FuncEntry
+[2.752] flash_f2_get_busy_status():  FuncExit
+[2.752] flash_f2_get_busy_status():  FuncEntry
+[2.753] flash_f2_get_busy_status():  FuncExit
+[2.753] flash_f2_get_busy_status():  FuncEntry
+[2.753] flash_f2_get_busy_status():  FuncExit
+[2.753] flash_f2_get_busy_status():  FuncEntry
+[2.753] flash_f2_get_busy_status():  FuncExit
+[2.753] flash_f2_get_busy_status():  FuncEntry
+[2.754] flash_f2_get_busy_status():  FuncExit
+[2.754] flash_f2_get_busy_status():  FuncEntry
+[2.754] flash_f2_get_busy_status():  FuncExit
+[2.754] flash_f2_get_busy_status():  FuncEntry
+[2.754] flash_f2_get_busy_status():  FuncExit
+[2.754] flash_f2_get_busy_status():  FuncEntry
+[2.755] flash_f2_get_busy_status():  FuncExit
+[2.755] flash_f2_get_busy_status():  FuncEntry
+[2.755] flash_f2_get_busy_status():  FuncExit
+[2.755] flash_f2_get_busy_status():  FuncEntry
+[2.756] flash_f2_get_busy_status():  FuncExit
+[2.756] flash_f2_get_busy_status():  FuncEntry
+[2.756] flash_f2_get_busy_status():  FuncExit
+[2.756] flash_f2_get_busy_status():  FuncEntry
+[2.756] flash_f2_get_busy_status():  FuncExit
+[2.756] flash_f2_get_busy_status():  FuncEntry
+[2.757] flash_f2_get_busy_status():  FuncExit
+[2.757] flash_f2_get_busy_status():  FuncEntry
+[2.757] flash_f2_get_busy_status():  FuncExit
+[2.757] flash_f2_get_busy_status():  FuncEntry
+[2.757] flash_f2_get_busy_status():  FuncExit
+[2.757] flash_f2_get_busy_status():  FuncEntry
+[2.758] flash_f2_get_busy_status():  FuncExit
+[2.758] flash_f2_get_busy_status():  FuncEntry
+[2.758] flash_f2_get_busy_status():  FuncExit
+[2.758] flash_f2_get_busy_status():  FuncEntry
+[2.759] flash_f2_get_busy_status():  FuncExit
+[2.759] flash_f2_get_busy_status():  FuncEntry
+[2.759] flash_f2_get_busy_status():  FuncExit
+[2.759] flash_f2_get_busy_status():  FuncEntry
+[2.759] flash_f2_get_busy_status():  FuncExit
+[2.759] flash_f2_get_busy_status():  FuncEntry
+[2.760] flash_f2_get_busy_status():  FuncExit
+[2.760] flash_f2_get_busy_status():  FuncEntry
+[2.760] flash_f2_get_busy_status():  FuncExit
+[2.760] flash_f2_get_busy_status():  FuncEntry
+[2.760] flash_f2_get_busy_status():  FuncExit
+[2.760] flash_f2_get_busy_status():  FuncEntry
+[2.761] flash_f2_get_busy_status():  FuncExit
+[2.761] flash_f2_get_busy_status():  FuncEntry
+[2.761] flash_f2_get_busy_status():  FuncExit
+[2.761] flash_f2_get_busy_status():  FuncEntry
+[2.761] flash_f2_get_busy_status():  FuncExit
+[2.761] flash_f2_get_busy_status():  FuncEntry
+[2.762] flash_f2_get_busy_status():  FuncExit
+[2.762] flash_f2_get_busy_status():  FuncEntry
+[2.762] flash_f2_get_busy_status():  FuncExit
+[2.762] flash_f2_get_busy_status():  FuncEntry
+[2.763] flash_f2_get_busy_status():  FuncExit
+[2.763] flash_f2_get_busy_status():  FuncEntry
+[2.763] flash_f2_get_busy_status():  FuncExit
+[2.763] flash_f2_get_busy_status():  FuncEntry
+[2.763] flash_f2_get_busy_status():  FuncExit
+[2.763] flash_f2_get_busy_status():  FuncEntry
+[2.764] flash_f2_get_busy_status():  FuncExit
+[2.764] flash_f2_get_busy_status():  FuncEntry
+[2.764] flash_f2_get_busy_status():  FuncExit
+[2.764] flash_f2_get_busy_status():  FuncEntry
+[2.764] flash_f2_get_busy_status():  FuncExit
+[2.764] flash_f2_get_busy_status():  FuncEntry
+[2.765] flash_f2_get_busy_status():  FuncExit
+[2.765] flash_f2_get_busy_status():  FuncEntry
+[2.765] flash_f2_get_busy_status():  FuncExit
+[2.765] flash_f2_get_busy_status():  FuncEntry
+[2.766] flash_f2_get_busy_status():  FuncExit
+[2.766] flash_f2_get_busy_status():  FuncEntry
+[2.766] flash_f2_get_busy_status():  FuncExit
+[2.766] flash_f2_get_busy_status():  FuncEntry
+[2.766] flash_f2_get_busy_status():  FuncExit
+[2.766] flash_f2_get_busy_status():  FuncEntry
+[2.767] flash_f2_get_busy_status():  FuncExit
+[2.767] flash_f2_get_busy_status():  FuncEntry
+[2.767] flash_f2_get_busy_status():  FuncExit
+[2.767] flash_f2_get_busy_status():  FuncEntry
+[2.767] flash_f2_get_busy_status():  FuncExit
+[2.767] flash_f2_get_busy_status():  FuncEntry
+[2.768] flash_f2_get_busy_status():  FuncExit
+[2.768] flash_f2_get_busy_status():  FuncEntry
+[2.768] flash_f2_get_busy_status():  FuncExit
+[2.768] flash_f2_get_busy_status():  FuncEntry
+[2.769] flash_f2_get_busy_status():  FuncExit
+[2.769] flash_f2_get_busy_status():  FuncEntry
+[2.769] flash_f2_get_busy_status():  FuncExit
+[2.769] flash_f2_get_busy_status():  FuncEntry
+[2.769] flash_f2_get_busy_status():  FuncExit
+[2.769] flash_f2_get_busy_status():  FuncEntry
+[2.770] flash_f2_get_busy_status():  FuncExit
+[2.770] flash_f2_get_busy_status():  FuncEntry
+[2.770] flash_f2_get_busy_status():  FuncExit
+[2.770] flash_f2_get_busy_status():  FuncEntry
+[2.770] flash_f2_get_busy_status():  FuncExit
+[2.770] flash_f2_get_busy_status():  FuncEntry
+[2.771] flash_f2_get_busy_status():  FuncExit
+[2.771] flash_f2_get_busy_status():  FuncEntry
+[2.771] flash_f2_get_busy_status():  FuncExit
+[2.771] flash_f2_get_busy_status():  FuncEntry
+[2.771] flash_f2_get_busy_status():  FuncExit
+[2.771] flash_f2_get_busy_status():  FuncEntry
+[2.772] flash_f2_get_busy_status():  FuncExit
+[2.772] flash_f2_get_busy_status():  FuncEntry
+[2.772] flash_f2_get_busy_status():  FuncExit
+[2.772] flash_f2_get_busy_status():  FuncEntry
+[2.773] flash_f2_get_busy_status():  FuncExit
+[2.773] flash_f2_get_busy_status():  FuncEntry
+[2.773] flash_f2_get_busy_status():  FuncExit
+[2.773] flash_f2_get_busy_status():  FuncEntry
+[2.773] flash_f2_get_busy_status():  FuncExit
+[2.773] flash_f2_get_busy_status():  FuncEntry
+[2.774] flash_f2_get_busy_status():  FuncExit
+[2.774] flash_f2_get_busy_status():  FuncEntry
+[2.774] flash_f2_get_busy_status():  FuncExit
+[2.774] flash_f2_get_busy_status():  FuncEntry
+[2.774] flash_f2_get_busy_status():  FuncExit
+[2.774] flash_f2_get_busy_status():  FuncEntry
+[2.775] flash_f2_get_busy_status():  FuncExit
+[2.775] flash_f2_get_busy_status():  FuncEntry
+[2.775] flash_f2_get_busy_status():  FuncExit
+[2.775] flash_f2_get_busy_status():  FuncEntry
+[2.776] flash_f2_get_busy_status():  FuncExit
+[2.776] flash_f2_get_busy_status():  FuncEntry
+[2.776] flash_f2_get_busy_status():  FuncExit
+[2.776] flash_f2_get_busy_status():  FuncEntry
+[2.776] flash_f2_get_busy_status():  FuncExit
+[2.776] flash_f2_get_busy_status():  FuncEntry
+[2.777] flash_f2_get_busy_status():  FuncExit
+[2.777] flash_f2_get_busy_status():  FuncEntry
+[2.777] flash_f2_get_busy_status():  FuncExit
+[2.777] flash_f2_get_busy_status():  FuncEntry
+[2.778] flash_f2_get_busy_status():  FuncExit
+[2.778] flash_f2_get_busy_status():  FuncEntry
+[2.778] flash_f2_get_busy_status():  FuncExit
+[2.778] flash_f2_get_busy_status():  FuncEntry
+[2.778] flash_f2_get_busy_status():  FuncExit
+[2.778] flash_f2_get_busy_status():  FuncEntry
+[2.779] flash_f2_get_busy_status():  FuncExit
+[2.779] flash_f2_get_busy_status():  FuncEntry
+[2.779] flash_f2_get_busy_status():  FuncExit
+[2.779] flash_f2_get_busy_status():  FuncEntry
+[2.779] flash_f2_get_busy_status():  FuncExit
+[2.779] flash_f2_get_busy_status():  FuncEntry
+[2.780] flash_f2_get_busy_status():  FuncExit
+[2.780] flash_f2_get_busy_status():  FuncEntry
+[2.780] flash_f2_get_busy_status():  FuncExit
+[2.780] flash_f2_get_busy_status():  FuncEntry
+[2.780] flash_f2_get_busy_status():  FuncExit
+[2.780] flash_f2_get_busy_status():  FuncEntry
+[2.781] flash_f2_get_busy_status():  FuncExit
+[2.781] flash_f2_wait_for_last_operation():  FuncExit
+[2.782] get_f2_flash_error_status():  FuncEntry
+[2.782] flash_f2_wait_for_last_operation():  FuncEntry
+[2.782] flash_f2_get_busy_status():  FuncEntry
+[2.782] flash_f2_get_busy_status():  FuncExit
+[2.782] flash_f2_wait_for_last_operation():  FuncExit
+[2.783] get_f2_flash_error_status():  FuncExit
+[2.783] lock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[2.783] flash_f2_wait_for_last_operation():  FuncEntry
+[2.783] flash_f2_get_busy_status():  FuncEntry
+[2.783] flash_f2_get_busy_status():  FuncExit
+[2.783] flash_f2_wait_for_last_operation():  FuncExit
+[2.784] lock_flash_f2_prg_and_erase_ctrler():  FuncExit
+[2.785] handleFlashPacket():  Flash write: Address= 0x8000000, Length=392 
+[2.785] program_flash_memory():  FuncEntry
+[2.785] unlock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[2.785] flash_f2_wait_for_last_operation():  FuncEntry
+[2.785] flash_f2_get_busy_status():  FuncEntry
+[2.785] flash_f2_get_busy_status():  FuncExit
+[2.785] flash_f2_wait_for_last_operation():  FuncExit
+[2.786] flash_f2_wait_for_last_operation():  FuncEntry
+[2.787] flash_f2_get_busy_status():  FuncEntry
+[2.787] flash_f2_get_busy_status():  FuncExit
+[2.787] flash_f2_wait_for_last_operation():  FuncExit
+[2.788] stm32_f2_program_flash_memory_debug_write_byte():  FuncEntry
+[2.788] unlock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[2.788] flash_f2_wait_for_last_operation():  FuncEntry
+[2.788] flash_f2_get_busy_status():  FuncEntry
+[2.788] flash_f2_get_busy_status():  FuncExit
+[2.788] flash_f2_wait_for_last_operation():  FuncExit
+[2.788] unlock_flash_f2_prg_and_erase_ctrler():  STM32 device: flash controller is unlocked
+[2.788] flash_f2_wait_for_last_operation():  FuncEntry
+[2.788] flash_f2_get_busy_status():  FuncEntry
+[2.789] flash_f2_get_busy_status():  FuncExit
+[2.789] flash_f2_wait_for_last_operation():  FuncExit
+[2.789] flash_f2_wait_for_last_operation():  FuncEntry
+[2.789] flash_f2_get_busy_status():  FuncEntry
+[2.789] flash_f2_get_busy_status():  FuncExit
+[2.789] flash_f2_wait_for_last_operation():  FuncExit
+[2.804]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000000
+[2.819]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000040
+[2.834]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000080
+[2.848]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80000c0
+[2.863]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000100
+[2.878]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000140
+[2.881] lock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[2.881] flash_f2_wait_for_last_operation():  FuncEntry
+[2.881] flash_f2_get_busy_status():  FuncEntry
+[2.881] flash_f2_get_busy_status():  FuncExit
+[2.881] flash_f2_wait_for_last_operation():  FuncExit
+[2.883] lock_flash_f2_prg_and_erase_ctrler():  FuncExit
+[2.886]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: flash programming successful 0x8000000 
+[2.886] stm32_f2_program_flash_memory_debug_write_byte():  FuncExit
+[2.886] handleFlashPacket():  Flash write completed in 0.101000 seconds, 3.790223kB/s
+[2.887] handleFlashPacket():  Flash write: Address= 0x8000188, Length=2984 
+[2.887] program_flash_memory():  FuncEntry
+[2.887] unlock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[2.887] flash_f2_wait_for_last_operation():  FuncEntry
+[2.887] flash_f2_get_busy_status():  FuncEntry
+[2.887] flash_f2_get_busy_status():  FuncExit
+[2.887] flash_f2_wait_for_last_operation():  FuncExit
+[2.889] flash_f2_wait_for_last_operation():  FuncEntry
+[2.889] flash_f2_get_busy_status():  FuncEntry
+[2.889] flash_f2_get_busy_status():  FuncExit
+[2.889] flash_f2_wait_for_last_operation():  FuncExit
+[2.890] stm32_f2_program_flash_memory_debug_write_byte():  FuncEntry
+[2.890] unlock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[2.890] flash_f2_wait_for_last_operation():  FuncEntry
+[2.890] flash_f2_get_busy_status():  FuncEntry
+[2.890] flash_f2_get_busy_status():  FuncExit
+[2.890] flash_f2_wait_for_last_operation():  FuncExit
+[2.890] unlock_flash_f2_prg_and_erase_ctrler():  STM32 device: flash controller is unlocked
+[2.890] flash_f2_wait_for_last_operation():  FuncEntry
+[2.890] flash_f2_get_busy_status():  FuncEntry
+[2.891] flash_f2_get_busy_status():  FuncExit
+[2.891] flash_f2_wait_for_last_operation():  FuncExit
+[2.891] flash_f2_wait_for_last_operation():  FuncEntry
+[2.891] flash_f2_get_busy_status():  FuncEntry
+[2.891] flash_f2_get_busy_status():  FuncExit
+[2.891] flash_f2_wait_for_last_operation():  FuncExit
+[2.907]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000188
+[2.922]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80001c8
+[2.936]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000208
+[2.951]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000248
+[2.966]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000288
+[2.980]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80002c8
+[2.995]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000308
+[3.010]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000348
+[3.025]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000388
+[3.040]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80003c8
+[3.056]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000408
+[3.071]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000448
+[3.086]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000488
+[3.101]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80004c8
+[3.116]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000508
+[3.131]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000548
+[3.146]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000588
+[3.161]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80005c8
+[3.177]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000608
+[3.192]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000648
+[3.208]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000688
+[3.224]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80006c8
+[3.239]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000708
+[3.254]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000748
+[3.270]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000788
+[3.285]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80007c8
+[3.301]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000808
+[3.315]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000848
+[3.331]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000888
+[3.347]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80008c8
+[3.362]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000908
+[3.378]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000948
+[3.393]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000988
+[3.409]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80009c8
+[3.425]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000a08
+[3.441]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000a48
+[3.456]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000a88
+[3.471]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000ac8
+[3.487]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000b08
+[3.502]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000b48
+[3.518]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000b88
+[3.533]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000bc8
+[3.549]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000c08
+[3.564]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000c48
+[3.580]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000c88
+[3.596]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000cc8
+[3.607] lock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[3.608] flash_f2_wait_for_last_operation():  FuncEntry
+[3.608] flash_f2_get_busy_status():  FuncEntry
+[3.609] flash_f2_get_busy_status():  FuncExit
+[3.609] flash_f2_wait_for_last_operation():  FuncExit
+[3.612] lock_flash_f2_prg_and_erase_ctrler():  FuncExit
+[3.643]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: flash programming successful 0x8000188 
+[3.643] stm32_f2_program_flash_memory_debug_write_byte():  FuncExit
+[3.644] handleFlashPacket():  Flash write completed in 0.757000 seconds, 3.849488kB/s
+[3.645] handleFlashPacket():  Flash write: Address= 0x8000d30, Length=2360 
+[3.645] program_flash_memory():  FuncEntry
+[3.645] unlock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[3.645] flash_f2_wait_for_last_operation():  FuncEntry
+[3.645] flash_f2_get_busy_status():  FuncEntry
+[3.646] flash_f2_get_busy_status():  FuncExit
+[3.646] flash_f2_wait_for_last_operation():  FuncExit
+[3.650] flash_f2_wait_for_last_operation():  FuncEntry
+[3.650] flash_f2_get_busy_status():  FuncEntry
+[3.651] flash_f2_get_busy_status():  FuncExit
+[3.651] flash_f2_wait_for_last_operation():  FuncExit
+[3.653] stm32_f2_program_flash_memory_debug_write_byte():  FuncEntry
+[3.653] unlock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[3.653] flash_f2_wait_for_last_operation():  FuncEntry
+[3.653] flash_f2_get_busy_status():  FuncEntry
+[3.654] flash_f2_get_busy_status():  FuncExit
+[3.654] flash_f2_wait_for_last_operation():  FuncExit
+[3.655] unlock_flash_f2_prg_and_erase_ctrler():  STM32 device: flash controller is unlocked
+[3.655] flash_f2_wait_for_last_operation():  FuncEntry
+[3.655] flash_f2_get_busy_status():  FuncEntry
+[3.656] flash_f2_get_busy_status():  FuncExit
+[3.656] flash_f2_wait_for_last_operation():  FuncExit
+[3.656] flash_f2_wait_for_last_operation():  FuncEntry
+[3.656] flash_f2_get_busy_status():  FuncEntry
+[3.657] flash_f2_get_busy_status():  FuncExit
+[3.657] flash_f2_wait_for_last_operation():  FuncExit
+[3.674]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000d30
+[3.690]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000d70
+[3.707]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000db0
+[3.722]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000df0
+[3.738]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000e30
+[3.753]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000e70
+[3.768]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000eb0
+[3.784]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000ef0
+[3.800]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000f30
+[3.815]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000f70
+[3.830]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000fb0
+[3.845]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8000ff0
+[3.861]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8001030
+[3.877]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8001070
+[3.893]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80010b0
+[3.908]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80010f0
+[3.924]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8001130
+[3.940]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8001170
+[3.956]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80011b0
+[3.971]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80011f0
+[3.987]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8001230
+[4.002]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8001270
+[4.018]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80012b0
+[4.033]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80012f0
+[4.049]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8001330
+[4.065]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8001370
+[4.080]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80013b0
+[4.096]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80013f0
+[4.111]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8001430
+[4.126]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8001470
+[4.142]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80014b0
+[4.158]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80014f0
+[4.174]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8001530
+[4.190]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 8001570
+[4.205]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80015b0
+[4.221]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: programmed flash memory at address 80015f0
+[4.237] lock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[4.237] flash_f2_wait_for_last_operation():  FuncEntry
+[4.238] flash_f2_get_busy_status():  FuncEntry
+[4.239] flash_f2_get_busy_status():  FuncExit
+[4.239] flash_f2_wait_for_last_operation():  FuncExit
+[4.242] lock_flash_f2_prg_and_erase_ctrler():  FuncExit
+[4.267]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: flash programming successful 0x8000d30 
+[4.267] stm32_f2_program_flash_memory_debug_write_byte():  FuncExit
+[4.268] handleFlashPacket():  Flash write completed in 0.623000 seconds, 3.699338kB/s
+[4.269] handleFlashPacket():  Flash write: Address= 0x8001668, Length=56 
+[4.269] program_flash_memory():  FuncEntry
+[4.269] unlock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[4.269] flash_f2_wait_for_last_operation():  FuncEntry
+[4.269] flash_f2_get_busy_status():  FuncEntry
+[4.270] flash_f2_get_busy_status():  FuncExit
+[4.270] flash_f2_wait_for_last_operation():  FuncExit
+[4.273] flash_f2_wait_for_last_operation():  FuncEntry
+[4.273] flash_f2_get_busy_status():  FuncEntry
+[4.275] flash_f2_get_busy_status():  FuncExit
+[4.275] flash_f2_wait_for_last_operation():  FuncExit
+[4.277] stm32_f2_program_flash_memory_debug_write_byte():  FuncEntry
+[4.277] unlock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[4.277] flash_f2_wait_for_last_operation():  FuncEntry
+[4.277] flash_f2_get_busy_status():  FuncEntry
+[4.278] flash_f2_get_busy_status():  FuncExit
+[4.278] flash_f2_wait_for_last_operation():  FuncExit
+[4.279] unlock_flash_f2_prg_and_erase_ctrler():  STM32 device: flash controller is unlocked
+[4.279] flash_f2_wait_for_last_operation():  FuncEntry
+[4.279] flash_f2_get_busy_status():  FuncEntry
+[4.280] flash_f2_get_busy_status():  FuncExit
+[4.280] flash_f2_wait_for_last_operation():  FuncExit
+[4.280] flash_f2_wait_for_last_operation():  FuncEntry
+[4.280] flash_f2_get_busy_status():  FuncEntry
+[4.282] flash_f2_get_busy_status():  FuncExit
+[4.282] flash_f2_wait_for_last_operation():  FuncExit
+[4.300] lock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[4.300] flash_f2_wait_for_last_operation():  FuncEntry
+[4.300] flash_f2_get_busy_status():  FuncEntry
+[4.301] flash_f2_get_busy_status():  FuncExit
+[4.301] flash_f2_wait_for_last_operation():  FuncExit
+[4.303] lock_flash_f2_prg_and_erase_ctrler():  FuncExit
+[4.305]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: flash programming successful 0x8001668 
+[4.305] stm32_f2_program_flash_memory_debug_write_byte():  FuncExit
+[4.305] handleFlashPacket():  Flash write completed in 0.036000 seconds, 1.519097kB/s
+[4.306] handleFlashPacket():  Flash write: Address= 0x80016a0, Length=8 
+[4.306] program_flash_memory():  FuncEntry
+[4.306] unlock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[4.306] flash_f2_wait_for_last_operation():  FuncEntry
+[4.306] flash_f2_get_busy_status():  FuncEntry
+[4.307] flash_f2_get_busy_status():  FuncExit
+[4.307] flash_f2_wait_for_last_operation():  FuncExit
+[4.311] flash_f2_wait_for_last_operation():  FuncEntry
+[4.311] flash_f2_get_busy_status():  FuncEntry
+[4.312] flash_f2_get_busy_status():  FuncExit
+[4.312] flash_f2_wait_for_last_operation():  FuncExit
+[4.313] stm32_f2_program_flash_memory_debug_write_byte():  FuncEntry
+[4.313] unlock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[4.314] flash_f2_wait_for_last_operation():  FuncEntry
+[4.314] flash_f2_get_busy_status():  FuncEntry
+[4.314] flash_f2_get_busy_status():  FuncExit
+[4.315] flash_f2_wait_for_last_operation():  FuncExit
+[4.315] unlock_flash_f2_prg_and_erase_ctrler():  STM32 device: flash controller is unlocked
+[4.316] flash_f2_wait_for_last_operation():  FuncEntry
+[4.316] flash_f2_get_busy_status():  FuncEntry
+[4.316] flash_f2_get_busy_status():  FuncExit
+[4.317] flash_f2_wait_for_last_operation():  FuncExit
+[4.317] flash_f2_wait_for_last_operation():  FuncEntry
+[4.317] flash_f2_get_busy_status():  FuncEntry
+[4.318] flash_f2_get_busy_status():  FuncExit
+[4.318] flash_f2_wait_for_last_operation():  FuncExit
+[4.323] lock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[4.324] flash_f2_wait_for_last_operation():  FuncEntry
+[4.324] flash_f2_get_busy_status():  FuncEntry
+[4.325] flash_f2_get_busy_status():  FuncExit
+[4.325] flash_f2_wait_for_last_operation():  FuncExit
+[4.329] lock_flash_f2_prg_and_erase_ctrler():  FuncExit
+[4.329]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: flash programming successful 0x80016a0 
+[4.329] stm32_f2_program_flash_memory_debug_write_byte():  FuncExit
+[4.330] handleFlashPacket():  Flash write completed in 0.023000 seconds, 0.339674kB/s
+[4.331] handleFlashPacket():  Flash write: Address= 0x80016a8, Length=4 
+[4.331] program_flash_memory():  FuncEntry
+[4.331] unlock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[4.331] flash_f2_wait_for_last_operation():  FuncEntry
+[4.331] flash_f2_get_busy_status():  FuncEntry
+[4.333] flash_f2_get_busy_status():  FuncExit
+[4.333] flash_f2_wait_for_last_operation():  FuncExit
+[4.337] flash_f2_wait_for_last_operation():  FuncEntry
+[4.337] flash_f2_get_busy_status():  FuncEntry
+[4.338] flash_f2_get_busy_status():  FuncExit
+[4.338] flash_f2_wait_for_last_operation():  FuncExit
+[4.340] stm32_f2_program_flash_memory_debug_write_byte():  FuncEntry
+[4.340] unlock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[4.341] flash_f2_wait_for_last_operation():  FuncEntry
+[4.341] flash_f2_get_busy_status():  FuncEntry
+[4.342] flash_f2_get_busy_status():  FuncExit
+[4.342] flash_f2_wait_for_last_operation():  FuncExit
+[4.343] unlock_flash_f2_prg_and_erase_ctrler():  STM32 device: flash controller is unlocked
+[4.343] flash_f2_wait_for_last_operation():  FuncEntry
+[4.344] flash_f2_get_busy_status():  FuncEntry
+[4.345] flash_f2_get_busy_status():  FuncExit
+[4.345] flash_f2_wait_for_last_operation():  FuncExit
+[4.345] flash_f2_wait_for_last_operation():  FuncEntry
+[4.345] flash_f2_get_busy_status():  FuncEntry
+[4.346] flash_f2_get_busy_status():  FuncExit
+[4.346] flash_f2_wait_for_last_operation():  FuncExit
+[4.351] lock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[4.352] flash_f2_wait_for_last_operation():  FuncEntry
+[4.352] flash_f2_get_busy_status():  FuncEntry
+[4.353] flash_f2_get_busy_status():  FuncExit
+[4.353] flash_f2_wait_for_last_operation():  FuncExit
+[4.356] lock_flash_f2_prg_and_erase_ctrler():  FuncExit
+[4.357]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: flash programming successful 0x80016a8 
+[4.357] stm32_f2_program_flash_memory_debug_write_byte():  FuncExit
+[4.357] handleFlashPacket():  Flash write completed in 0.027000 seconds, 0.144676kB/s
+[4.358] handleFlashPacket():  Flash write: Address= 0x80016ac, Length=4 
+[4.358] program_flash_memory():  FuncEntry
+[4.359] unlock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[4.359] flash_f2_wait_for_last_operation():  FuncEntry
+[4.359] flash_f2_get_busy_status():  FuncEntry
+[4.360] flash_f2_get_busy_status():  FuncExit
+[4.360] flash_f2_wait_for_last_operation():  FuncExit
+[4.363] flash_f2_wait_for_last_operation():  FuncEntry
+[4.363] flash_f2_get_busy_status():  FuncEntry
+[4.364] flash_f2_get_busy_status():  FuncExit
+[4.364] flash_f2_wait_for_last_operation():  FuncExit
+[4.366] stm32_f2_program_flash_memory_debug_write_byte():  FuncEntry
+[4.366] unlock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[4.366] flash_f2_wait_for_last_operation():  FuncEntry
+[4.366] flash_f2_get_busy_status():  FuncEntry
+[4.367] flash_f2_get_busy_status():  FuncExit
+[4.367] flash_f2_wait_for_last_operation():  FuncExit
+[4.368] unlock_flash_f2_prg_and_erase_ctrler():  STM32 device: flash controller is unlocked
+[4.368] flash_f2_wait_for_last_operation():  FuncEntry
+[4.368] flash_f2_get_busy_status():  FuncEntry
+[4.370] flash_f2_get_busy_status():  FuncExit
+[4.370] flash_f2_wait_for_last_operation():  FuncExit
+[4.370] flash_f2_wait_for_last_operation():  FuncEntry
+[4.370] flash_f2_get_busy_status():  FuncEntry
+[4.371] flash_f2_get_busy_status():  FuncExit
+[4.371] flash_f2_wait_for_last_operation():  FuncExit
+[4.376] lock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[4.376] flash_f2_wait_for_last_operation():  FuncEntry
+[4.376] flash_f2_get_busy_status():  FuncEntry
+[4.377] flash_f2_get_busy_status():  FuncExit
+[4.377] flash_f2_wait_for_last_operation():  FuncExit
+[4.380] lock_flash_f2_prg_and_erase_ctrler():  FuncExit
+[4.381]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: flash programming successful 0x80016ac 
+[4.381] stm32_f2_program_flash_memory_debug_write_byte():  FuncExit
+[4.381] handleFlashPacket():  Flash write completed in 0.023000 seconds, 0.169837kB/s
+[4.382] handleFlashPacket():  Flash write: Address= 0x80016b0, Length=8 
+[4.382] program_flash_memory():  FuncEntry
+[4.383] unlock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[4.383] flash_f2_wait_for_last_operation():  FuncEntry
+[4.383] flash_f2_get_busy_status():  FuncEntry
+[4.384] flash_f2_get_busy_status():  FuncExit
+[4.384] flash_f2_wait_for_last_operation():  FuncExit
+[4.388] flash_f2_wait_for_last_operation():  FuncEntry
+[4.388] flash_f2_get_busy_status():  FuncEntry
+[4.388] flash_f2_get_busy_status():  FuncExit
+[4.389] flash_f2_wait_for_last_operation():  FuncExit
+[4.391] stm32_f2_program_flash_memory_debug_write_byte():  FuncEntry
+[4.391] unlock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[4.391] flash_f2_wait_for_last_operation():  FuncEntry
+[4.391] flash_f2_get_busy_status():  FuncEntry
+[4.392] flash_f2_get_busy_status():  FuncExit
+[4.392] flash_f2_wait_for_last_operation():  FuncExit
+[4.393] unlock_flash_f2_prg_and_erase_ctrler():  STM32 device: flash controller is unlocked
+[4.393] flash_f2_wait_for_last_operation():  FuncEntry
+[4.393] flash_f2_get_busy_status():  FuncEntry
+[4.394] flash_f2_get_busy_status():  FuncExit
+[4.395] flash_f2_wait_for_last_operation():  FuncExit
+[4.395] flash_f2_wait_for_last_operation():  FuncEntry
+[4.395] flash_f2_get_busy_status():  FuncEntry
+[4.396] flash_f2_get_busy_status():  FuncExit
+[4.396] flash_f2_wait_for_last_operation():  FuncExit
+[4.403] lock_flash_f2_prg_and_erase_ctrler():  FuncEntry
+[4.403] flash_f2_wait_for_last_operation():  FuncEntry
+[4.403] flash_f2_get_busy_status():  FuncEntry
+[4.404] flash_f2_get_busy_status():  FuncExit
+[4.404] flash_f2_wait_for_last_operation():  FuncExit
+[4.407] lock_flash_f2_prg_and_erase_ctrler():  FuncExit
+[4.408]  stm32_f2_program_flash_memory_debug_write_byte():  STM32 device: flash programming successful 0x80016b0 
+[4.408] stm32_f2_program_flash_memory_debug_write_byte():  FuncExit
+[4.408] handleFlashPacket():  Flash write completed in 0.026000 seconds, 0.300481kB/s
+[4.412] STM32_AppReset():  Enter STM32_AppReset() function 
+[4.524] STM32_AppReset():  NVIC_DFSR_REG = 0x00000009
+[4.525] STM32_AppReset():  NVIC_CFGFSR_REG = 0x00000100
+[4.527] STM32_AppReset():  XPSR = 0x00000003
+[4.527] STM32_AppReset():  XPSR missing T-bit, fixing
+[4.529] STM32_AppReset():  after setting XPSR = 0x01000003
+[4.533] handlePacket():  Reading 0x4 bytes of memory from addr 0x80015b4 
+[4.535] handlePacket():  Reading 0x2 bytes of memory from addr 0x80014aa 
+[4.536] handlePacket():  Reading 0x4 bytes of memory from addr 0x80014c0 
+[4.539] handlePacket():  Reading 0x2 bytes of memory from addr 0x80014aa 
+[4.541] handlePacket():  Reading 0x2 bytes of memory from addr 0x80014a0 
+[4.544] handlePacket():  Reading 0x2 bytes of memory from addr 0x80014a0 
+[4.547] handlePacket():  Reading 0x2 bytes of memory from addr 0x8000f70 
+[4.549] handlePacket():  Reading 0x2 bytes of memory from addr 0x8000f72 
+[4.552] handlePacket():  Reading 0x2 bytes of memory from addr 0x8001370 
+[4.554] handlePacket():  Reading 0x4 bytes of memory from addr 0x80013c4 
+[4.556] handlePacket():  Reading 0x2 bytes of memory from addr 0x8001378 
+[4.558] handlePacket():  Reading 0x2 bytes of memory from addr 0x800145a 
+[4.560] handlePacket():  Reading 0x2 bytes of memory from addr 0x800146a 
+[4.565] handlePacket():  Reading 0x4 bytes of memory from addr 0xe0042004 
+[4.580] handlePacket():  Reading 0x4 bytes of memory from addr 0x80015b4 
+[4.591] performContinue():  TraceCaptureStart and SWV event set to APP_TRUE 
+[4.608] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[4.613] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000002 
+[4.614] handleStopReply():  ST_LINK Halt Reason break point hit 
+ 
+[4.628] handlePacket():  Reading 0x4 bytes of memory from addr 0x8001378 
+[5.620] handlePacket():  Reading 0x40 bytes of memory from addr 0x8001340 
+[5.626] handlePacket():  Reading 0x40 bytes of memory from addr 0x8001380 
+[15.332] performStep():  TraceCaptureStart and SWV event set to APP_TRUE 
+[15.352] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[15.358] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000001 
+[15.358] handleStopReply():  ST_LINK Halt Reason halt requested by NVIC, including step 
+ 
+[15.372] handlePacket():  Reading 0x4 bytes of memory from addr 0x8000500 
+[15.373] handlePacket():  Reading 0x4 bytes of memory from addr 0x800137c 
+[15.375] handlePacket():  Reading 0x2 bytes of memory from addr 0x800137c 
+[15.381] performContinue():  TraceCaptureStart and SWV event set to APP_TRUE 
+[15.397] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[15.403] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000003 
+[15.405] handleStopReply():  ST_LINK Halt Reason break point hit 
+ 
+[15.418] handlePacket():  Reading 0x4 bytes of memory from addr 0x800137c 
+[16.667] performStep():  TraceCaptureStart and SWV event set to APP_TRUE 
+[16.687] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[16.694] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000001 
+[16.694] handleStopReply():  ST_LINK Halt Reason halt requested by NVIC, including step 
+ 
+[16.707] handlePacket():  Reading 0x4 bytes of memory from addr 0x80012dc 
+[16.709] handlePacket():  Reading 0x4 bytes of memory from addr 0x8001380 
+[16.711] handlePacket():  Reading 0x2 bytes of memory from addr 0x8001380 
+[16.714] performContinue():  TraceCaptureStart and SWV event set to APP_TRUE 
+[16.730] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[16.736] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000003 
+[16.737] handleStopReply():  ST_LINK Halt Reason break point hit 
+ 
+[16.750] handlePacket():  Reading 0x4 bytes of memory from addr 0x8001380 
+[18.584] performStep():  TraceCaptureStart and SWV event set to APP_TRUE 
+[18.603] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[18.611] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000001 
+[18.611] handleStopReply():  ST_LINK Halt Reason halt requested by NVIC, including step 
+ 
+[18.624] handlePacket():  Reading 0x4 bytes of memory from addr 0x800121c 
+[18.626] handlePacket():  Reading 0x4 bytes of memory from addr 0x8001384 
+[18.627] handlePacket():  Reading 0x2 bytes of memory from addr 0x8001384 
+[18.630] performContinue():  TraceCaptureStart and SWV event set to APP_TRUE 
+[18.645] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[18.652] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000003 
+[18.653] handleStopReply():  ST_LINK Halt Reason break point hit 
+ 
+[18.666] handlePacket():  Reading 0x4 bytes of memory from addr 0x8001384 
+[19.886] performStep():  TraceCaptureStart and SWV event set to APP_TRUE 
+[19.906] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[19.912] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000001 
+[19.912] handleStopReply():  ST_LINK Halt Reason halt requested by NVIC, including step 
+ 
+[19.925] handlePacket():  Reading 0x4 bytes of memory from addr 0x8001514 
+[19.927] handlePacket():  Reading 0x4 bytes of memory from addr 0x8001388 
+[19.928] handlePacket():  Reading 0x2 bytes of memory from addr 0x8001388 
+[19.932] performContinue():  TraceCaptureStart and SWV event set to APP_TRUE 
+[19.948] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[19.955] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000003 
+[19.956] handleStopReply():  ST_LINK Halt Reason break point hit 
+ 
+[19.969] handlePacket():  Reading 0x4 bytes of memory from addr 0x8000f72 
+[19.980] handlePacket():  Reading 0x4 bytes of memory from addr 0x2001ffec 
+[19.982] handlePacket():  Reading 0x4 bytes of memory from addr 0x2001ffec 
+[19.983] handlePacket():  Reading 0x4 bytes of memory from addr 0x8001536 
+[20.032] handlePacket():  Reading 0x4 bytes of memory from addr 0x2001fff4 
+[20.034] handlePacket():  Reading 0x4 bytes of memory from addr 0x2001fff4 
+[20.035] handlePacket():  Reading 0x4 bytes of memory from addr 0x2001ffec 
+[20.037] handlePacket():  Reading 0x4 bytes of memory from addr 0x2001fff4 
+[20.038] handlePacket():  Reading 0x4 bytes of memory from addr 0x8001388 
+[20.051] handlePacket():  Reading 0x40 bytes of memory from addr 0x8000f40 
+[20.063] handlePacket():  Reading 0x40 bytes of memory from addr 0x8000f80 
+[20.287] handlePacket():  Reading 0x40 bytes of memory from addr 0x8000fc0 
+[24.120] handlePacket():  Reading 0x2 bytes of memory from addr 0x8001536 
+[24.125] performStep():  TraceCaptureStart and SWV event set to APP_TRUE 
+[24.142] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[24.147] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000001 
+[24.147] handleStopReply():  ST_LINK Halt Reason halt requested by NVIC, including step 
+ 
+[24.159] handlePacket():  Reading 0x4 bytes of memory from addr 0x8000f74 
+[24.161] performContinue():  TraceCaptureStart and SWV event set to APP_TRUE 
+[24.177] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[24.182] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000003 
+[24.183] handleStopReply():  ST_LINK Halt Reason break point hit 
+ 
+[24.195] handlePacket():  Reading 0x4 bytes of memory from addr 0x8001536 
+[24.220] handlePacket():  Reading 0x40 bytes of memory from addr 0x8001500 
+[24.221] handlePacket():  Reading 0x40 bytes of memory from addr 0x8001540 
+[24.224] handlePacket():  Reading 0x4 bytes of memory from addr 0x2001fff4 
+[24.225] handlePacket():  Reading 0x4 bytes of memory from addr 0x2001fff4 
+[24.226] handlePacket():  Reading 0x4 bytes of memory from addr 0x8001388 
+[25.746] handlePacket():  Reading 0x2 bytes of memory from addr 0x8001388 
+[25.757] performContinue():  TraceCaptureStart and SWV event set to APP_TRUE 
+[25.772] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[25.778] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000002 
+[25.779] handleStopReply():  ST_LINK Halt Reason break point hit 
+ 
+[25.792] handlePacket():  Reading 0x4 bytes of memory from addr 0x8001388 
+[29.124] performStep():  TraceCaptureStart and SWV event set to APP_TRUE 
+[29.142] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[29.148] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000001 
+[29.149] handleStopReply():  ST_LINK Halt Reason halt requested by NVIC, including step 
+ 
+[29.161] handlePacket():  Reading 0x4 bytes of memory from addr 0x800138a 
+[35.012] handlePacket():  Reading 0x40 bytes of memory from addr 0x20000054 
+[35.414] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000054 
+[35.415] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000074 
+[35.417] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000078 
+[35.418] handlePacket():  Reading 0x2 bytes of memory from addr 0x2000007a 
+[35.419] handlePacket():  Reading 0x4 bytes of memory from addr 0x2000007c 
+[35.421] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000080 
+[35.422] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000082 
+[35.423] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000084 
+[35.424] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000088 
+[35.425] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008c 
+[35.426] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008d 
+[35.427] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008e 
+[35.428] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000090 
+[38.026] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011000 
+[38.027] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011004 
+[38.028] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011008 
+[38.029] handlePacket():  Reading 0x4 bytes of memory from addr 0x4001100c 
+[38.030] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011010 
+[38.031] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011014 
+[38.032] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011018 
+[45.035] performStep():  TraceCaptureStart and SWV event set to APP_TRUE 
+[45.053] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[45.058] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000001 
+[45.059] handleStopReply():  ST_LINK Halt Reason halt requested by NVIC, including step 
+ 
+[45.072] handlePacket():  Reading 0x4 bytes of memory from addr 0x800138c 
+[45.398] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000054 
+[45.399] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011000 
+[45.400] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011004 
+[45.401] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011008 
+[45.402] handlePacket():  Reading 0x4 bytes of memory from addr 0x4001100c 
+[45.403] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011010 
+[45.404] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011014 
+[45.405] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011018 
+[45.406] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000074 
+[45.408] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000078 
+[45.409] handlePacket():  Reading 0x2 bytes of memory from addr 0x2000007a 
+[45.410] handlePacket():  Reading 0x4 bytes of memory from addr 0x2000007c 
+[45.411] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000080 
+[45.412] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000082 
+[45.413] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000084 
+[45.414] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000088 
+[45.415] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008c 
+[45.416] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008d 
+[45.417] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008e 
+[45.417] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000090 
+[48.034] performStep():  TraceCaptureStart and SWV event set to APP_TRUE 
+[48.053] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[48.058] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000001 
+[48.059] handleStopReply():  ST_LINK Halt Reason halt requested by NVIC, including step 
+ 
+[48.071] handlePacket():  Reading 0x4 bytes of memory from addr 0x800138e 
+[48.301] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000054 
+[48.302] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011000 
+[48.303] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011004 
+[48.305] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011008 
+[48.306] handlePacket():  Reading 0x4 bytes of memory from addr 0x4001100c 
+[48.308] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011010 
+[48.310] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011014 
+[48.311] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011018 
+[48.313] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000074 
+[48.314] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000078 
+[48.315] handlePacket():  Reading 0x2 bytes of memory from addr 0x2000007a 
+[48.316] handlePacket():  Reading 0x4 bytes of memory from addr 0x2000007c 
+[48.318] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000080 
+[48.319] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000082 
+[48.321] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000084 
+[48.322] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000088 
+[48.324] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008c 
+[48.325] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008d 
+[48.326] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008e 
+[48.328] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000090 
+[55.041] handlePacket():  Reading 0x40 bytes of memory from addr 0x20000054 
+[66.708] performStep():  TraceCaptureStart and SWV event set to APP_TRUE 
+[66.727] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[66.732] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000001 
+[66.733] handleStopReply():  ST_LINK Halt Reason halt requested by NVIC, including step 
+ 
+[66.745] handlePacket():  Reading 0x4 bytes of memory from addr 0x8001390 
+[66.949] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000054 
+[66.950] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011000 
+[66.951] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011004 
+[66.953] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011008 
+[66.954] handlePacket():  Reading 0x4 bytes of memory from addr 0x4001100c 
+[66.955] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011010 
+[66.957] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011014 
+[66.958] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011018 
+[66.959] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000074 
+[66.960] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000078 
+[66.961] handlePacket():  Reading 0x2 bytes of memory from addr 0x2000007a 
+[66.962] handlePacket():  Reading 0x4 bytes of memory from addr 0x2000007c 
+[66.963] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000080 
+[66.965] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000082 
+[66.966] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000084 
+[66.967] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000088 
+[66.968] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008c 
+[66.969] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008d 
+[66.970] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008e 
+[66.972] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000090 
+[68.326] performStep():  TraceCaptureStart and SWV event set to APP_TRUE 
+[68.345] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[68.350] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000001 
+[68.351] handleStopReply():  ST_LINK Halt Reason halt requested by NVIC, including step 
+ 
+[68.363] handlePacket():  Reading 0x4 bytes of memory from addr 0x8001394 
+[68.365] performStep():  TraceCaptureStart and SWV event set to APP_TRUE 
+[68.385] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[68.392] Device_GetHaltReason():  NVIC_DFSR_REG = 0x00000001 
+[68.392] handleStopReply():  ST_LINK Halt Reason halt requested by NVIC, including step 
+ 
+[68.404] handlePacket():  Reading 0x4 bytes of memory from addr 0x8001396 
+[68.640] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000054 
+[68.641] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011000 
+[68.642] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011004 
+[68.644] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011008 
+[68.645] handlePacket():  Reading 0x4 bytes of memory from addr 0x4001100c 
+[68.646] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011010 
+[68.647] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011014 
+[68.649] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011018 
+[68.650] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000074 
+[68.651] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000078 
+[68.653] handlePacket():  Reading 0x2 bytes of memory from addr 0x2000007a 
+[68.654] handlePacket():  Reading 0x4 bytes of memory from addr 0x2000007c 
+[68.655] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000080 
+[68.657] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000082 
+[68.658] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000084 
+[68.659] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000088 
+[68.661] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008c 
+[68.662] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008d 
+[68.663] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008e 
+[68.664] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000090 
+[71.481] handlePacket():  Reading 0x40 bytes of memory from addr 0x20000054 
+[85.647] performContinue():  TraceCaptureStart and SWV event set to APP_TRUE 
+[85.662] Device_GetStatus():  ST_LINK device status: RUN_MODE
+[93.063] parseForPacket():  Received Ctrl-C from the client 
+[93.063] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[93.068] handleSignalPacket():  Device not halted(0), performing Ctrl-C
+[93.069] handleSignalPacket():  Device halted
+[93.083] handlePacket():  Reading 0x4 bytes of memory from addr 0x80013b6 
+[93.100] Device_GetStatus():  ST_LINK device status: HALT_MODE
+[93.446] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000054 
+[93.447] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011000 
+[93.448] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011004 
+[93.450] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011008 
+[93.451] handlePacket():  Reading 0x4 bytes of memory from addr 0x4001100c 
+[93.452] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011010 
+[93.453] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011014 
+[93.454] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011018 
+[93.455] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000074 
+[93.457] handlePacket():  Reading 0x8 bytes of memory from addr 0x8001672 
+[93.460] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000078 
+[93.461] handlePacket():  Reading 0x2 bytes of memory from addr 0x2000007a 
+[93.462] handlePacket():  Reading 0x4 bytes of memory from addr 0x2000007c 
+[93.463] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000080 
+[93.465] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000082 
+[93.466] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000084 
+[93.467] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000088 
+[93.468] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008c 
+[93.469] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008d 
+[93.471] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008e 
+[93.472] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000090 
+[93.528] handlePacket():  Reading 0x40 bytes of memory from addr 0x8001380 
+[93.529] handlePacket():  Reading 0x40 bytes of memory from addr 0x80013c0 
+[97.730] handlePacket():  Reading 0x1 bytes of memory from addr 0x8000fcc 
+[98.152] handlePacket():  Reading 0x1 bytes of memory from addr 0x8000fcc 
+[100.183] handlePacket():  Reading 0x40 bytes of memory from addr 0x20000054 
+[100.185] handlePacket():  Reading 0x8 bytes of memory from addr 0x8001672 
+[104.722] performContinue():  TraceCaptureStart and SWV event set to APP_TRUE 
+[104.740] Device_GetStatus():  ST_LINK device status: RUN_MODE
+[108.005] parseForPacket():  Received Ctrl-C from the client 
+[108.005] handleGDBConnection():  TraceCaptureStart and SWV event set to APP_FALSE 
+[108.011] handleSignalPacket():  Device not halted(0), performing Ctrl-C
+[108.013] handleSignalPacket():  Device halted
+[108.026] handlePacket():  Reading 0x4 bytes of memory from addr 0x80013a2 
+[108.045] Device_GetStatus():  ST_LINK device status: HALT_MODE
+[108.314] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000054 
+[108.316] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011000 
+[108.318] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011004 
+[108.319] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011008 
+[108.320] handlePacket():  Reading 0x4 bytes of memory from addr 0x4001100c 
+[108.322] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011010 
+[108.323] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011014 
+[108.324] handlePacket():  Reading 0x4 bytes of memory from addr 0x40011018 
+[108.326] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000074 
+[108.327] handlePacket():  Reading 0x8 bytes of memory from addr 0x8001672 
+[108.329] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000078 
+[108.331] handlePacket():  Reading 0x2 bytes of memory from addr 0x2000007a 
+[108.332] handlePacket():  Reading 0x4 bytes of memory from addr 0x2000007c 
+[108.334] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000080 
+[108.336] handlePacket():  Reading 0x2 bytes of memory from addr 0x20000082 
+[108.337] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000084 
+[108.338] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000088 
+[108.339] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008c 
+[108.341] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008d 
+[108.342] handlePacket():  Reading 0x1 bytes of memory from addr 0x2000008e 
+[108.344] handlePacket():  Reading 0x4 bytes of memory from addr 0x20000090 
+[108.672] handlePacket():  Reading 0x40 bytes of memory from addr 0x8001380 
+[108.674] handlePacket():  Reading 0x40 bytes of memory from addr 0x80013c0 
+[109.655] handlePacket():  Reading 0x40 bytes of memory from addr 0x20000054 
+[109.658] handlePacket():  Reading 0x8 bytes of memory from addr 0x8001672 
+[140.534] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[141.536] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[142.539] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[143.540] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[144.542] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[145.544] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[146.545] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[147.548] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[148.550] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[149.551] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[150.553] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[151.555] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[152.556] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[153.558] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[154.560] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[155.561] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[156.563] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[157.565] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[158.566] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[159.568] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[160.570] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[161.571] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[162.574] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[163.577] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[164.578] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[165.581] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[166.583] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[167.584] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[168.586] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[169.588] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[170.589] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[171.591] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[172.593] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[173.594] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[174.596] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[175.599] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[176.600] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[177.602] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[178.604] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[179.606] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
+[180.609] Device_GetStatus():  ST_LINK device status: Failed to get status, Target not responding, retrying...
