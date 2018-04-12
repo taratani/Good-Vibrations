@@ -99,7 +99,7 @@ void Configure_PC4(void) {
     EXTI_InitTypeDef EXTI_InitStruct;
     NVIC_InitTypeDef NVIC_InitStruct;
 
-    /* Enable clock for GPIOD */
+    /* Enable clock for GPIOC */
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
     /* Enable clock for SYSCFG */
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
@@ -205,13 +205,13 @@ void TM_LEDS_Init(void) {
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
 
 	/* Alternating functions for pins */
-	GPIO_PinAFConfig(GPIOC, GPIO_PinSource12, GPIO_AF_TIM4);
+	GPIO_PinAFConfig(GPIOC, GPIO_PinSource9, GPIO_AF_TIM3);
 	GPIO_PinAFConfig(GPIOC, GPIO_PinSource13, GPIO_AF_TIM4);
 	GPIO_PinAFConfig(GPIOC, GPIO_PinSource14, GPIO_AF_TIM4);
 	GPIO_PinAFConfig(GPIOC, GPIO_PinSource15, GPIO_AF_TIM4);
 
 	/* Set pins */
-	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_9 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
 	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
     GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF;
@@ -223,7 +223,7 @@ void TM_TIMER_Init(void) {
 	TIM_TimeBaseInitTypeDef TIM_BaseStruct;
 
 	/* Enable clock for TIM4 */
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1, ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
 /*
 	TIM4 is connected to APB1 bus, which has on F407 device 42MHz clock
 	But, timer has internal PLL, which double this frequency for timer, up to 84MHz
@@ -267,9 +267,9 @@ void TM_TIMER_Init(void) {
     TIM_BaseStruct.TIM_ClockDivision = TIM_CKD_DIV1;
     TIM_BaseStruct.TIM_RepetitionCounter = 0;
 	/* Initialize TIM4 */
-    TIM_TimeBaseInit(TIM1, &TIM_BaseStruct);
+    TIM_TimeBaseInit(TIM3, &TIM_BaseStruct);
 	/* Start count on TIM4 */
-    TIM_Cmd(TIM1, ENABLE);
+    TIM_Cmd(TIM3, ENABLE);
 }
 
 void TM_PWM_Init(void) {
@@ -298,20 +298,124 @@ void TM_PWM_Init(void) {
 	Remember: if pulse_length is larger than TIM_Period, you will have output HIGH all the time
 */
 	TIM_OCStruct.TIM_Pulse = 2099; /* 25% duty cycle */
-	TIM_OC1Init(TIM1, &TIM_OCStruct);
-	TIM_OC1PreloadConfig(TIM1, TIM_OCPreload_Enable);
+	TIM_OC1Init(TIM3, &TIM_OCStruct);
+	TIM_OC1PreloadConfig(TIM3, TIM_OCPreload_Enable);
 
 	TIM_OCStruct.TIM_Pulse = 4199; /* 50% duty cycle */
-	TIM_OC2Init(TIM1, &TIM_OCStruct);
-	TIM_OC2PreloadConfig(TIM1, TIM_OCPreload_Enable);
+	TIM_OC2Init(TIM3, &TIM_OCStruct);
+	TIM_OC2PreloadConfig(TIM3, TIM_OCPreload_Enable);
 
 	TIM_OCStruct.TIM_Pulse = 6299; /* 75% duty cycle */
-	TIM_OC3Init(TIM1, &TIM_OCStruct);
-	TIM_OC3PreloadConfig(TIM1, TIM_OCPreload_Enable);
+	TIM_OC3Init(TIM3, &TIM_OCStruct);
+	TIM_OC3PreloadConfig(TIM3, TIM_OCPreload_Enable);
 
-	TIM_OCStruct.TIM_Pulse = 8399; /* 100% duty cycle */
-	TIM_OC4Init(TIM1, &TIM_OCStruct);
-	TIM_OC4PreloadConfig(TIM1, TIM_OCPreload_Enable);
+	TIM_OCStruct.TIM_Pulse = 4199; /* 100% duty cycle */
+	TIM_OC4Init(TIM3, &TIM_OCStruct);
+	TIM_OC4PreloadConfig(TIM3, TIM_OCPreload_Enable);
+}
+
+void init_SPI2(void){
+
+	GPIO_InitTypeDef GPIO_InitStruct;
+	SPI_InitTypeDef SPI_InitStruct;
+
+	// enable clock for used IO pins
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
+
+	/* configure pins used by SPI1
+	 * PB10 = SCK
+	 * PC3 = MOSI
+	 */
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_10;
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF;
+	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
+	GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_3;
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF;
+	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
+	GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+	// connect SPI1 pins to SPI alternate function
+	GPIO_PinAFConfig(GPIOB, GPIO_PinSource10, GPIO_AF_SPI1);
+	GPIO_PinAFConfig(GPIOC, GPIO_PinSource3, GPIO_AF_SPI1);
+
+	// enable clock for used IO pins
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
+
+	/* Configure the RCK pin as an output.
+	 * The data is loaded as output on
+	 * the rising edge of RCK.
+	 */
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_5;
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
+	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
+	GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+	/* Configure the G_Bar pin as an output.
+	 * This needs to be low for the shift
+	 * registers to be enabled
+	 */
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_15;
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
+	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
+	GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+	/* Configure the G_Bar pin as an output.
+	 * This needs to be low for the shift
+	 * registers to be enabled
+	 */
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_14;
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
+	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
+	GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+	//GPIOA->BSRRL |= GPIO_Pin_5; // set PE7 high
+
+	// enable peripheral clock
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2, ENABLE);
+
+	/* configure SPI1 in Mode 0
+	 * CPOL = 0 --> clock is low when idle
+	 * CPHA = 0 --> data is sampled at the first edge
+	 */
+	SPI_InitStruct.SPI_Direction = SPI_Direction_1Line_Tx; // set to full duplex mode, seperate MOSI and MISO lines
+	SPI_InitStruct.SPI_Mode = SPI_Mode_Master;     // transmit in master mode, NSS pin has to be always high
+	SPI_InitStruct.SPI_DataSize = SPI_DataSize_8b; // one packet of data is 8 bits wide
+	SPI_InitStruct.SPI_CPOL = SPI_CPOL_Low;        // clock is low when idle
+	SPI_InitStruct.SPI_CPHA = SPI_CPHA_1Edge;      // data sampled at first edge
+	SPI_InitStruct.SPI_NSS = SPI_NSS_Soft | SPI_NSSInternalSoft_Set; // set the NSS management to internal and pull internal NSS high
+	SPI_InitStruct.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_16; // SPI frequency is APB2 frequency / 4
+	SPI_InitStruct.SPI_FirstBit = SPI_FirstBit_LSB;// data is transmitted MSB first
+	SPI_Init(SPI2, &SPI_InitStruct);
+
+	SPI_Cmd(SPI2, ENABLE); // enable SPI1
+}
+
+/* This function is used to transmit data
+ * with SPI2
+ * 			data --> data to be transmitted
+ * 			returns received value
+ */
+uint8_t SPI2_send(uint8_t data){
+
+	SPI2->DR = data; // write data to be transmitted to the SPI data register
+	while( !(SPI2->SR & SPI_I2S_FLAG_TXE) ); // wait until transmit complete
+	//while( !(SPI1->SR & SPI_I2S_FLAG_RXNE) ); // wait until receive complete
+	while( SPI2->SR & SPI_I2S_FLAG_BSY ); // wait until SPI is not busy anymore
+	return SPI2->DR; // return received data from SPI data register
 }
 
 int main(void) {
@@ -320,17 +424,26 @@ int main(void) {
 
   init_USART1(9600); // initialize USART1 @ 9600 baud
 
-  //init_I2C1(); //
-
   TIM_INT_Init();
+//
+//  /* Init leds */
+//  TM_LEDS_Init();
+//  /* Init timer */
+//  TM_TIMER_Init();
+//  /* Init PWM */
+//  TM_PWM_Init();
 
-  /* Init leds */
-  TM_LEDS_Init();
-  /* Init timer */
-  TM_TIMER_Init();
-  /* Init PWM */
-  TM_PWM_Init();
+  // Vibration motors
+  GPIOC->BSRRL |= GPIO_Pin_15; // set G_Bar to high (disable)
+  GPIOC->BSRRL |= GPIO_Pin_14; // set SR_CLR to high (enable)
+  init_SPI2();
+  GPIOC->BSRRH |= GPIO_Pin_15; // set G_Bar to low (enable)
 
+
+  GPIOA->BSRRH |= GPIO_Pin_5; // set RCK to low
+  SPI2_send(0xFF);  // transmit first 8 bits (far)
+  GPIOA->BSRRL |= GPIO_Pin_5; // set RCK to high
+  //GPIOA->BSRRH |= GPIO_Pin_5; // set RCK to low
 
   while (1){
     /*
@@ -377,6 +490,19 @@ void EXTI4_IRQHandler(void) {
     		if(time < BUTTON_LIMIT){
     			USART_puts(USART1, "hello");
     			state = 2;
+
+    			  /* Init leds */
+    			  TM_LEDS_Init();
+    			  /* Init timer */
+    			  TM_TIMER_Init();
+    			  /* Init PWM */
+    			  TM_PWM_Init();
+
+    			  // Wait
+    			  Delay(500);
+
+    			  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, DISABLE);
+
     		}
     		else{
     			USART_puts(USART1, "quit");
@@ -400,4 +526,7 @@ void EXTI4_IRQHandler(void) {
         EXTI_ClearITPendingBit(EXTI_Line4);
     }
 }
+
+
+
 
