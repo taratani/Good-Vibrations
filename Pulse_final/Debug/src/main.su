@@ -1,0 +1,11 @@
+main.c:15:6:Delay	16	static
+main.c:25:6:init_USART1	48	static
+main.c:96:6:Configure_PC4	32	static
+main.c:155:6:USART_puts	16	static
+main.c:165:6:TIM_INT_Init	24	static
+main.c:201:6:TM_LEDS_Init	16	static
+main.c:222:6:TM_TIMER_Init	24	static
+main.c:275:6:TM_PWM_Init	32	static
+main.c:317:5:main	8	static
+main.c:344:6:USART1_IRQHandler	16	static
+main.c:365:6:EXTI4_IRQHandler	16	static
