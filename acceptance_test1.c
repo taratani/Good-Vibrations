@@ -477,13 +477,6 @@ int main(void) {
 //  /* Init PWM */
   //TM_PWM_Init();
 
-  // device wake up
-  buzz(500000);
-  Delay(BUTTON_LIMIT);
-  buzz(500000);
-  Delay(500000);
-  buzz(500000);
-
   while (1){
     /*
      * You can do whatever you want in here
@@ -558,10 +551,19 @@ void EXTI4_IRQHandler(void) {
 
     			  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, DISABLE);
 
-    			  vibrate(0x00);
-    			  vibrate(0xFF);
-    			  GPIOC->BSRRL |= GPIO_Pin_15; // set G_Bar to high (disable)
-    			  vibrate(0x00);
+    			  Delay(BUTTON_LIMIT * 3);
+
+    			  /* Init leds */
+    			  TM_LEDS_Init();
+    			  /* Init timer */
+    			  TM_TIMER_Init();
+    			  /* Init PWM */
+    			  TM_PWM_Init();
+
+    			  Delay(500000);
+
+    			  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, DISABLE);
+
 
     		}
     		else{
