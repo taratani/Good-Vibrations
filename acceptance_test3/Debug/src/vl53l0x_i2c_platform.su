@@ -1,0 +1,9 @@
+vl53l0x_i2c_platform.c:14:5:VL53L0X_i2c_init	4	static
+vl53l0x_i2c_platform.c:19:9:VL53L0X_write_multi	32	static
+vl53l0x_i2c_platform.c:24:9:VL53L0X_read_multi	32	static
+vl53l0x_i2c_platform.c:29:9:VL53L0X_write_byte	16	static
+vl53l0x_i2c_platform.c:33:9:VL53L0X_write_word	24	static
+vl53l0x_i2c_platform.c:40:9:VL53L0X_write_dword	24	static
+vl53l0x_i2c_platform.c:51:9:VL53L0X_read_byte	16	static
+vl53l0x_i2c_platform.c:55:9:VL53L0X_read_word	24	static
+vl53l0x_i2c_platform.c:68:9:VL53L0X_read_dword	32	static
