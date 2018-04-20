@@ -11,7 +11,7 @@
 
 #define MAX_STRLEN 32 // this is the maximum string length of our string in characters
 #define BUTTON_LIMIT 2500000
-#define NUMBER_OF_DEVICES 2 // number of rangefinders connected
+#define NUMBER_OF_DEVICES 5 // number of rangefinders connected
 #define MAX_ACTIVE_MOTORS 3
 volatile char received_string[MAX_STRLEN+1]; // this will hold the recieved string
 #define SLAVE_ADDRESS 0x29 // the slave address (example)
@@ -620,12 +620,23 @@ void End_Ranging(VL53L0X_Dev_t *MyDevices)
 	}
 }
 
-VL53L0X_Error Init_Rangefinder(VL53L0X_Dev_t *MyDevice, uint8_t address, uint16_t pin)
+VL53L0X_Error Init_Rangefinder(VL53L0X_Dev_t *MyDevice, uint8_t address, uint16_t pin, uint8_t pinPrefix)
 {
 
 	VL53L0X_Error Status = VL53L0X_ERROR_NONE;
 
-	TM_GPIO_SetPinHigh(GPIOA, pin);
+	if(pinPrefix == 1)
+	{
+		TM_GPIO_SetPinHigh(GPIOA, pin);
+	}
+	else if(pinPrefix == 2)
+	{
+		TM_GPIO_SetPinHigh(GPIOB, pin);
+	}
+	else
+	{
+		TM_GPIO_SetPinHigh(GPIOC, pin);
+	}
 	Delay(500);
 
 	if (Status == VL53L0X_ERROR_NONE)
@@ -652,22 +663,40 @@ void Init_RangeArray(VL53L0X_Dev_t *MyDevices)
    uint8_t address;
    uint8_t baseAddress = 0x40;
 
-   uint16_t pins[2] = {GPIO_PIN_12, GPIO_PIN_11};
+   uint16_t a_pins[3] = {GPIO_PIN_12, GPIO_PIN_11, GPIO_PIN_8};
+   uint16_t c_pins[3] = {GPIO_PIN_8, GPIO_PIN_7, GPIO_PIN_6};
 
-   TM_GPIO_Init(GPIOA, (GPIO_PIN_12 | GPIO_PIN_11), TM_GPIO_Mode_OUT, TM_GPIO_OType_PP, TM_GPIO_PuPd_UP, TM_GPIO_Speed_High);
-   TM_GPIO_SetPinLow(GPIOA, (GPIO_PIN_12 | GPIO_PIN_11));
+   TM_GPIO_Init(GPIOA, (GPIO_PIN_12 | GPIO_PIN_11 | GPIO_PIN_8), TM_GPIO_Mode_OUT, TM_GPIO_OType_PP, TM_GPIO_PuPd_UP, TM_GPIO_Speed_High);
+   TM_GPIO_SetPinLow(GPIOA, (GPIO_PIN_12 | GPIO_PIN_11 | GPIO_PIN_8));
+
+   TM_GPIO_Init(GPIOC, (GPIO_PIN_8 | GPIO_PIN_7 | GPIO_PIN_6), TM_GPIO_Mode_OUT, TM_GPIO_OType_PP, TM_GPIO_PuPd_UP, TM_GPIO_Speed_High);
+   TM_GPIO_SetPinLow(GPIOC, (GPIO_PIN_8 | GPIO_PIN_7 | GPIO_PIN_6));
    Delay(500);
 
-   for(int i=0; i<NUMBER_OF_DEVICES; i++)
+   for(int i=0; i<2; i++)
    {
 	   MyDevices[i].I2cDevAddr	= 0x29;
 	   MyDevices[i].comms_type      =  1;
 	   MyDevices[i].comms_speed_khz =  100;
 	   address = baseAddress + 4*i;
-	   Init_Rangefinder(&(MyDevices[i]), address, pins[i]);
+	   Init_Rangefinder(&(MyDevices[i]), address, a_pins[i], 1);
 	   if (Status != VL53L0X_ERROR_NONE)
 		   break;
    }
+
+
+
+   for(int i=2; i<5; i++)
+   {
+	   MyDevices[i].I2cDevAddr	= 0x29;
+	   MyDevices[i].comms_type      =  1;
+	   MyDevices[i].comms_speed_khz =  100;
+	   address = baseAddress + 4*i;
+	   Init_Rangefinder(&(MyDevices[i]), address, c_pins[i-2], 3);
+	   if (Status != VL53L0X_ERROR_NONE)
+		   break;
+   }
+
 }
 
 void buzz(int time)
@@ -705,9 +734,20 @@ void UpdateMotors()
 				index = j;
 			}
 		}
-		measurement[index] = 4000;
 
-		index = 0x01 << index;
+		measurement[index] = (4000+1);
+
+		if(index < 3){
+			index = 0x01 << (index+1);
+		}
+		else if(index == 3)
+		{
+			index = 0x03 << (index+1);
+		}
+		else
+		{
+			index = 0x01 << (index+2);
+		}
 
 		// check for closest distance
 		if(min < 500){
