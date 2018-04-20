@@ -11,6 +11,8 @@
 
 #define MAX_STRLEN 32 // this is the maximum string length of our string in characters
 #define BUTTON_LIMIT 2500000
+#define NUMBER_OF_DEVICES 2 // number of rangefinders connected
+#define MAX_ACTIVE_MOTORS 3
 volatile char received_string[MAX_STRLEN+1]; // this will hold the recieved string
 #define SLAVE_ADDRESS 0x29 // the slave address (example)
 #define PERC_10 2738
@@ -18,9 +20,17 @@ volatile char received_string[MAX_STRLEN+1]; // this will hold the recieved stri
 uint8_t state = 1;
 uint8_t received_data[2];
 
+uint8_t buttom_row = 0x00;
+uint8_t middle_row = 0x00;
+uint8_t top_row = 0x00;
+
 uint8_t below_10 = 0;
 uint8_t below_5 = 0;
 uint8_t reset = 0;
+
+uint32_t counter = 0;
+
+uint32_t measurement[NUMBER_OF_DEVICES];
 
 
 
@@ -418,6 +428,42 @@ uint8_t SPI2_send(uint8_t data){
 	return SPI2->DR; // return received data from SPI data register
 }
 
+void TIM_INT_Init()
+{
+    // Enable clock for TIM2
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM5, ENABLE);
+
+    // TIM2 initialization overflow every 500ms
+    // TIM2 by default has clock of 84MHz
+    // Here, we must set value of prescaler and period,
+    // so update event is 0.5Hz or 500ms
+    // Update Event (Hz) = timer_clock / ((TIM_Prescaler + 1) *
+    // (TIM_Period + 1))
+    // Update Event (Hz) = 84MHz / ((4199 + 1) * (9999 + 1)) = 2 Hz
+    TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStruct;
+    TIM_TimeBaseInitStruct.TIM_Prescaler = 4199;
+    TIM_TimeBaseInitStruct.TIM_Period = 9999;
+    TIM_TimeBaseInitStruct.TIM_ClockDivision = TIM_CKD_DIV1;
+    TIM_TimeBaseInitStruct.TIM_CounterMode = TIM_CounterMode_Up;
+
+    // TIM2 initialize
+    TIM_TimeBaseInit(TIM5, &TIM_TimeBaseInitStruct);
+    // Enable TIM2 interrupt
+    TIM_ITConfig(TIM5, TIM_IT_Update, ENABLE);
+    // Start TIM2
+    TIM_Cmd(TIM5, ENABLE);
+
+    // Nested vectored interrupt settings
+    // TIM2 interrupt is most important (PreemptionPriority and
+    // SubPriority = 0)
+    NVIC_InitTypeDef NVIC_InitStruct;
+    NVIC_InitStruct.NVIC_IRQChannel = TIM5_IRQn;
+    NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority = 0;
+    NVIC_InitStruct.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStruct);
+}
+
 int vibrate(uint8_t value){
 	  GPIOC->BSRRL |= GPIO_Pin_15; // set G_Bar to high (disable)
 	  GPIOC->BSRRL |= GPIO_Pin_14; // set SR_CLR to high (enable)
@@ -514,64 +560,10 @@ void init_I2C1(void){
 	I2C_Cmd(I2C1, ENABLE);
 }
 
-VL53L0X_Error WaitMeasurementDataReady(VL53L0X_DEV Dev) {
-    VL53L0X_Error Status = VL53L0X_ERROR_NONE;
-    uint8_t NewDatReady=0;
-    uint32_t LoopNb;
-
-    // Wait until it finished
-    // use timeout to avoid deadlock
-    if (Status == VL53L0X_ERROR_NONE) {
-        LoopNb = 0;
-        do {
-            Status = VL53L0X_GetMeasurementDataReady(Dev, &NewDatReady);
-            if ((NewDatReady == 0x01) || Status != VL53L0X_ERROR_NONE) {
-                break;
-            }
-            LoopNb = LoopNb + 1;
-            VL53L0X_PollingDelay(Dev);
-        } while (LoopNb < VL53L0X_DEFAULT_MAX_LOOP);
-
-        if (LoopNb >= VL53L0X_DEFAULT_MAX_LOOP) {
-            Status = VL53L0X_ERROR_TIME_OUT;
-        }
-    }
-
-    return Status;
-}
-
-VL53L0X_Error WaitStopCompleted(VL53L0X_DEV Dev) {
-    VL53L0X_Error Status = VL53L0X_ERROR_NONE;
-    uint32_t StopCompleted=0;
-    uint32_t LoopNb;
-
-    // Wait until it finished
-    // use timeout to avoid deadlock
-    if (Status == VL53L0X_ERROR_NONE) {
-        LoopNb = 0;
-        do {
-            Status = VL53L0X_GetStopCompletedStatus(Dev, &StopCompleted);
-            if ((StopCompleted == 0x00) || Status != VL53L0X_ERROR_NONE) {
-                break;
-            }
-            LoopNb = LoopNb + 1;
-            VL53L0X_PollingDelay(Dev);
-        } while (LoopNb < VL53L0X_DEFAULT_MAX_LOOP);
-
-        if (LoopNb >= VL53L0X_DEFAULT_MAX_LOOP) {
-            Status = VL53L0X_ERROR_TIME_OUT;
-        }
-
-    }
-
-    return Status;
-}
 
 
 VL53L0X_Error rangeInit(VL53L0X_Dev_t *pMyDevice)
 {
-    VL53L0X_RangingMeasurementData_t    RangingMeasurementData;
-    VL53L0X_RangingMeasurementData_t   *pRangingMeasurementData    = &RangingMeasurementData;
     VL53L0X_Error Status = VL53L0X_ERROR_NONE;
     uint32_t refSpadCount;
     uint8_t isApertureSpads;
@@ -600,100 +592,32 @@ VL53L0X_Error rangeInit(VL53L0X_Dev_t *pMyDevice)
     return Status;
 }
 
-VL53L0X_Error range(VL53L0X_Dev_t *pMyDevice)
+
+void Start_Ranging(VL53L0X_Dev_t *MyDevices)
 {
+	VL53L0X_Error Status = VL53L0X_ERROR_NONE;
+	for(int i=0; i<NUMBER_OF_DEVICES; i++){
+		Status = VL53L0X_StartMeasurement(&(MyDevices[i]));
+	}
+}
+
+void Get_Ranges(VL53L0X_Dev_t *MyDevices)
+{
+	VL53L0X_Error Status = VL53L0X_ERROR_NONE;
     VL53L0X_RangingMeasurementData_t    RangingMeasurementData;
     VL53L0X_RangingMeasurementData_t   *pRangingMeasurementData    = &RangingMeasurementData;
-    VL53L0X_Error Status = VL53L0X_ERROR_NONE;
-    uint32_t refSpadCount;
-    uint8_t isApertureSpads;
-    uint8_t VhvSettings;
-    uint8_t PhaseCal;
+	for(int i=0; i<NUMBER_OF_DEVICES; i++){
+        Status = VL53L0X_GetRangingMeasurementData(&(MyDevices[i]), pRangingMeasurementData);
+        measurement[i] = pRangingMeasurementData->RangeMilliMeter;
+	}
+}
 
-    if(Status == VL53L0X_ERROR_NONE)
-    {
-        Status = VL53L0X_StaticInit(pMyDevice); // Device Initialization
-        // StaticInit will set interrupt by default
-    }
-
-    if(Status == VL53L0X_ERROR_NONE)
-    {
-        Status = VL53L0X_PerformRefCalibration(pMyDevice,
-        		&VhvSettings, &PhaseCal); // Device Initialization
-    }
-
-    if(Status == VL53L0X_ERROR_NONE)
-    {
-        Status = VL53L0X_PerformRefSpadManagement(pMyDevice,
-        		&refSpadCount, &isApertureSpads); // Device Initialization
-    }
-
-
-
-    if(Status == VL53L0X_ERROR_NONE)
-    {
-
-        Status = VL53L0X_SetDeviceMode(pMyDevice, VL53L0X_DEVICEMODE_CONTINUOUS_RANGING); // Setup in single ranging mode
-    }
-
-    if(Status == VL53L0X_ERROR_NONE)
-    {
-		Status = VL53L0X_StartMeasurement(pMyDevice);
-    }
-
-    if(Status == VL53L0X_ERROR_NONE)
-    {
-        uint32_t measurement;
-        uint32_t no_of_measurements = 32;
-
-        uint16_t* pResults = (uint16_t*)malloc(sizeof(uint16_t) * no_of_measurements);
-
-        for(measurement=0; measurement<no_of_measurements; measurement++)
-        {
-
-            Status = WaitMeasurementDataReady(pMyDevice);
-
-            if(Status == VL53L0X_ERROR_NONE)
-            {
-                Status = VL53L0X_GetRangingMeasurementData(pMyDevice, pRangingMeasurementData);
-
-                *(pResults + measurement) = pRangingMeasurementData->RangeMilliMeter;
-
-                // Clear the interrupt
-                VL53L0X_ClearInterruptMask(pMyDevice, VL53L0X_REG_SYSTEM_INTERRUPT_GPIO_NEW_SAMPLE_READY);
-                VL53L0X_PollingDelay(pMyDevice);
-            } else {
-                break;
-            }
-        }
-
-        if(Status == VL53L0X_ERROR_NONE)
-        {
-            for(measurement=0; measurement<no_of_measurements; measurement++)
-            {
-
-            }
-        }
-
-        free(pResults);
-    }
-
-
-    if(Status == VL53L0X_ERROR_NONE)
-    {
-        Status = VL53L0X_StopMeasurement(pMyDevice);
-    }
-
-    if(Status == VL53L0X_ERROR_NONE)
-    {
-        Status = WaitStopCompleted(pMyDevice);
-    }
-
-    if(Status == VL53L0X_ERROR_NONE)
-	Status = VL53L0X_ClearInterruptMask(pMyDevice,
-		VL53L0X_REG_SYSTEM_INTERRUPT_GPIO_NEW_SAMPLE_READY);
-
-    return Status;
+void End_Ranging(VL53L0X_Dev_t *MyDevices)
+{
+	VL53L0X_Error Status = VL53L0X_ERROR_NONE;
+	for(int i=0; i<NUMBER_OF_DEVICES; i++){
+		Status = VL53L0X_StopMeasurement(&(MyDevices[i]));
+	}
 }
 
 VL53L0X_Error Init_Rangefinder(VL53L0X_Dev_t *MyDevice, uint8_t address, uint16_t pin)
@@ -716,10 +640,13 @@ VL53L0X_Error Init_Rangefinder(VL53L0X_Dev_t *MyDevice, uint8_t address, uint16_
 	if (Status == VL53L0X_ERROR_NONE)
 		Status = VL53L0X_SetLinearityCorrectiveGain(MyDevice, 1000);
 
+	if(Status == VL53L0X_ERROR_NONE)
+		Status = VL53L0X_SetDeviceMode(MyDevice, VL53L0X_DEVICEMODE_CONTINUOUS_RANGING); // Setup in single ranging mode
+
 	return Status;
 }
 
-void Init_RangeArray(VL53L0X_Dev_t *MyDevices, uint8_t numberOfDevices)
+void Init_RangeArray(VL53L0X_Dev_t *MyDevices)
 {
    VL53L0X_Error Status = VL53L0X_ERROR_NONE;
    uint8_t address;
@@ -731,7 +658,7 @@ void Init_RangeArray(VL53L0X_Dev_t *MyDevices, uint8_t numberOfDevices)
    TM_GPIO_SetPinLow(GPIOA, (GPIO_PIN_12 | GPIO_PIN_11));
    Delay(500);
 
-   for(int i=0; i<numberOfDevices; i++)
+   for(int i=0; i<NUMBER_OF_DEVICES; i++)
    {
 	   MyDevices[i].I2cDevAddr	= 0x29;
 	   MyDevices[i].comms_type      =  1;
@@ -759,6 +686,46 @@ void flagReset()
 	reset = 0;
 }
 
+void UpdateMotors()
+{
+	// reset all motors
+	buttom_row = 0x00;
+	middle_row = 0x00;
+	top_row = 0x00;
+
+	// find minimum values
+	for(int i=0; i<MAX_ACTIVE_MOTORS; i++)
+	{
+		uint16_t min = 4000;
+		uint8_t index = 0;
+		for(int j=0; j<NUMBER_OF_DEVICES; j++)
+		{
+			if(measurement[j] < min){
+				min = measurement[j];
+				index = j;
+			}
+		}
+		measurement[index] = 4000;
+
+		index = 0x01 << index;
+
+		// check for closest distance
+		if(min < 500){
+			top_row = top_row | index;
+		}
+		else if((min > 500) && (min < 1000))
+		{
+			middle_row = middle_row | index;
+		}
+		else
+		{
+			buttom_row = buttom_row | index;
+		}
+	}
+	vibrate(top_row);
+	vibrate(middle_row);
+	vibrate(buttom_row);
+}
 
 int main(void) {
 
@@ -769,22 +736,24 @@ int main(void) {
    int32_t init_done = 0;
 
    uint8_t data = 0;
-   //VL53L0X_Error Status = VL53L0X_ERROR_NONE;
+   VL53L0X_Error Status = VL53L0X_ERROR_NONE;
 
    TM_I2C_Init(I2C1, TM_I2C_PinsPack_1, TM_I2C_CLOCK_STANDARD);
 
-   uint8_t numberOfDevices = 2;
-   VL53L0X_Dev_t MyDevices[numberOfDevices];
+   VL53L0X_Dev_t MyDevices[NUMBER_OF_DEVICES];
 
-   Init_RangeArray(&MyDevices, numberOfDevices);
+   Init_RangeArray(&MyDevices);
+   Start_Ranging(&MyDevices);
+
 
    init_USART1(9600); // initialize USART1 @ 9600 baud
 
    ADC_Config();
    Configure_PC4();
+   TIM_INT_Init();
 
 
-  uint16_t adc_val = 0;
+   uint16_t adc_val = 0;
 
 
 //
@@ -805,6 +774,9 @@ int main(void) {
 	  //VL53L0X_SetLinearityCorrectiveGain(pMyDevice, 1000);
 	  //TM_I2C_ReadMulti(I2C1, 0x29, 0xC0, &data, 1);
 	  //Status = rangingTest(pMyDevice);
+
+	  Get_Ranges(&MyDevices);
+	  UpdateMotors();
 
 	  adc_val = ADC_Read();
 
@@ -855,6 +827,17 @@ void USART1_IRQHandler(void){
 			cnt = 0;
 		}
 	}
+}
+
+void TIM5_IRQHandler()
+{
+    // Checks whether the TIM2 interrupt has occurred or not
+    if (TIM_GetITStatus(TIM5, TIM_IT_Update))
+    {
+    	counter++;
+        // Clears the TIM2 interrupt pending bit
+        TIM_ClearITPendingBit(TIM5, TIM_IT_Update);
+    }
 }
 
 void EXTI4_IRQHandler(void) {
