@@ -4,6 +4,7 @@
 #include <stm32f4xx_i2c.h>
 #include <stm32f4xx_tim.h>
 #include <stm32f4xx_rcc.h>
+#include <string.h>
 #include "vl53l0x_api.h"
 #include "tm_stm32f4_i2c.h"
 #include "tm_stm32f4_gpio.h"
@@ -11,18 +12,27 @@
 
 #define MAX_STRLEN 32 // this is the maximum string length of our string in characters
 #define BUTTON_LIMIT 2500000
-#define NUMBER_OF_DEVICES 5 // number of rangefinders connected
+#define NUMBER_OF_DEVICES 5 // number of range finders connected
 #define MAX_ACTIVE_MOTORS 3
-volatile char received_string[MAX_STRLEN+1]; // this will hold the recieved string
+volatile char received_string[MAX_STRLEN+1]; // this will hold the received string
 #define SLAVE_ADDRESS 0x29 // the slave address (example)
 #define PERC_10 2738
 #define PERC_5 2615
 uint8_t state = 1;
 uint8_t received_data[2];
 
-uint8_t buttom_row = 0x00;
+char object[15];
+uint8_t location;
+uint8_t object_array[3];
+uint8_t object_index = 0;
+uint8_t isObject = 1;
+
+uint8_t object_recognition = 0;
+
+uint8_t bottom_row = 0x00;
 uint8_t middle_row = 0x00;
 uint8_t top_row = 0x00;
+uint16_t patternCycle = 0x01;
 
 uint8_t below_10 = 0;
 uint8_t below_5 = 0;
@@ -32,18 +42,45 @@ uint32_t counter = 0;
 
 uint32_t measurement[NUMBER_OF_DEVICES];
 
-
-
 void Delay(__IO uint32_t nCount) {
   while(nCount--) {
   }
 }
 
-/* This funcion initializes the USART1 peripheral
- *
- * Arguments: baudrate --> the baudrate at which the USART is
- * 						   supposed to operate
- */
+void clearString()
+{
+	for(int i=0; i<15; i++)
+	{
+		object[i] = 0x0;
+	}
+}
+
+// updates object array with patter
+void updateObjects()
+{
+	/*
+	if(!strcmp(object, "person"))
+	{
+		object_array[location] = 0x3;
+	}
+	else if(!strcmp(object, "chair"))
+	{
+		object_array[location] = 0x12;
+	}
+	*/
+}
+
+void init_Clocks()
+{
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
+	/* Enable clock for SYSCFG */
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+
+
+}
+
 void init_USART1(uint32_t baudrate){
 
 	/* This is a concept that has to do with the libraries provided by ST
@@ -67,7 +104,7 @@ void init_USART1(uint32_t baudrate){
 	/* enable the peripheral clock for the pins used by
 	 * USART1, PB6 for TX and PB7 for RX
 	 */
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
+
 
 	/* This sequence sets up the TX and RX pins
 	 * so they work correctly with the USART1 peripheral
@@ -122,9 +159,7 @@ void Configure_PC4(void) {
     NVIC_InitTypeDef NVIC_InitStruct;
 
     /* Enable clock for GPIOC */
-    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
-    /* Enable clock for SYSCFG */
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
 
     /* Set pin as input */
@@ -212,7 +247,7 @@ void TM_LEDS_Init(void) {
 	GPIO_InitTypeDef GPIO_InitStruct;
 
 	/* Clock for GPIOD */
-    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
+
 
 	/* Alternating functions for pins */
 	GPIO_PinAFConfig(GPIOC, GPIO_PinSource9, GPIO_AF_TIM3);
@@ -330,9 +365,7 @@ void init_SPI2(void){
 	SPI_InitTypeDef SPI_InitStruct;
 
 	// enable clock for used IO pins
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
+
 
 	/* configure pins used by SPI1
 	 * PB10 = SCK
@@ -441,7 +474,7 @@ void TIM_INT_Init()
     // (TIM_Period + 1))
     // Update Event (Hz) = 84MHz / ((4199 + 1) * (9999 + 1)) = 2 Hz
     TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStruct;
-    TIM_TimeBaseInitStruct.TIM_Prescaler = 4199;
+    TIM_TimeBaseInitStruct.TIM_Prescaler = 419;
     TIM_TimeBaseInitStruct.TIM_Period = 9999;
     TIM_TimeBaseInitStruct.TIM_ClockDivision = TIM_CKD_DIV1;
     TIM_TimeBaseInitStruct.TIM_CounterMode = TIM_CounterMode_Up;
@@ -462,6 +495,8 @@ void TIM_INT_Init()
     NVIC_InitStruct.NVIC_IRQChannelSubPriority = 0;
     NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStruct);
+
+    TIM_ClearITPendingBit(TIM5, TIM_IT_Update);
 }
 
 int vibrate(uint8_t value){
@@ -527,8 +562,6 @@ void init_I2C1(void){
 
 	// enable APB1 peripheral clock for I2C1
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_I2C1, ENABLE);
-	// enable clock for SCL and SDA pins
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
 
 	/* setup SCL and SDA pins
 	 * You can connect I2C1 to two different
@@ -715,10 +748,42 @@ void flagReset()
 	reset = 0;
 }
 
+void UpdatePattern()
+{
+	uint8_t temp_bottom = bottom_row;
+	uint8_t temp_middle = middle_row;
+	uint8_t temp_top = top_row;
+
+
+	if(!(object_array[0] & patternCycle))
+	{
+		temp_bottom = bottom_row & 0x1F;
+		temp_middle = middle_row & 0x1F;
+		temp_top = top_row & 0xF8;
+	}
+	if(!(object_array[1] & patternCycle))
+	{
+		temp_bottom = bottom_row & 0xE7;
+		temp_middle = middle_row & 0xE7;
+		temp_top = top_row & 0x18;
+	}
+	if(!(object_array[2] & patternCycle))
+	{
+		temp_bottom = bottom_row & 0xF8;
+		temp_middle = middle_row & 0xF8;
+		temp_top = top_row & 0x1F;
+	}
+
+
+	vibrate(temp_top);
+	vibrate(temp_middle);
+	vibrate(temp_bottom);
+}
+
 void UpdateMotors()
 {
 	// reset all motors
-	buttom_row = 0x00;
+	bottom_row = 0x00;
 	middle_row = 0x00;
 	top_row = 0x00;
 
@@ -759,91 +824,52 @@ void UpdateMotors()
 		}
 		else
 		{
-			buttom_row = buttom_row | index;
+			bottom_row = bottom_row | index;
 		}
 	}
-	vibrate(top_row);
-	vibrate(middle_row);
-	vibrate(buttom_row);
+
+	UpdatePattern();
 }
 
 int main(void) {
 
    SystemInit();
-
-
-   int32_t status_int;
-   int32_t init_done = 0;
-
-   uint8_t data = 0;
-   VL53L0X_Error Status = VL53L0X_ERROR_NONE;
+   init_Clocks();
 
    TM_I2C_Init(I2C1, TM_I2C_PinsPack_1, TM_I2C_CLOCK_STANDARD);
 
    VL53L0X_Dev_t MyDevices[NUMBER_OF_DEVICES];
 
+   // configure rangefinders
    Init_RangeArray(&MyDevices);
    Start_Ranging(&MyDevices);
 
+   // initialize USART1 @ 9600 baud
+   init_USART1(9600);
 
-   init_USART1(9600); // initialize USART1 @ 9600 baud
-
+   // initialize ADC
    ADC_Config();
-   Configure_PC4();
-   TIM_INT_Init();
+   //object_array[1] = 0x3;
 
+   // initialize user button
+   //Configure_PC4();
+
+   // initialize TIM5 and interrupt
+   TIM_INT_Init();
 
    uint16_t adc_val = 0;
 
 
-//
-//  /* Init leds */
-  //TM_LEDS_Init();
-//  /* Init timer */
-  //TM_TIMER_Init();
-//  /* Init PWM */
-  //TM_PWM_Init();
-
-  // device wake up
-
   while (1){
-    /*
-     * You can do whatever you want in here
-     */
+
 	  //__WFI();
-	  //VL53L0X_SetLinearityCorrectiveGain(pMyDevice, 1000);
-	  //TM_I2C_ReadMulti(I2C1, 0x29, 0xC0, &data, 1);
-	  //Status = rangingTest(pMyDevice);
 
+	  // poll range finder info
 	  Get_Ranges(&MyDevices);
-	  UpdateMotors();
 
-	  adc_val = ADC_Read();
-
-
-	  if((adc_val < PERC_10) && (adc_val > PERC_5) && !(below_10)){
-		  buzz(500000);
-		  Delay(500000);
-		  buzz(500000);
-		  below_10 = 1;
-		  reset = 1;
-	  }
-	  else if ((adc_val < PERC_5) && !(below_5)){
-		  buzz(500000);
-		  Delay(500000);
-		  buzz(500000);
-		  Delay(500000);
-		  buzz(500000);
-		  USART_puts(USART1, "sleep");
-		  below_5 = 1;
-		  reset = 1;
-	  }
-	  else if ((adc_val > 3751) && reset){
-		  flagReset();
-		  buzz(500000);
-	  }
-
-
+	  // check battery level
+	  //adc_val = ADC_Read();
+	  //CheckVoltage(adc_val);
   }
 }
 
@@ -862,6 +888,33 @@ void USART1_IRQHandler(void){
 		if( (t != '\n') && (cnt < MAX_STRLEN) ){
 			received_string[cnt] = t;
 			cnt++;
+
+			// beginning of string parsing
+			if(t != ',' && isObject)
+			{
+				object[object_index] = t;
+				object_index++;
+			}
+			else if(t != ',' && !isObject)
+			{
+				location = (t - '0')-1;
+				object_index = 0;
+				updateObjects();
+			}
+			else
+			{
+				if(isObject)
+				{
+					isObject = 0;
+				}
+				else
+				{
+					isObject = 1;
+					clearString();
+				}
+			}
+			// end of string parsing
+
 		}
 		else{ // otherwise reset the character counter and print the received string
 			cnt = 0;
@@ -871,11 +924,28 @@ void USART1_IRQHandler(void){
 
 void TIM5_IRQHandler()
 {
-    // Checks whether the TIM2 interrupt has occurred or not
+    // Checks whether the TIM5 interrupt has occurred or not
     if (TIM_GetITStatus(TIM5, TIM_IT_Update))
     {
-    	counter++;
-        // Clears the TIM2 interrupt pending bit
+    	if(counter == 5)
+    	{
+    		counter = 0;
+    		if(patternCycle == 0x08)
+    		{
+    			patternCycle = 0x01;
+    		}
+    		else
+    		{
+    			patternCycle = patternCycle << 1;
+    		}
+    	}
+    	else
+    	{
+    		counter++;
+    	}
+    	UpdateMotors();
+
+        // Clears the TIM5 interrupt pending bit
         TIM_ClearITPendingBit(TIM5, TIM_IT_Update);
     }
 }
@@ -890,8 +960,9 @@ void EXTI4_IRQHandler(void) {
     		time = time + 1;
     	}
 
-    	// if state is equal to 1
+    	// if device is waking up
     	if(state == 1){
+    		// if button is pressed for less than 3 secs
     		if(time < BUTTON_LIMIT){
     			USART_puts(USART1, "hello");
     			state = 2;
@@ -914,6 +985,7 @@ void EXTI4_IRQHandler(void) {
     	else{
     		if(time < BUTTON_LIMIT){
     			USART_puts(USART1, "data");
+    			object_recognition = 1;
     			state = 2;
     		}
     		else{
