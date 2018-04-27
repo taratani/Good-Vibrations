@@ -13,7 +13,7 @@
 
 #define MAX_STRLEN 32 // this is the maximum string length of our string in characters
 #define BUTTON_LIMIT 2500000
-#define NUMBER_OF_DEVICES 5 // number of rangefinders connected
+#define NUMBER_OF_DEVICES 7 // number of rangefinders connected
 #define MAX_ACTIVE_MOTORS 3
 volatile char received_string[MAX_STRLEN+1]; // this will hold the recieved string
 #define SLAVE_ADDRESS 0x29 // the slave address (example)
@@ -28,8 +28,8 @@ uint8_t top_row = 0x00;
 uint8_t patternCycle = 0x01;
 
 char object[15];
-uint8_t location;
-uint8_t object_array[3];
+uint8_t location = 0;
+uint16_t object_array[3] = {0x00, 0x00, 0x00};
 uint8_t object_index = 0;
 uint8_t isObject = 1;
 
@@ -41,12 +41,17 @@ uint8_t below_5 = 0;
 uint8_t reset = 0;
 
 uint32_t counter = 0;
+uint32_t milliseconds = 0;
 
+VL53L0X_Dev_t MyDevices[NUMBER_OF_DEVICES];
 uint32_t measurement[NUMBER_OF_DEVICES];
 
 uint8_t getImageData = 0;
 
-
+uint8_t newData = 0;
+uint8_t patternReady = 0;
+uint8_t patternReps = 0;
+uint16_t patternTime = 40;
 
 void Delay(__IO uint32_t nCount) {
   while(nCount--) {
@@ -66,11 +71,11 @@ void updateObjects()
 {
 	if(!strcmp(object, "person"))
 	{
-		object_array[location] = 0x3;
+		object_array[location] = 0x0303;
 	}
 	else if(!strcmp(object, "chair"))
 	{
-		object_array[location] = 0x12;
+		object_array[location] = 0xFF12;
 	}
 }
 
@@ -453,7 +458,7 @@ uint8_t SPI2_send(uint8_t data){
 void TIM_INT_Init()
 {
     // Enable clock for TIM2
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM5, ENABLE);
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
 
     // TIM2 initialization overflow every 500ms
     // TIM2 by default has clock of 84MHz
@@ -463,23 +468,23 @@ void TIM_INT_Init()
     // (TIM_Period + 1))
     // Update Event (Hz) = 84MHz / ((4199 + 1) * (9999 + 1)) = 2 Hz
     TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStruct;
-    TIM_TimeBaseInitStruct.TIM_Prescaler = 4199;
+    TIM_TimeBaseInitStruct.TIM_Prescaler = 83;
     TIM_TimeBaseInitStruct.TIM_Period = 9999;
     TIM_TimeBaseInitStruct.TIM_ClockDivision = TIM_CKD_DIV1;
     TIM_TimeBaseInitStruct.TIM_CounterMode = TIM_CounterMode_Up;
 
     // TIM2 initialize
-    TIM_TimeBaseInit(TIM5, &TIM_TimeBaseInitStruct);
+    TIM_TimeBaseInit(TIM2, &TIM_TimeBaseInitStruct);
     // Enable TIM2 interrupt
-    TIM_ITConfig(TIM5, TIM_IT_Update, ENABLE);
+    TIM_ITConfig(TIM2, TIM_IT_Update, ENABLE);
     // Start TIM2
-    TIM_Cmd(TIM5, ENABLE);
+    TIM_Cmd(TIM2, ENABLE);
 
     // Nested vectored interrupt settings
     // TIM2 interrupt is most important (PreemptionPriority and
     // SubPriority = 0)
     NVIC_InitTypeDef NVIC_InitStruct;
-    NVIC_InitStruct.NVIC_IRQChannel = TIM5_IRQn;
+    NVIC_InitStruct.NVIC_IRQChannel = TIM2_IRQn;
     NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority = 0;
     NVIC_InitStruct.NVIC_IRQChannelSubPriority = 0;
     NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;
@@ -687,15 +692,19 @@ void Init_RangeArray(VL53L0X_Dev_t *MyDevices)
 
    uint16_t a_pins[3] = {GPIO_PIN_12, GPIO_PIN_11, GPIO_PIN_8};
    uint16_t c_pins[3] = {GPIO_PIN_8, GPIO_PIN_7, GPIO_PIN_6};
+   uint16_t b_pin = GPIO_PIN_15;
 
    TM_GPIO_Init(GPIOA, (GPIO_PIN_12 | GPIO_PIN_11 | GPIO_PIN_8), TM_GPIO_Mode_OUT, TM_GPIO_OType_PP, TM_GPIO_PuPd_UP, TM_GPIO_Speed_High);
    TM_GPIO_SetPinLow(GPIOA, (GPIO_PIN_12 | GPIO_PIN_11 | GPIO_PIN_8));
 
    TM_GPIO_Init(GPIOC, (GPIO_PIN_8 | GPIO_PIN_7 | GPIO_PIN_6), TM_GPIO_Mode_OUT, TM_GPIO_OType_PP, TM_GPIO_PuPd_UP, TM_GPIO_Speed_High);
    TM_GPIO_SetPinLow(GPIOC, (GPIO_PIN_8 | GPIO_PIN_7 | GPIO_PIN_6));
+
+   TM_GPIO_Init(GPIOB, GPIO_PIN_15, TM_GPIO_Mode_OUT, TM_GPIO_OType_PP, TM_GPIO_PuPd_UP, TM_GPIO_Speed_High);
+   TM_GPIO_SetPinLow(GPIOB, GPIO_PIN_15);
    Delay(500);
 
-   for(int i=0; i<2; i++)
+   for(int i=0; i<3; i++)
    {
 	   MyDevices[i].I2cDevAddr	= 0x29;
 	   MyDevices[i].comms_type      =  1;
@@ -708,16 +717,24 @@ void Init_RangeArray(VL53L0X_Dev_t *MyDevices)
 
 
 
-   for(int i=2; i<5; i++)
+   for(int i=3; i<6; i++)
    {
 	   MyDevices[i].I2cDevAddr	= 0x29;
 	   MyDevices[i].comms_type      =  1;
 	   MyDevices[i].comms_speed_khz =  100;
 	   address = baseAddress + 4*i;
-	   Init_Rangefinder(&(MyDevices[i]), address, c_pins[i-2], 3);
+	   Init_Rangefinder(&(MyDevices[i]), address, c_pins[i-3], 3);
 	   if (Status != VL53L0X_ERROR_NONE)
 		   break;
    }
+
+
+   MyDevices[6].I2cDevAddr	= 0x29;
+   MyDevices[6].comms_type      =  1;
+   MyDevices[6].comms_speed_khz =  100;
+   address = baseAddress + 4*6;
+   Init_Rangefinder(&(MyDevices[6]), address, b_pin, 2);
+
 
 }
 
@@ -744,23 +761,23 @@ void UpdatePattern()
 	uint8_t temp_top = top_row;
 
 
-	if(!(object_array[2] & patternCycle) && (object_array[2] != 0x00))
+	if(!(object_array[0] & patternCycle) && object_array[0])
 	{
 		temp_bottom = bottom_row & 0x1F;
 		temp_middle = middle_row & 0x1F;
-		temp_top = top_row & 0xF8;
+		temp_top = top_row & 0x1F;
 	}
-	if(!(object_array[1] & patternCycle) && (object_array[1] != 0x00))
+	if(!(object_array[1] & patternCycle) && object_array[1])
 	{
 		temp_bottom = bottom_row & 0xE7;
 		temp_middle = middle_row & 0xE7;
-		temp_top = top_row & 0x18;
+		temp_top = top_row & 0xE7;
 	}
-	if(!(object_array[0] & patternCycle) && (object_array[0] != 0x00))
+	if(!(object_array[2] & patternCycle) && object_array[2])
 	{
 		temp_bottom = bottom_row & 0xF8;
 		temp_middle = middle_row & 0xF8;
-		temp_top = top_row & 0x1F;
+		temp_top = top_row & 0xF8;
 	}
 
 
@@ -811,19 +828,26 @@ void UpdateMotors()
 		{
 			middle_row = middle_row | index;
 		}
-		else if(min < 4000)
+		else if(min < 6000)
 		{
 			bottom_row = bottom_row | index;
 		}
 	}
-	if(getImageData){
-		UpdatePattern();
+
+	/*
+	if(patternTime < 40){
+         UpdatePattern();
 	}
 	else{
 		vibrate(top_row);
 		vibrate(middle_row);
 		vibrate(bottom_row);
 	}
+	*/
+	UpdatePattern();
+	//vibrate(top_row);
+	//vibrate(middle_row);
+	//vibrate(bottom_row);
 
 }
 
@@ -840,7 +864,7 @@ int main(void) {
 
    TM_I2C_Init(I2C1, TM_I2C_PinsPack_1, TM_I2C_CLOCK_STANDARD);
 
-   VL53L0X_Dev_t MyDevices[NUMBER_OF_DEVICES];
+
 
    Init_RangeArray(&MyDevices);
    Start_Ranging(&MyDevices);
@@ -849,9 +873,9 @@ int main(void) {
    init_USART1(9600); // initialize USART1 @ 9600 baud
 
    //ADC_Config();
-   //Configure_PC4();
+   Configure_PC4();
 
-   //TIM_INT_Init();
+   TIM_INT_Init();
    //object_array[1] = 0x3;
    vibrate(0x00);
    vibrate(0x00);
@@ -880,18 +904,12 @@ int main(void) {
 	  //TM_I2C_ReadMulti(I2C1, 0x29, 0xC0, &data, 1);
 	  //Status = rangingTest(pMyDevice);
 
+	  /*
 	    Get_Ranges(&MyDevices);
-		if(counter == 4)
+	    patternCycle = 0x01 << counter;
+		if(counter == 7)
 		{
 			counter = 0;
-			if(patternCycle == 0x08)
-			{
-				patternCycle = 0x01;
-			}
-			else
-			{
-				patternCycle = patternCycle << 1;
-			}
 		}
 		else
 		{
@@ -899,6 +917,7 @@ int main(void) {
 		}
 		UpdateMotors();
 		Delay(50000);
+	  */
 
 
 	  /*
@@ -943,10 +962,7 @@ void USART1_IRQHandler(void){
 		/* check if the received character is not the LF character (used to determine end of string)
 		 * or the if the maximum string length has been been reached
 		 */
-		if( (t != '\n') && (cnt < MAX_STRLEN) ){
-			received_string[cnt] = t;
-			cnt++;
-
+		if( (t != '\n') && newData){
 			// beginning of string parsing
 			if(t != ',' && isObject)
 			{
@@ -974,28 +990,48 @@ void USART1_IRQHandler(void){
 			// end of string parsing
 
 		}
-		else if(t == '\n')
+		else if((t == '\n') && newData)
 		{
+			updateObjects();
 			isObject = 1;
 			clearString();
 			object_index = 0;
-			cnt = 0;
-		}
-		else{ // otherwise reset the character counter and print the received string
-			cnt = 0;
+			newData = 0;
+			patternReady = 1;
+			patternTime = 0;
 		}
 	}
 }
 
 
-void TIM5_IRQHandler()
+void TIM2_IRQHandler()
 {
     // Checks whether the TIM2 interrupt has occurred or not
-    if (TIM_GetITStatus(TIM5, TIM_IT_Update))
+    if (TIM_GetITStatus(TIM2, TIM_IT_Update))
     {
-    	counter++;
-        // Clears the TIM2 interrupt pending bit
-        TIM_ClearITPendingBit(TIM5, TIM_IT_Update);
+    	if(milliseconds%5 == 0)
+    	{
+    		Get_Ranges(&MyDevices);
+			patternCycle = 0x01 << counter;
+			if(counter == 7)
+			{
+				counter = 0;
+			}
+			else
+			{
+				counter++;
+			}
+			if(state == 2)
+			{
+				UpdateMotors();
+			}
+
+    	}
+    	milliseconds++;
+    	patternTime++;
+
+     	 // Clears the TIM2 interrupt pending bit
+        TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
     }
 }
 
@@ -1034,11 +1070,22 @@ void EXTI4_IRQHandler(void) {
     		if(time < BUTTON_LIMIT){
     			USART_puts(USART1, "data");
     			state = 2;
-    			getImageData = 1;
+    			counter = 0;
+    			object_array[0] = 0x00;
+    			object_array[1] = 0x00;
+    			object_array[2] = 0x00;
+
+    			newData = 1;
+
+    			patternReady = 0;
     		}
     		else{
     			USART_puts(USART1, "quit");
     			state = 1;
+
+    			vibrate(0x00);
+    			vibrate(0x00);
+    			vibrate(0x00);
 
     			TM_LEDS_Init();
     			TM_TIMER_Init();
