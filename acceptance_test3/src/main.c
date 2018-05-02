@@ -809,15 +809,15 @@ void UpdateMotors()
 		measurement[index] = (7000+1);
 
 		if(index < 3){
-			index = 0x01 << (index+1);
+			index = 0x01 << (index);
 		}
 		else if(index == 3)
 		{
-			index = 0x03 << (index+1);
+			index = 0x03 << (index);
 		}
 		else
 		{
-			index = 0x01 << (index+2);
+			index = 0x01 << (index+1);
 		}
 
 		// check for closest distance
